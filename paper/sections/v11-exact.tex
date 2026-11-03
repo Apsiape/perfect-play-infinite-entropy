@@ -1,0 +1,140 @@
+\section{Exact local algebras and extraction limits}\label{sec:exact-law}
+This appendix separates two refinements from the approximate-relation theorem. The first assumes exact local relations and has a sharp leading coefficient. The second limits a full-state self-testing modulus. Neither refinement is needed for Theorem~D.
+
+\subsection{The sharp exact-algebra law}
+\begin{theorem}[Exact local relations; three mirrors]\label{thm:exact-law}
+Suppose both parties obey \eqref{eq:R1}--\eqref{eq:R3} as operator identities. On a normal purification $\Omega$, set
+\[
+ \Delta_3=\|(A_L^*-A_R/2)\Omega\|^2
+ +\|(B_L^*-B_R)\Omega\|^2+\|(C_L-C_R)\Omega\|^2.
+\]
+There is an absolute constant $C_0$ such that, for sufficiently small $\Delta_3>0$ and either party $s$,
+\[
+ S(\rho_s)\ge\frac23\log_2(1/\Delta_3)
+       -8\log_2\log_2(1/\Delta_3)-C_0.
+\]
+In particular the same bound holds with $\Delta_3$ replaced by the sum $\Delta$ of all five squared mirror defects. For that five-mirror convention the leading coefficient $2/3$ is sharp, uniformly over representations and normal states.
+\end{theorem}
+\begin{proof}
+Put $\delta=\sqrt{\Delta_3}$ and $\ell=\log_2(1/\delta)$. The spectral argument in the first paragraph of the proof of Lemma~\ref{lem:normal} uses only the local identities: $P,Q$ are orthogonal reducing spectral subprojections, $B$ is a partial isometry, and $AA^*,BB^*,P$ are an orthogonal partition. An interval in $(1/2,1)$ would be transported isometrically by $B$ above one. The same reasoning on $1_{\{1\}}(C)-P$ gives $E_0=P$; on $1_{\{1/2\}}(C)-Q$ it gives $E_1=Q$, since the image would lie in $P$ and in the orthogonal range of $B$. Repeated upward transport excludes every interval $(2^{-h-1},2^{-h})$. Thus
+\[
+ I=E_\infty+\sum_{h\ge0}E_h,\qquad
+ E_h=1_{\{2^{-h}\}}(C),\quad E_\infty=1_{\{0\}}(C).
+\]
+This step makes no assertion that the zero-counter mass vanishes.
+
+For $k\ge0$ put $F_k=1_{[0,2^{-k}]}(C)$ and $t_k=\|F_k^L\Omega\|^2$, so $t_0=1$. For $k\ge1$, the range partition and covariance give the exact identity
+\[
+ t_k=\|F_{k-1}^LA_L^*\Omega\|^2
+           +\|F_{k+1}^LB_L^*\Omega\|^2.
+\]
+Replace the first adjoint by $A_R/2$ and the second by $B_R$. Their squared-norm errors are at most $3\delta/2$ and $2\delta$, respectively. Opposite-party commutation and the exact source relations give the first squared norm $t_{k-1}/4$ and the second
+\[
+ t_{k+1}-\|F_{k+1}^L(P_R+Q_R)\Omega\|^2.
+\]
+On this last joint spectral support, $C_L\le1/4$ and $C_R\ge1/2$. The commuting spectral-gap estimate bounds its mass by $16\delta^2$. Hence, for $\delta\le1$,
+\[
+ |t_k-t_{k-1}/4-t_{k+1}|\le20\delta.
+\]
+The homogeneous solution from $t_0,t_1$ is $[t_0+(2t_1-t_0)k]2^{-k}$, at most $(k+1)2^{-k}$. The impulse kernel has total mass $\sum_{j\ge0}(j+1)2^{-j}=4$. Therefore
+\begin{equation}\label{eq:exact-tail}
+ t_k\le(k+1)2^{-k}+80\delta.
+\end{equation}
+Only the three displayed mirrors have been used.
+
+Let $D_\infty$ project onto equal finite heights together with equal zero-counter sectors. If unequal counters have at least one height at most $m$, their distance is at least $2^{-m-1}$. All remaining unequal pairs have left counter at most $2^{-m-1}$. Thus
+\[
+ \|(I-D_\infty)\Omega\|^2
+ \le4^{m+1}\delta^2+(m+2)2^{-m-1}+80\delta.
+\]
+With $m=\lfloor2\ell/3\rfloor$, this is at most $c_1(\ell+1)\delta^{2/3}$ for an absolute $c_1$. For $D_H=\sum_{h=0}^HE_h^LE_h^R$ and $\Omega_H=D_H\Omega$, \eqref{eq:exact-tail} consequently gives
+\begin{equation}\label{eq:exact-match}
+ \|\Omega-\Omega_H\|\le
+ c_2\sqrt{\ell+1}\,\delta^{1/3}
+ +c_2\sqrt{H+2}\,2^{-H/2}.
+\end{equation}
+The estimate includes zero-counter mass and is independent of a smallest Schmidt value.
+
+Retain $a=A\sum_{h=0}^{H-2}E_h$ and $b=B\sum_{h=2}^HE_h$. Their columns are isometries with orthogonal incoming ranges, and $aa^*+bb^*=\sum_{h=1}^{H-1}E_h$. On matched heights let
+\[
+ T_H=\tfrac12a_L\otimes a_R+b_L\otimes b_R,
+ \qquad \xi_j=E_j^LE_j^R\Omega\quad(j=0,H).
+\]
+There is no incoming retained edge at either boundary. Define
+\[
+ \Pi_+=\sum_{h=1}^{H-1}E_{h-1}^LE_h^R,\qquad
+ \Pi_-=\sum_{h=1}^{H-1}E_{h+1}^LE_h^R.
+\]
+Covariance proves, as exact vector identities,
+\[
+ (a_L^*-a_R/2)\Omega_H=\Pi_+(A_L^*-A_R/2)\Omega,
+\quad
+ (b_L^*-b_R)\Omega_H=\Pi_-(B_L^*-B_R)\Omega.
+\]
+Indeed selecting the displayed output heights forces matched input heights in each term. Multiply these identities by $a_L,b_L$ and use the interior row partition. Their ranges are orthogonal, so
+\[
+ (I-T_H)\Omega_H=\xi_0+\xi_H+r_H,
+ \qquad\|r_H\|\le\delta.
+\]
+In particular the height-matching error has not passed through the inverse. Lemma~\ref{rnd:lem:renewal} gives
+\[
+ y_H=(I-T_H)^{-1}(\xi_0+\xi_H),\qquad
+ \|y_H-\Omega_H\|\le4H^2 2^{H/2}\delta.
+\]
+Combining with \eqref{eq:exact-match}, and writing the resulting bound as $\zeta_H$, yields
+\[
+ \zeta_H\le c_3\left(
+ \sqrt{\ell+1}\,\delta^{1/3}
+ +\sqrt{H+2}\,2^{-H/2}
+ +H^2 2^{H/2}\delta\right).
+\]
+Choose $H=\lfloor2\ell-12\log_2(\ell+2)-c_4\rfloor$. For sufficiently large $\ell$, $H\ge2$ and $\zeta_H(N_{\rm hist}+2)$ is bounded by an absolute constant: use $N_{\rm hist}+2\le18H^3$ and $2^{H/2}\delta\le2^{-c_4/2}(\ell+2)^{-6}$. The first two terms decay exponentially in $\ell$ after multiplication by $H^3$. Also $\zeta_H<1/2$ and $y_H\ne0$ for sufficiently large $\ell$.
+
+The local finite-history isometry and Lemma~\ref{rnd:lem:entropy-comparison}, applied on either side, now give
+\[
+ S(\rho_s)\ge\tfrac23H-O(1)
+ =\tfrac43\ell-8\log_2(\ell+2)-O(1).
+\]
+The path construction is symmetric, so this gives both marginal bounds even though the renewal residual used only the left adjoint mirrors. Since $\log_2(1/\Delta_3)=2\ell$, the stated remainder follows. If all three defects vanish, apply the same argument with every positive $\delta$ to obtain infinite entropy. Replacing $\Delta_3$ by the larger $\Delta$ changes the lower bound only in the sufficiently small range, where its right side is increasing in $\log_2(1/\Delta)$.
+
+For sharpness use the canonical height-$H$ state on the unchanged exact local representation. $B$ and $C$ mirrors are exact. Each of the two $A$ mirrors has squared norm $q_H/4$, since only an omitted $A$ child contributes, with coefficient $1/2$. Thus $\Delta=q_H/2$. Equations~\eqref{eq:v11-height-formulas} and \eqref{eq:v11-height-entropy}, with the fixed scaffold term removed, give entropy $2H/3+O(1)$ and $\log_2(1/\Delta)=H+\log_2H+O(1)$. No larger uniform leading coefficient can hold.
+\end{proof}
+
+\begin{corollary}[The boundary-law class]\label{cor:boundary-law}
+For the prefix-closed, $B$-closed canonical restrictions of Section~\ref{sec:v11-height}, the infimum entropy at boundary ratio at most $q$ has leading term $(2/3)\log_2(1/q)$. The same leading coefficient holds for that class of strategies for $B$ and $G$, with their fixed normalizations.
+\end{corollary}
+\begin{proof}
+On the unamplified word state, prefix closure and $B$ closure make both $B$ mirrors exact; $C$ is diagonal and matched. Each $A$ mirror has squared norm $q_S/4$, by the same omitted-child calculation. Hence $\Delta_S=q_S/2$ for every such set, including infinite sets of finite entropy. Theorem~\ref{thm:exact-law} gives the lower leading term uniformly over the class. Height cutoffs give the upper term, and finite height-and-size cutoffs approximate them with strict loss slack. The scaffold adds a fixed entropy; \eqref{eq:v11-boundary} multiplies loss by a fixed positive constant. Neither changes a leading logarithmic coefficient.
+\end{proof}
+
+\subsection{A limit on full-state extraction}
+\begin{proposition}[No faster full-state self-testing modulus]\label{prop:modulus}
+For sufficiently small $\eta>0$, a pure state $\phi$ within vector distance $\eta$ of $\psicat\otimes\xi$, after local isometries and with arbitrary auxiliary vector $\xi$, has marginal entropy at least $c\eta^{-2}$ for an absolute $c>0$. Consequently a uniform vector extraction modulus for all near-perfect strategies of $B$ or $G$ must satisfy
+\[
+ \eta(\varepsilon)\ge c'\bigl(\log_2(1/\varepsilon)\bigr)^{-1/2}
+\]
+for sufficiently small $\varepsilon$, with a fixed $c'>0$. In particular no positive H\"older rate is possible.
+\end{proposition}
+\begin{proof}
+Let $p$ be the ordered Schmidt probabilities of $\psicat$, and $d_N=\sum_{n=0}^N\Cat_n$. The elementary Catalan bound $\Cat_n4^{-n}\ge[2(n+1)^{3/2}]^{-1}$ gives
+\[
+ \tau_p(d_N):=\sum_{i>d_N}p_i\ge\frac1{2\sqrt{N+2}},
+ \qquad\log_2d_N\ge N-1.
+\]
+For the first inequality sum the bound over $n>N$ and compare with the integral of $x^{-3/2}/4$ from $N+2$ to infinity. For the second use $\Cat_N\ge2^{N-1}$, which follows inductively from the two endpoint terms in the Catalan convolution (with $N=1$ checked directly).
+
+Tensoring by an auxiliary Schmidt law cannot decrease an ordered tail. To see this, write $p\otimes q=\sum_jq_j(p\otimes e_j)$. The sum of the largest $d$ entries is convex and is the same for each vector $p\otimes e_j$, so it is at most the sum of the largest $d$ entries of $p$. The conclusion also holds for countably many $q_j$ by monotone approximation.
+
+For any coefficient Hilbert--Schmidt operator, its distance to operators of rank at most $d$ is the square root of its ordered tail. This follows by projecting onto the $d$ largest singular directions for the upper bound, and by the variational characterization of the sum of the largest $d$ squared singular values for the lower bound. Distance to a fixed set is $1$-Lipschitz. Therefore, for the Schmidt law $p_\phi$,
+\[
+ \sqrt{\tau_{p_\phi}(d)}\ge\sqrt{\tau_p(d)}-\eta.
+\]
+Take $N=\lfloor(256\eta^4)^{-1}\rfloor$ and $\eta\le1/8$. Then $N+2\le(128\eta^4)^{-1}$, so $\tau_p(d_N)\ge4\eta^2$ and $\tau_{p_\phi}(d_N)\ge\eta^2$. Since the probabilities after position $d_N$ are at most $1/d_N$,
+\[
+ S(\phi_L)\ge\tau_{p_\phi}(d_N)\log_2d_N
+ \ge\frac1{512\eta^2}.
+\]
+This remains true with an untouched purifying environment in the auxiliary system, since the cut is the original left marginal against everything else.
+
+Apply the estimate to the pure finite height-and-size strategies in Theorem~D, whose entropy is at most $C_X\log_2(1/\varepsilon)$ for small $\varepsilon$. Local isometries preserve this entropy. A uniform extraction guarantee $\eta(\varepsilon)$ would imply $1/(512\eta(\varepsilon)^2)\le C_X\log_2(1/\varepsilon)$, proving the modulus bound. If the modulus does not tend to zero the same lower asymptotic restriction is immediate.
+\end{proof}

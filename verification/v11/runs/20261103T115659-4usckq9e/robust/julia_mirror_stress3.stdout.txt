@@ -1,0 +1,43 @@
+{
+ "trials": 432,
+ "eta_range": [
+  5.082574008311826e-06,
+  1.0215361028851702
+ ],
+ "opnorm_err_range": [
+  1.4279497102912309,
+  1.9646522396453945
+ ],
+ "worst_bridge_over_eta": 1.0212234276086847,
+ "worst_mirrors_over_eta": 1.7433374383811233,
+ "small_eta_count": 207,
+ "small_eta_worst": {
+  "bridge": 1.0012486121620285,
+  "mirrors": 1.709238296509502,
+  "min_opnorm_err": 1.4279497102912309
+ },
+ "eta_over_sqrt_low_mass_range": [
+  1.9522260494020958,
+  1.7333397661911658e+142
+ ],
+ "constrained_adversarial": [
+  {
+   "decay": 0.5,
+   "n": 10,
+   "best_ratio": 1.7071067811712026,
+   "eta": 9.997988067158763e-05
+  },
+  {
+   "decay": 0.0625,
+   "n": 10,
+   "best_ratio": 1.6627124481336597,
+   "eta": 9.533401807332867e-05
+  },
+  {
+   "decay": 1e-06,
+   "n": 10,
+   "best_ratio": -1,
+   "eta": null
+  }
+ ]
+}

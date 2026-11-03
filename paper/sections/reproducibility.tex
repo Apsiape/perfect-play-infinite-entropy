@@ -21,7 +21,7 @@ $N$&Local dimension&$1-\omega_N$\\
 \end{center}
 These agree with \eqref{eq:gamecutoff}. The public verifier is checked on $10\,076\,128$ column-graph and spectator answer cases, together with the complete pair-rule index. Independent brute-force and changed-column controls accompany the reduced game evaluator. The checks evaluate rule classes and exact structural zeros, not a dense enumeration of every answer pair in the full question square.
 
-The scalar checker audits the literal direct-event classes, performs thirty-two exact rank-one contractions, checks rational taper losses, and evaluates positive scalar sums through $N=10^6$. A second engine for \eqref{eq:filteredloss} contracts all $73\,769$ literal coefficients on filtered states at word cutoffs $M=1,2$, including the tapers and mixed-sign rational filters. It reuses the cross-checked Bell measurement builder; its state construction, contraction, aggregation and comparison are separate. The scripts and recorded and fresh outputs are bundled with hashes. Floating-point asymptotic illustrations do not replace the analytic limits or provide an unrestricted entropy lower rate.
+The scalar checker audits the literal direct-event classes, performs thirty-two exact rank-one contractions, checks rational taper losses, and evaluates positive scalar sums through $N=10^6$. A second engine for \eqref{eq:filteredloss} contracts all $73\,769$ literal coefficients on filtered states at word cutoffs $M=1,2$, including the tapers and mixed-sign rational filters. It reuses the cross-checked Bell measurement builder; its state construction, contraction, aggregation and comparison are separate. The scripts and recorded and fresh outputs are bundled with hashes. Floating-point asymptotic illustrations do not replace the analytic limits or establish a universal entropy lower rate without the written argument.
 
 The functional archive SHA-256 is
 \begin{quote}\small\ttfamily
@@ -34,3 +34,6 @@ f29237d3920afe1b4ff9a3749b6893416\\
 9d8109bbaa0fa19dbbcc34f334824d2.
 \end{quote}
 The line breaks above split each hash after thirty-two hexadecimal characters. Neither archive was regenerated for packaging. No proof-assistant certification is claimed.
+
+\paragraph{Version 1.1.0 checks.}
+The portable driver \texttt{verification/v11/run\_review\_checks.py} runs the retained fifteen checks and eight appendix checks in a new unique output directory. It resolves input archives relative to the extracted bundle, limits BLAS threads, and fails on a nonzero exit or a failed numerical/exact assertion. The new checks cover normal magic-square extraction, mixed and pure sign mirrors, cap/threshold/polar/cover inequalities, independent path enumeration, exact rational strip solutions through height 80, perturbed band-and-row models, and cutoff arithmetic. The bundle checksums record the released scripts and outputs. Finite checks test formulas and implementations; the dimension-independent conclusions rest on the proofs.

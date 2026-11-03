@@ -1,0 +1,710 @@
+\section{Polynomial decoding on the actual state}\label{sec:decoding}
+\subsection{Statement, conventions, and scope}
+We use the finite tests of Sections~\ref{sec:bridge}--\ref{sec:compiler}. The graph, placement, parameter, cover, and polynomial rows are those specified there. Constants may depend on this fixed finite list, its coefficients, and its question distribution. They never depend on Hilbert-space dimension, a Schmidt eigenvalue, or a state-sector mass.
+
+\begin{theorem}[Actual-state decoding]\label{dec:thm:main}
+There is a constant $K$ such that every normal spatial strategy for $\cB$ of loss $\eps$ admits local isometries $V_L,V_R$ and operators $A_s,B_s,C_s,P_s,Q_s$ on their target spaces, $s=L,R$, satisfying
+\[
+\norm{A_s},\norm{B_s}\le1,\qquad 0\le C_s\le\id,
+\qquad P_s^2=P_s=P_s^*,\quad Q_s^2=Q_s=Q_s^*.
+\]
+For every purification $\Om$, put $\widehat\Om=(V_L\otimes V_R\otimes\id_E)\Om$. Each of
+\begin{align*}
+&A_s^*A_s-\id,\quad A_sA_s^*+B_sB_s^*+P_s-\id,
+\quad B_s^*B_s+P_s+Q_s-\id,\\
+&C_sP_s-P_s,\quad C_sQ_s-Q_s/2,\quad
+C_sA_s-A_sC_s/2,\quad C_sB_s-2B_sC_s,\quad P_sQ_s
+\end{align*}
+has vector norm at most $K\eps^{1/4}$ on $\widehat\Om$. The same holds for the five mirrors
+\begin{equation}\label{dec:eq:five}
+\tfrac12A_L-A_R^*,\quad A_L^*-\tfrac12A_R,\quad
+B_L-B_R^*,\quad B_L^*-B_R,\quad C_L-C_R.
+\end{equation}
+The same conclusion, with a different fixed $K$ and the same exponent $1/4$, holds for the game $G$.
+\end{theorem}
+
+The proof retains the scalar $M_3$ frame in the root multiplicity space. It does not claim a quantitative tensor identification of every original label on all 27 frame/corner blocks. Those stronger identifications are unnecessary for Theorem~\ref{dec:thm:main}. The final operators are one common root table amplified to the nine scaffold sectors, evaluated on the \emph{actual} transformed state.
+
+The isometries and decoded operators are functions only of the measurement operators and fixed padding choices; they do not depend on the choice of purification. The local state spaces can be assumed separable for the proof: take the closed span of the local state supports under all words in the finitely many measurements and their adjoints. This is a separable reducing space. Arbitrary zero-state complements can instead be retained and padded to a common cardinal dimension. Neither choice changes any estimate.
+
+First dilate the finitely many local POVMs simultaneously to PVMs with one common local embedding and pure local ancillas. All tested probabilities and marginal spectra are preserved. For $\cB$, the SOS identity in the construction gives, with $r=C_0\sqrt\eps$, the following data: every rational row has vector residual at most $r$ on each party; each synchronized binary projection has mismatch norm at most $r$; every forbidden-event amplitude is at most $r$. Fixed finite sums of events merely change $C_0$.
+
+Throughout, $O(r^a)$ means a bound by a fixed constant times $r^a$. The proof supplies a finite recurrence for all such constants. It suffices to treat small $r$; increasing $K$ covers the remaining losses by bounded trivial choices of the decoded operators.
+
+\subsection{A calculus that supplies every suffix mirror}\label{dec:sec:calculus}
+\begin{lemma}[Word mirrors]\label{dec:lem:word}
+Suppose local operators $x_\alpha$ have already proved opposite-party mirrors $y_\alpha$ with
+\[
+\norm{(x_{\alpha,L}-y_{\alpha,R})\Om}\le e_\alpha,
+\qquad \norm{x_\alpha}\le M_\alpha,
+\qquad\norm{y_\alpha}\le N_\alpha.
+\]
+For a word $w=x_1\cdots x_k$, its mirror is $w^\flat=y_k\cdots y_1$, and
+\begin{equation}\label{dec:eq:wordgeneral}
+\norm{(w-w^\flat)\Om}
+\le \sum_{j=1}^k\left(\prod_{i<j}M_i\right)
+\left(\prod_{i>j}N_i\right)e_j.
+\end{equation}
+Consequently, for a bounded local operator or local-space map $R$,
+\begin{equation}\label{dec:eq:suffix}
+\norm{Rw\Om}\le\norm{w^\flat}\norm{R\Om}
++\norm R\norm{(w-w^\flat)\Om}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Replace the rightmost left letter by its opposite mirror and commute that mirror past all remaining left letters. Repeat, working right to left. This gives \eqref{dec:eq:wordgeneral}. In \eqref{dec:eq:suffix}, replace $w\Om$ by $w^\flat\Om$ and commute the opposite-party product past $R$. This argument works equally for rectangular maps $R$ between local spaces.
+\end{proof}
+
+For raw synchronized projections $p_\alpha$, take $y_\alpha=p_{\alpha,R}$, $M_\alpha=N_\alpha=1$, and $e_\alpha=r$. If $p=\sum_w c_ww$ is a fixed raw polynomial, define
+\[
+a(p)=\sum_w|c_w|,\qquad \ell(p)=\sum_w|c_w|\,|w|.
+\]
+Then
+\begin{equation}\label{dec:eq:rawmirror}
+\norm{p^\flat}\le a(p),\quad
+\norm{(p-p^\flat)\Om}\le \ell(p)r,\quad
+\norm{Rp\Om}\le a(p)\norm{R\Om}+\norm R\,\ell(p)r.
+\end{equation}
+For real-coefficient raw polynomials, $p^\flat=p_R^*$. This formula supplies the mirror for every graph word, every matrix unit, every proper-prefix word, every parameter polynomial, and every suffix in the raw calculations below; no extracted frame or calibrated sign is needed.
+
+Write $p\simeq q$ if both $p-q$ and its adjoint have $O(\sqrt r)$ vector norm. For fixed raw polynomials this is a congruence under addition, multiplication, and adjoint. The initial seeds below are self-adjoint rows and \emph{both ordered} projection overlaps. We never infer an adjoint estimate from the norm of an arbitrary residual alone. A term $aRb$ with $\norm{R\Om}\le c_R\sqrt r$ is bounded, for $r\le1$, by
+\begin{equation}\label{dec:eq:constant}
+\norm{aRb\Om}\le
+\bigl[a(a)a(b)c_R+a(a)a(R)\ell(b)\bigr]\sqrt r.
+\end{equation}
+Summing \eqref{dec:eq:constant} over an expanded finite algebraic derivation computes its constant.
+
+\begin{lemma}[Projection-partition estimate]\label{dec:lem:partition}
+For synchronized projections $P_1,\ldots,P_n$ with
+$\norm{(\sum_iP_i-\id)\Om}\le\eta$,
+\begin{equation}\label{dec:eq:overlaps}
+\sum_{i\ne j}\norm{P_iP_j\Om}^2
+\le\eta^2+\eta+2n(n-1)r.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $\phi(X)=\ip\Om{X\Om}$ and any bounded local $X$, synchronization gives
+$|\phi(XP)-\phi(PX)|\le2\norm X r$: move the endpoint $P$ to the opposite party in each expression and commute it past $X$. Thus
+$\phi(P_jP_iP_j)$ differs from $\phi(P_jP_i)$ by at most $2r$. Put $R=\sum_iP_i-\id$. Summing gives
+$\sum_{i\ne j}\phi(P_iP_j)=\phi(R^2)+\phi(R)$, which proves the assertion.
+\end{proof}
+
+\subsection{Raw graphs, triangles, words, and prescribed parameters}\label{dec:sec:raw}
+The complete partitions needed in the graph presentation are
+\[
+\begin{gathered}
+(F_1,F_2,F_3),\quad(G,K_G,F_k),\quad(H,K_H,F_k),\\
+(E_i,N_i,\id-F_i),\quad(E_1,N_1,E_2,N_2,E_3,N_3),\\
+(J_{11},J_{10},J_{01},J_{00},F_k).
+\end{gathered}
+\]
+Here $E_i,N_i$ denote the projection \emph{symbols} in the parameter-binding rules, before identifying their products. Their sum rows have residual at most $5r$, and each list has at most six terms. Lemma~\ref{dec:lem:partition} bounds every ordered overlap by $10\sqrt r$. Hence support, orthogonality, and all their adjoints are available in the raw congruence.
+
+\subsubsection{Graphs}
+For one graph on $i,j$, put
+\[
+S=F_i+F_j,\quad Z=F_i-F_j,\quad X=2G-S,\quad Y=2H-S.
+\]
+The partition seeds give
+\[
+S^2\simeq S,\quad Z^2\simeq S,\quad SX\simeq XS\simeq X,
+\quad SY\simeq YS\simeq Y,\quad X^2\simeq Y^2\simeq S.
+\]
+For example $G(\id-S)\simeq0$ follows from the partition containing $G,K_G,F_k$ and the $F$ cover, so
+$X^2=4G-2GS-2SG+S^2\simeq S$. The row $5H+S=3F_i+4G$ gives
+$Y\simeq(3Z+4X)/5$. Squaring and subtracting yields $\{Z,X\}\simeq0$. Its $i,i$ and $j,j$ sandwiches give
+$F_iXF_i\simeq F_jXF_j\simeq0$. Therefore, with
+\[
+t_{ij}=F_iXF_j,\qquad t_{ji}=t_{ij}^*,
+\]
+\begin{equation}\label{dec:eq:graphlaws}
+X\simeq t_{ij}+t_{ji},\qquad
+t_{ij}t_{ji}\simeq F_i,\qquad t_{ji}t_{ij}\simeq F_j.
+\end{equation}
+These statements apply to every labelled graph independently. All sandwiches and squares use \eqref{dec:eq:rawmirror}. Also $\norm{t_{ij}}\le2$, since $-2\id\le2G-F_i-F_j\le2\id$.
+
+\subsubsection{Triangles and placements}
+For a triangle $(U,V,W)$, put
+\[
+K=\id+t_{12}^{U}+t_{21}^{U}+t_{23}^{V}+t_{32}^{V}+t_{13}^{W}+t_{31}^{W}.
+\]
+Its row gives $3D\simeq K$. Since $D^2=D$, $K^2\simeq3K$. The $1,3$ sandwich has only the diagonal contributions $2t_{13}^{W}$ and the path $t_{12}^{U}t_{23}^{V}$, hence
+\begin{equation}\label{dec:eq:triangle}
+t_{12}^{U}t_{23}^{V}\simeq t_{13}^{W}.
+\end{equation}
+The $3,1$ sandwich gives the adjoint assertion separately. The identity triangle gives the reference matrix-unit laws, with $t_{ii}=F_i$. The placement triangles $(U,1,U)$ and $(1,U,U)$ identify the same label in all positions.
+
+Define precisely the raw global label
+\begin{equation}\label{dec:eq:rawU}
+U_{11}^{\raw}=t_{12}^{U}t_{21},\qquad
+U^{\raw}=\sum_{i=1}^3t_{i1}U_{11}^{\raw}t_{1i}.
+\end{equation}
+Matrix-unit multiplication and \eqref{dec:eq:triangle} give
+\begin{equation}\label{dec:eq:rawUlaws}
+\begin{gathered}
+(U^{\raw})^*U^{\raw}\simeq\id,\quad U^{\raw}(U^{\raw})^*\simeq\id,
+\quad[U^{\raw},t_{ij}]\simeq0,\\
+t_{ij}^{U}\simeq U^{\raw}t_{ij}\simeq t_{ij}U^{\raw},\qquad
+U^{\raw}V^{\raw}\simeq W^{\raw}
+\end{gathered}
+\end{equation}
+whenever the corresponding product triangle is present. Inverse triangles give the inverse/adjoint labels. Induction over the specified proper-prefix construction proves \eqref{dec:eq:rawUlaws} for every word in the finite list. This is an induction over actual products of the same tokens, not a fresh interpretation for each word. The elementary bound $\norm{U^{\raw}}\le4+16+16=36$ holds before any repair.
+
+Here are the reductions behind these assertions. Write $u=U_{11}^{\raw}$. Then
+\[
+u^*u=t_{12}(t_{12}^{U})^*t_{12}^{U}t_{21}\simeq F_1,
+\qquad uu^*\simeq F_1.
+\]
+Multiplying the sums in \eqref{dec:eq:rawU} cancels $t_{1i}t_{j1}\simeq\delta_{ij}F_1$ and yields both unitary identities. Also
+$U^{\raw}t_{ij}\simeq t_{i1}u t_{1j}\simeq t_{ij}U^{\raw}$, and
+$U^{\raw}t_{12}\simeq u t_{12}\simeq t_{12}^{U}$.
+The placement triangles give $t_{13}^{U}\simeq t_{12}^{U}t_{23}$ and
+$t_{23}^{U}\simeq t_{21}t_{12}^{U}t_{23}$, proving the other placements and their adjoints. For a product triangle, substitute these placements in \eqref{dec:eq:triangle} to obtain
+$(U^{\raw}V^{\raw}-W^{\raw})t_{13}\simeq0$. Multiply by $t_{31}$ and transport the resulting $F_1$ corner through $t_{i1},t_{1i}$; commutation with the reference units gives the global product equation.
+
+Sandwich a rational graph row
+$2\sum_wq_wG_{12}(U_w)-(\sum_wq_w)(F_1+F_2)=0$
+by $F_1,F_2$, multiply by $t_{21}$, and transport to the three diagonal corners with $t_{i1},t_{1i}$. It gives $\sum_wq_wU_w^{\raw}\simeq0$. Substitute the previously proved word identities. This proves every prescribed polynomial input, and its adjoint, at $O(\sqrt r)$.
+
+\subsubsection{The parameters are the specified physical events}
+For a prescribed projection $E$, the six-part partition and the rows $\sum_iE_i=E$ imply
+\[
+E_i\simeq EF_i\simeq F_iE.
+\]
+The four $J$ projections form a partition of $F_i+F_j$. Their two marginal rows give
+\[
+(E_i+E_j)G_{ij}(1)\simeq J_{11}\simeq G_{ij}(1)(E_i+E_j),
+\]
+\[
+J_{00}\simeq(S-E_i-E_j)(S-G_{ij}(1)).
+\]
+Consequently $[E,F_i]\simeq[E,G_{ij}(1)]\simeq[E,t_{ij}]\simeq0$, and
+\[
+2G_{ij}(s_E)-S\simeq
+\bigl(2(E_i+E_j)-S\bigr)\bigl(2G_{ij}(1)-S\bigr).
+\]
+Taking its off-diagonal sandwich and using \eqref{dec:eq:rawU} proves
+\begin{equation}\label{dec:eq:param}
+t_{ij}^{s_E}\simeq(2E-\id)t_{ij},\qquad
+s_E^{\raw}\simeq2E-\id.
+\end{equation}
+Thus all thirteen physical parameter events, including the magic axes and corners, occur in the same raw algebra. The entire raw stage is $O(\sqrt r)$, stronger than $O(r^{1/4})$.
+
+\subsection{Normal row--column magic-square rigidity}\label{dec:sec:magic}
+We give the needed arbitrary-Hilbert-space statement directly. The finite-sum representation method is the same general mechanism as state-dependent Gowers--Hatami stability \cite{VidickGH,GH} and the state-dependent stability argument in \cite[Lemma 4.7]{CSRigidity}; the proof here starts with row--column measurements and does not invoke its finite-dimensional equation--variable self-testing theorem as a black box.
+
+\begin{lemma}[Normal magic-square lemma]\label{dec:lem:magic}
+For projective row--column magic-square measurements on a unit vector $\Om\in\cH_L\otimes\cH_R\otimes\cH_E$, write $M_{ij},N_{ij}$ for the cell reflections and $h=\max_{ij}\norm{(M_{ij}-N_{ij})\Om}$. There are local isometries, trivial on $E$, extracting the standard real magic-square observables $P_{ij}$ such that
+\[
+\norm{\widehat\Om-\Phi_4\otimes\eta}\le1250h,
+\qquad
+\norm{(V_sM_{ij}-(P_{ij}\otimes\id)V_s)\Om}\le632h,
+\]
+with $N_{ij}$ on Bob. A word of length $\ell$ has intertwining error at most
+$[632\ell+\ell(\ell-1)]h$. The POVM version follows by simultaneous local Naimark dilation. The unnormalized version has the same bounds in terms of unnormalized mismatch norms, with no inverse state mass.
+\end{lemma}
+\begin{proof}
+Every Alice word in the nine reflections has the reverse Bob word as a norm-one mirror, with error at most its length times $h$. Write Alice's square as
+\[
+\begin{pmatrix}a&b&u\\c&d&v\\e&f&w\end{pmatrix}.
+\]
+The row equations hold exactly: $u=ab$, $v=cd$, $w=ef$, and $[a,b]=[c,d]=[e,f]=0$. Transfer to Bob's exact column contexts to get
+\[
+\norm{(e-ac)\Om},\norm{(f-bd)\Om},\norm{(w+uv)\Om}\le3h,
+\quad\norm{[a,c]\Om},\norm{[b,d]\Om}\le4h.
+\]
+For instance $ac\Om$ transfers to $N_{21}N_{11}\Om=N_{31}\Om$ with error $2h$, and $N_{31}$ transfers back with error $h$.
+
+The expansion $(ac-e)bd+e(bd-f)$ and the already proved mirror of $bd$ give
+$\norm{(acbd-ef)\Om}\le10h$; the reversed expression gives
+$\norm{(bdac-fe)\Om}\le10h$. Therefore
+\[
+D=acbd+abcd,\quad C=acbd-bdac,
+\qquad\norm{D\Om}\le13h,\quad\norm{C\Om}\le20h.
+\]
+Exact row commutations give $D=a(cb+bc)d$ and $D-C=b(ad+da)c$. Cancel the left unitaries and remove the rightmost $d$ or $c$ using its norm-one mirror. Thus
+$\norm{\{b,c\}\Om}\le15h$ and $\norm{\{a,d\}\Om}\le35h$. Transfer these degree-two identities to Bob. On both parties, the six Pauli commuting/anticommuting relations have error at most $40h$.
+
+Let $\Gamma$ be the order-32 group of bit tuples $(t,p,q,r,s)$ with multiplication
+\[
+(t,p,q,r,s)(t',p',q',r',s')
+=(t+t'+sp'+rq',\,p+p',q+q',r+r',s+s'),
+\]
+with addition modulo two. Its normal forms are $J^ta^pb^qc^rd^s$. Define actual unitaries
+\[
+f(t,p,q,r,s)=(-1)^ta^pb^qc^rd^s.
+\]
+A product of two normal forms requires at most six swaps to sort: three for the second $a$, two for the second $b$, one for the second $c$. The right suffix of a swap has length at most six, so its previously derived mirror bounds the swap error by $40h+12h$. Consequently
+\begin{equation}\label{dec:eq:mult}
+\norm{(f(g)f(k)-f(gk))\Om}\le312h.
+\end{equation}
+Squared letters cancel exactly; $f(gJ)=-f(g)$ exactly.
+
+Define the actual isometry
+\[
+V_s\xi=32^{-1/2}\sum_{g\in\Gamma}|g\rangle\otimes f_s(g)\xi.
+\]
+For the right regular representation $R(k)|g\rangle=|gk^{-1}\rangle$, orthogonality of the register and \eqref{dec:eq:mult} give
+$\norm{(R(k)V_s-V_sf_s(k))\Om}\le312h$.
+The image of $V_s$ lies exactly in the central-minus subspace, since $R(J)V_s=-V_s$. That part of the group algebra is $M_4(\mathbb C)$: take
+$a=Z\otimes\id$, $b=\id\otimes Z$, $c=\id\otimes X$, $d=X\otimes\id$; their sixteen monomials are a Hilbert--Schmidt orthogonal matrix basis. A fixed finite-register unitary identifies the central-minus regular representation with these matrices tensored with a multiplicity space.
+
+After both maps, the four matching-generator defects are at most $625h$. The four stabilizers $P(g)_LP(g)_R$ commute, and their common $+1$ space is exactly $\mathbb C\Phi_4$. For $Q=|\Phi_4\rangle\langle\Phi_4|\otimes\id$,
+\[
+\norm{(\id-Q)\widehat\Om}^2
+\le\tfrac14\sum_g\norm{(\id-P(g)_LP(g)_R)\widehat\Om}^2
+\le(625h)^2.
+\]
+Normalize the comparison junk vector in $Q\widehat\Om$; the distance is at most $1250h$. If this bound is at least two, an arbitrary unit junk vector suffices. This normalization is not a physical operation.
+
+The nine cell group elements are $a,b,ab,c,d,cd,ac,bd,-abcd$. Alice's cells differ from their normal forms by at most $3h$. Bob's differ by at most $320h$: use the mirror, the Alice comparison, and \eqref{dec:eq:mult} to replace $f(g)^*$ by $f(g)$ for these involutory group elements. Adding $312h$ gives $632h$. Telescope words with the already proved raw reverse-word mirrors to get the stated length bound. Every outcome projector is a fixed polynomial in its context's cells. The fixed real unitary $H_2\otimes H_2$, with $H_2$ the Hadamard matrix, converts this Pauli square to the magic square of Section~\ref{sec:bridge}, preserves $\Phi_4$, and gives the specified overlaps $\langle c_x,r_y\rangle=(-1)^{xy}/\sqrt2$. For an unnormalized vector, apply the normalized statement and multiply by its norm; the mass cancels. The zero vector is immediate.
+\end{proof}
+
+\subsection{One actual pair of isometries and the two comparison blocks}\label{dec:sec:geometry}
+Set $u=\sqrt r$. All constructions in this section have error $O(u)$.
+
+\subsubsection{Mirrors before compression}
+In each original FMS row or column, let $T_{ij}$ be its signed nonflag cell sum, zero on flag and inactive answers. A checked pair gives
+$\norm{(T_{ij,L}-T_{ij,R})\Om}=O(r)$: its squared value is zero on every accepted answer pair and bounded by four on every rejected pair. The nonflag projectors have the same estimate. Nonflag projectors of distinct contexts in the same bridge agree on the state by comparison through one opposite context.
+
+Every fine nonflag outcome $D_a$ already has a bounded mirror: if $\alpha$ is its context's nonflag projection, then
+\[
+D_a=\alpha\prod_{j=0}^2(\id+a_jT_{ij})/2.
+\]
+Use the opposite nonflag projector and the reversed opposite cell factors. Each factor is a contraction, so the mirror has norm at most one and error $O(r)$. Flag and inactive projections have their direct bound mirrors. Sanitizing flag/inactive answers to one fixed valid magic triple adds finitely many such terms, still with fixed bounded mirrors. This observation is needed for \emph{output} leakage in the next step.
+
+\subsubsection{Round only three coarse sectors}
+Use one bridge-1 context on each party. Let $F_0$ be its flag projection, $F_1$ its nonflag projection, and $P=F_0+F_1$ its exact noninactive projection. The flag binding identifies $F_0$ with the prescribed root event at $O(r)$. Let $Q=F_2$ be bridge 2's nonflag projection (Alice's $R_0$, Bob's $C_0$). All three projections have already established bounded opposite mirrors. The polynomial cover, reduced by the raw parameter identities, gives
+\[
+ R=P+Q-I=F_0+F_1+F_2-I,\qquad \|R\Om\|=O(u),
+ \qquad \|(F_{j,L}-F_{j,R})\Om\|=O(r).
+\]
+The cover is a polynomial input, not a linear partition row; its error here is $O(u)$.
+The exact identities
+\[
+ PQ=P(P+Q-I)=PR,\qquad QP=Q(P+Q-I)=QR
+\]
+give $\|PQ\Om\|,\|QP\Om\|=O(u)$ directly. Since $F_0,F_1\le P$, the two orders of each overlap with $Q$ are $O(u)$: $F_iQ=F_iPQ$, and $QF_i=QPF_i$; in the latter expression carry the suffix $F_i$ by its previously proved bounded mirror. Also $F_0F_1=F_1F_0=0$ in this context. Thus every ordered overlap $F_kF_j\Om$, $k\ne j$, is $O(u)$.
+
+Define $T\xi=\sum_{j=0}^2|j\rangle\otimes F_j\xi$. Extend its polar partial isometry to an isometry $V$ by local zero-state padding. Since $T^*T=\sum_jF_j$, spectral calculus gives
+\[
+ \|(V-T)\Om\|\le\|(I-T^*T)\Om\|=O(u).
+\]
+For the exact coordinate projections $\pi_j$,
+\[
+ \|(\pi_jT-TF_j)\Om\|^2
+ =\sum_{k\ne j}\|F_kF_j\Om\|^2=O(u^2).
+\]
+The other terms in $\pi_jV-VF_j$ are $O(u)$; the term $(V-T)F_j\Om$ uses the already available mirror of $F_j$. Consequently
+$\|(\pi_jV-VF_j)\Om\|=O(u)$.
+
+Apply these local isometries and call the actual state $\Om_1$. The exact matched-sector projection is $P_{\rm mat}=\sum_j\pi_{j,L}\pi_{j,R}$, and
+\[
+\norm{(\id-P_{\rm mat})\Om_1}^2
+=\tfrac12\sum_j\norm{(\pi_{j,L}-\pi_{j,R})\Om_1}^2=O(r).
+\]
+Its components $\Psi_j=\pi_{j,L}\pi_{j,R}\Om_1$ are comparison vectors only. The physical state is never postselected.
+
+\subsubsection{Compress, dilate, and extract each magic sector}
+Transport every original measurement by the isometries and extend it as a PVM on the zero-state complement. For a row's nonflag projection $\alpha$, $\norm{(\alpha-F_g)\Om}=O(r)$. If a tested nonflag pair has $D\alpha=D$, then
+\[
+D_LE_RF_{g,L}\Om=D_LE_R\Om+D_LE_R(F_{g,L}-\alpha_L)\Om=O(r).
+\]
+This uses opposite-party commutation and bounded prefixes, not a local suffix rule for a bipartite residual. Flag/inactive amplitudes on $F_g\Om$ are $O(r)$ by the same identity with $D\alpha=0$. On $\Psi_g$, these amplitudes are therefore $O(u)$. Compress each local measurement to $\pi_g$, relabel flag/inactive answers to one fixed valid triple, and perform a common local Naimark dilation \emph{inside that sector}. The unnormalized magic-game loss is $O(u^2)$. On $\Psi_g$ each cell mismatch satisfies $h^2=4\,\mathbb P(\text{cell disagreement})$, with both quantities unnormalized.
+
+Here is the required action comparison. Each sanitized outcome projection or cell reflection $X$ commutes with its own context's $\alpha$ and has the bounded mirror just proved. Thus
+$[F_g,X]\Om=[F_g-\alpha,X]\Om=O(r)$ by Lemma~\ref{dec:lem:word}. Apply the coarse intertwining also to $X\Om$, using that previously established fine-outcome mirror of $X$. This gives
+$[\pi_g,\widehat X]\Om_1=O(u)$, hence
+$\norm{(\id-\pi_g)\widehat X\Psi_g}=O(u)$.
+For an original projection $D$, its compression $Q=\pi_gD\pi_g$, and a Naimark projection $\widetilde D$ with embedding $J$,
+\begin{equation}\label{dec:eq:naimarkerror}
+\norm{\widetilde D J\xi-JQ\xi}^2
+=\ip\xi{(Q-Q^2)\xi}
+=\norm{(\id-\pi_g)D\xi}^2,\qquad \xi\in\pi_g\cH.
+\end{equation}
+The reflection version is $\norm\xi^2-\norm{\pi_gX\xi}^2$. Thus the action comparison is $O(u)$, with \emph{no new square root}.
+
+Apply Lemma~\ref{dec:lem:magic} in its unnormalized form. Its error is $O(u)$ independently of $\norm{\Psi_g}$; for a zero sector choose arbitrary embeddings. Combine the two sector isometries and the root embedding by local direct sum. The resulting \emph{one pair} of physical isometries gives an actual state $\widehat\Om$ and a reference vector
+\begin{equation}\label{dec:eq:reference}
+\Psi=\Psi_0+\Phi_4\otimes\eta_1+\Phi_4\otimes\eta_2,
+\qquad\norm{\widehat\Om-\Psi}=O(u).
+\end{equation}
+All junk vectors may contain $E$, which no map has touched. Pad each magic multiplicity space $K_g$ coherently across all four corners $m_{g,ab}$, using the same added summand in each corner, so that the exact magic matrix units extend on the padding. Original corner and positive-axis events are within $O(u)$, in state action, of the specified exact magic projectors. This follows from \eqref{dec:eq:naimarkerror}, outcome rigidity, and their binary event bindings. Outside the relevant coarse sector, an outcome $D_a\le\alpha$ satisfies
+$D_a(\id-F_g)\Om=D_a(\alpha-F_g)\Om=O(r)$. Replacing $F_g$ by $\pi_g$ and its state component by $\Psi_g$ costs $O(u)$, proving the required full-state estimate. On the opposite party use the original binary mirror and the exact real-projector matching in $\Phi_4$.
+
+In particular the flag of bridge 2 is the \emph{same exact} $m_{1,00}$ corner of bridge 1. We now have nine exact corner projections partitioning the local spaces. No scalar $M_3$ was extracted. After every local isometry the old measurements and binary projections are conjugated and extended as PVMs on the zero-state complement. Their previously proved raw polynomial relations transfer to $\Psi$ with error $O(u)$ by boundedness and \eqref{dec:eq:reference}; this does not assume that $\Psi$ lies in the old isometry image, and those relations are not re-derived from weaker row estimates. Exact corner and magic matrix-unit actions have their exact opposite mirrors on $\Psi$.
+
+\subsection{Calibrated signs and shared labels without coefficient inversion}\label{dec:sec:fms}
+Work on the reference vector \eqref{dec:eq:reference}. Calibration against the retained row/column outcomes identifies each raw sign sum $S_0$ with its exact comparison support $S=f+c_x$ (Alice), or $T=f+r_y$ (Bob), with error $O(u)$. Indeed retained triple events match the corresponding opposite triples in vector norm, their sums identify the sign support, and the preceding section identifies those triples with the standard magic projections. The same argument applies to every refined duplicate.
+
+For one bridge, identify the selected direction multiplicities. On the cut $L\mid RE$, the comparison blocks are
+\begin{equation}\label{dec:eq:blocks}
+W_{xy}=\diag(F,\sigma_{xy}D/\sqrt2),\quad
+\sigma_{xy}=(-1)^{xy},\qquad K=\diag(F,D).
+\end{equation}
+Here $F,D$ are arbitrary rectangular Hilbert--Schmidt coefficient operators. They are not assumed positive, injective, or invertible. Every right operator acts on $R$ tensored with $\id_E$. The selected direction changes are actual finite magic matrix units.
+
+\subsubsection{Compression and sharpness are linear in vector error}
+Let raw PVM signs have $S_0=P_++P_-$ and $X=P_+-P_-$, so $X^2=S_0$. Write $X_c=SXS$ and define complete binary effects on $S$ by
+\[
+E_a=(S+aX_c)/2=SP_aS+K_A/2,\qquad K_A=S-SS_0S\ge0.
+\]
+If all support and original forbidden amplitudes are bounded by $\delta_{\rm sign}=Cu$, then
+\[
+\ip\Psi{K_A\Psi}=\norm{(\id-S_0)S\Psi}^2\le \delta_{\rm sign}^2.
+\]
+Define $F_b,K_B,T_0,T,Y_c$ similarly. For a forbidden sign pair,
+\[
+\norm{P_aSQ_bT\Psi}\le\norm{P_aQ_b\Psi}+2\delta_{\rm sign}\le3\delta_{\rm sign}.
+\]
+To verify the middle term, use $P_aQ_b=P_aQ_bS_0T_0$ and
+$ST-S_0T_0=S(T-T_0)+(S-S_0)T_0$; the last suffix is opposite-party and commutes. The completion terms then give
+$p_{\rm bad}\le(41/2)\delta_{\rm sign}^2$ for the two wrong-parity pairs. Consequently the exact identity
+\begin{align}\label{dec:eq:sharp}
+4p_{\rm bad}={}&\norm{X_cW-\sigma WY_c^T}_2^2
++\norm{(\id-X_c^2)^{1/2}W}_2^2\\[-2mm]
+&+\norm{W(\id-(Y_c^T)^2)^{1/2}}_2^2\nonumber
+\end{align}
+controls all three norms by $\sqrt{82}\,\delta_{\rm sign}$.
+
+The actual raw sign also has linear output leakage, because
+\[
+SX(\id-S)XS=SS_0S-X_c^2\le S-X_c^2.
+\]
+The weights of $K$ and $W$ differ by at most $\sqrt2$, so
+$\norm{(\id-S)XS\Psi}\le\sqrt{164}\,\delta_{\rm sign}$. Input leakage satisfies
+$\norm{X(\id-S)\Psi}\le\norm{S_0(S_0-S)\Psi}\le \delta_{\rm sign}$.
+Therefore
+\begin{equation}\label{dec:eq:signleak}
+\norm{(X-X_c)\Psi}\le(1+\sqrt{164})\delta_{\rm sign}.
+\end{equation}
+This proof uses no sign mirror before establishing it.
+
+\subsubsection{A bounded raw-sign mirror precedes label transport}
+On the matched reference vector the exact sign-support identity is $S_L\Psi=S^{\prime\prime}_R\Psi$, where $S^{\prime\prime}_R$ is the opposite selected support rotated to the same direction by the exact magic units. For a positive comparison pair put $L=\diag(1,\sqrt2)$, so $H=KL^{-1}$. If $E=X_cH-HY_c^T$, then
+\begin{equation}\label{dec:eq:signmirror}
+X_cK-K(LY_cL^{-1})^T=EL.
+\end{equation}
+Rotate Bob's selected $r$ direction to the corresponding $c$ direction using the exact magic units. The resulting Bob-only mirror of $X_c$ is $LY_cL^{-1}$, of norm at most $\sqrt2$, extended by zero outside this sign support. Combining \eqref{dec:eq:signmirror} with \eqref{dec:eq:signleak} gives a bounded mirror for the \emph{raw} sign $X$, with error $O(u)$. The symmetric construction gives Bob's raw-sign mirror. Only the fixed scalar $L$ is inverted.
+
+\subsubsection{The same opposite questions fix every refinement}
+A refined PVM has raw coarse sign $X'$ and label marginal $Z'$. They commute exactly. Against the unchanged opposite sign its comparison equation has the same $H$, so
+\[
+\norm{(X_c-X_c')H}_2=O(u).
+\]
+The fixed weight comparison and \eqref{dec:eq:signleak} give $\norm{(X-X')\Psi}=O(u)$. Tested label matching gives $\norm{(Z-Z')\Psi}=O(u)$, and $Z'$ already has the norm-one opposite mirror $Z_R$.
+
+Put $D_0=X-X'$ and $Q_0=Z-Z'$. The exact identity
+\[
+[X,Z]=[D_0,Z']+[X,Q_0]
+\]
+has controlled suffixes: $Z'$ uses its tested mirror, and $X$ uses \eqref{dec:eq:signmirror}. Explicitly,
+\[
+\norm{[D_0,Z']\Psi}\le2\norm{D_0\Psi}+2\delta_{\rm sign},
+\quad
+\norm{[X,Q_0]\Psi}\le(1+\sqrt2)\norm{Q_0\Psi}+2e_X.
+\]
+Thus $[X,Z]\Psi=O(u)$ for every refined label, before assuming any frame preservation.
+
+\subsubsection{Calibrate and repair the same two transports}
+Put $J_LH=HJ_R$ and $W_{00}=W_{01}=W_{10}=H$, $W_{11}=J_LH$. Let
+$E_{xy}=X_xW_{xy}-(-1)^{xy}W_{xy}Y_y^T$. Direct expansion gives
+\begin{align*}
+\{X_0,J_L\}H&=E_{11}+(E_{00}-E_{10})J_R+J_LE_{01},\\
+H\{Y_0^T,J_R\}&=E_{11}-E_{10}J_R+J_L(E_{01}-E_{00}).
+\end{align*}
+The signs in these equations are the compressed signs; \eqref{dec:eq:signleak} compares them with the raw ones. Both weighted anticommutators are $O(u)$. If
+$X_0=\left(\begin{smallmatrix}a&\beta^*\\\beta&b\end{smallmatrix}\right)$, then
+\begin{align}\label{dec:eq:beta}
+&\norm{(\id-\beta^*\beta)^{1/2}F}_2^2
++\tfrac12\norm{(\id-\beta\beta^*)^{1/2}D}_2^2\\
+&\hspace{8mm}=\norm{(\id-X_0^2)^{1/2}H}_2^2
++\norm{\diag(X_0)H}_2^2=O(u^2).\nonumber
+\end{align}
+For Bob first use the fixed partial unitary $\sqrt2\,\Pi_{c_0}\Pi_{r_0}$ to identify his selected corner. After common zero-state padding, extend the polar partial isometry of each $\beta$ to a unitary $w:f\cH\to c_0\cH$. The source and range spaces can all be padded to the same infinite dimension, so the two bridges share the same padded $e_1$ space. For a contraction $\beta$,
+\[
+\norm{(w-\beta)\xi}\le\norm{(\id-\beta^*\beta)\xi},\qquad
+\norm{(w^*-\beta^*)\zeta}\le\norm{(\id-\beta\beta^*)\zeta}.
+\]
+These follow from $|1-s|\le|1-s^2|$ on $[0,1]$ and the polar decomposition; kernel padding has the same scalar value at $s=0$. Equation~\eqref{dec:eq:beta} controls both estimates by $O(u)$ on the corresponding state components. No spectral inverse is used.
+
+The off-diagonal blocks of $X_0H-HY_0^T=O(u)$ give
+\begin{equation}\label{dec:eq:wvec}
+w_L\Psi_f=2^{-1/2}w_R^*\Psi_c+O(u),\qquad
+w_L^*\Psi_c=2^{1/2}w_R\Psi_f+O(u).
+\end{equation}
+These are also the global mirrors for $w,w^*$, since their exact sources are $f,c$. Applying $w_L$ to the second equation proves
+\begin{equation}\label{dec:eq:wcomponent}
+\Psi_c=\sqrt2(w_L\otimes w_R\otimes\id_E)\Psi_f+O(u).
+\end{equation}
+Every map in this argument is on one physical party. Rectangular $F,D$ suffice throughout.
+
+\subsection{Transport the raw labels; leave the frame in the root}\label{dec:sec:labels}
+The six frame labels refined in each bridge are $F_1,F_2,F_3,G_{12}(1),G_{13}(1),G_{23}(1)$. Section~\ref{dec:sec:fms} gives their commutators with the original sign $X_0$ at $O(u)$. Each $t_{ij}$ is a fixed polynomial in those labels; Leibniz expansion and their raw suffix mirrors give $[X_0,t_{ij}]\Psi=O(u)$.
+
+For a transported label $v_{g,k}$, its raw global representative \eqref{dec:eq:rawU} is a polynomial in the frame projections and the \emph{refined} graph projection $G_{12}(v_{g,k})$. Therefore
+\begin{equation}\label{dec:eq:Xv}
+[X_0,v_{g,k}^{\raw}]\Psi=O(u).
+\end{equation}
+The adjoint commutator follows either by the same graph polynomial calculation or by
+$[X,U^*]=-U^*[X,U]U^*$ modulo the already proved two-sided unitary defects. All suffixes in the latter formula are raw except the one $X$, whose mirror was established first.
+
+The raw block equation is
+\begin{equation}\label{dec:eq:block}
+v_{g,k}^{\raw}\simeq \id-(e_{g-1}+M_g)+e_{g-1}u_{g-1,k}^{\raw}
++\sum_{a,b}R_{ab}e_gu_{g,k}^{\raw}R_{ab}^*.
+\end{equation}
+Here replace the prescribed raw corner and axis events by the exact comparison ones. Their actions differ by $O(u)$ and both families have already proved bounded mirrors, so the replacement preserves $O(u)$. The raw support equation $(U-\id)(\id-e)=0$ and its adjoint, together with two-sided raw unitarity, give both $Ue\simeq eU$ and $U(\id-e)\simeq\id-e$.
+
+Compress \eqref{dec:eq:Xv} between the exact magic corner $e_g$ and flag $e_{g-1}$. In \eqref{dec:eq:block}, only the flag block and the selected magic block survive, so, for the unrepaired off-diagonal sign block $\beta$,
+\[
+\beta u_{g-1,k}^{\raw}-u_{g,k}^{\raw}\beta=O(u)
+\]
+on $\Psi$. Replacing $\beta$ by the \emph{same calibrated} $w_g$ uses the raw suffix mirror of $u_{g-1,k}^{\raw}$; its other occurrence is a bounded prefix. The adjoint calculations give the reverse transport and the transport of adjoint labels. Thus
+\begin{equation}\label{dec:eq:transport}
+w_gu_{g-1,k}^{\raw}\simeq u_{g,k}^{\raw}w_g,
+\qquad
+w_g^*u_{g,k}^{\raw}\simeq u_{g-1,k}^{\raw}w_g^*.
+\end{equation}
+Here and below the congruence includes adjoints, proved with the corresponding adjoint-label calculation. The order is raw frame/words, comparison geometry, sign mirrors, shared-label commutators, then label transport. No scalar frame is used to decode labels before these steps.
+
+Let $v=w_2w_1$. It is an exact unitary from the padded $e_0$ corner to $e_2$, and the two preceding mirrors give
+\begin{equation}\label{dec:eq:vmirror}
+v_L\Psi=\tfrac12v_R^*\Psi+O(u),\qquad
+v_L^*\Psi=2v_R\Psi+O(u),\qquad
+\Psi_2=2(v_L\otimes v_R)\Psi_0+O(u).
+\end{equation}
+The product mirror is obtained in the order prescribed by Lemma~\ref{dec:lem:word}; it is $w_{1,R}^*w_{2,R}^*/2$. This supplies every suffix containing a calibrated transport before root generators are formed.
+
+\subsection{Bounded root generators and all five mirrors}\label{dec:sec:root}
+Until the final repair, use the raw common token polynomials. The core rows, with the exact comparison corner replacements, give
+\begin{align*}
+&a\simeq e_2ae_0,\quad a^*a\simeq e_0,
+\quad aa^*+b_2b_2^*+p_2\simeq e_2,\\
+&b_0^*b_0\simeq e_0-p_0-q_0,\quad p_0q_0\simeq0,
+\quad c_0p_0\simeq p_0,\quad c_0q_0\simeq q_0/2,\\
+&c_2a\simeq ac_0/2,\qquad c_0b_0\simeq2b_0c_0.
+\end{align*}
+The two root reflection equations also give $p_0^2\simeq p_0\simeq p_0^*$ and the analogous $q_0$ relations. All tokens have fixed norm bounds. For example $U-U^*=U^*(U^2-\id)+(\id-U^*U)U$ proves approximate self-adjointness of a raw root reflection, with a previously controlled suffix.
+
+Define provisionally $A_0=v^*a$, $B_0=b_0$, $C_0=c_0$, $P_0=p_0$, $Q_0=q_0$ on the root, inserting the exact source/range corner compressions. They satisfy the local Catalan polynomials at $O(u)$ on the unnormalized $\Psi_0$. For clarity the only transported calculations are
+\begin{align*}
+A_0^*A_0&=a^*vv^*a\simeq e_0,\\
+A_0A_0^*&=v^*aa^*v\simeq e_0-v^*b_2b_2^*v-v^*p_2v
+\simeq e_0-b_0b_0^*-p_0,\\
+C_0A_0-\tfrac12A_0C_0
+&=(c_0v^*-v^*c_2)a+v^*(c_2a-\tfrac12ac_0)\simeq0.
+\end{align*}
+Use \eqref{dec:eq:transport} also for adjoints to replace $v^*b_2b_2^*v$. Each right suffix is either a raw word or $v,v^*$ followed by raw words; \eqref{dec:eq:rawmirror}, \eqref{dec:eq:vmirror}, and Lemma~\ref{dec:lem:word} give all of their mirrors. The remaining root relations are the displayed core rows.
+
+\subsubsection{Exact domain restrictions without an exponent loss}
+Extend every provisional root operator by zero off $e_0$. Since $\Psi$ has exactly matched corner sectors, its action on $\Psi$ equals its action on $\Psi_0$. A product mirror of such an operator can be compressed to the opposite root corner with no increase in norm or error. Thus the global raw/transport suffix estimates already apply to every repair below on the unnormalized root vector; they do not depend on the final root mirrors, which are proved afterward.
+For every raw unitary token $U$, let $\widetilde U$ be its polar contraction cap: if $U=q|U|$, set $\widetilde U=q\min(|U|,\id)$. Then
+\begin{equation}\label{dec:eq:cap}
+\norm{(\widetilde U-U)\Psi}\le\norm{(U^*U-\id)\Psi},\qquad
+\norm{(\widetilde U^*-U^*)\Psi}\le\norm{(UU^*-\id)\Psi}.
+\end{equation}
+This is the scalar bound $(s-1)_+\le|s^2-1|$, applied on each polar side. No small singular value is divided by.
+Define
+\[
+a=e_2(\widetilde U_{a+}+\widetilde U_{a-})e_0/2,\quad
+B=e_0(\widetilde U_{0,b+}+\widetilde U_{0,b-})e_0/2,
+\]
+\[
+A=v^*a,\qquad
+C=e_0(2\id+\widetilde U_{0,c}+\widetilde U_{0,c}^*)e_0/4.
+\]
+These have the required exact contraction and positivity properties. For the projection $P$, Hermitianize and compress the raw $p_0$ to
+$h_p=e_0(p_0+p_0^*)e_0/2$. Its idempotency defect on $\Psi_0$ is $O(u)$, by the preceding root calculus. Set
+$P=\mathbf1_{[1/2,\infty)}(h_p)$ on the root, and define $Q$ identically from $q_0$. The scalar inequality
+\begin{equation}\label{dec:eq:threshold}
+|\mathbf1_{[1/2,\infty)}(t)-t|\le2|t^2-t|\quad(t\in\mathbb R)
+\end{equation}
+gives $O(u)$ direct and adjoint closeness. These projections need not commute exactly; the required $PQ$ defect is transferred from the explicit core row $p_0q_0\simeq0$.
+
+All repairs preserve every fixed polynomial residual: telescope with repaired bounded prefixes and \emph{original} suffixes. The latter already have their mirrors, including \eqref{dec:eq:vmirror}. This argument also supplies bounded mirrors for each repaired token from its raw mirror and its direct/adjoint closeness. Hence the domain repair costs no square root.
+
+\subsubsection{The root mirrors}
+Raw real-coefficient graph words have adjoint mirrors. Their repaired, exactly corner-compressed versions therefore satisfy
+\[
+a_L\Psi_0=a_R^*\Psi_2+O(u),\qquad
+a_L^*\Psi_2=a_R\Psi_0+O(u).
+\]
+Substitute \eqref{dec:eq:vmirror}. Apply $v_L^*$ in the first equation and $v_R^*$ in the second. Since operators on opposite parties commute and $v_s^*v_s=e_0$, this gives
+\[
+A_L\Psi_0=2A_R^*\Psi_0+O(u),\qquad
+2A_L^*\Psi_0=A_R\Psi_0+O(u).
+\]
+The two $B$ mirrors and the $C$ mirror follow directly from their raw adjoint mirrors and repair closeness. Thus all five equations \eqref{dec:eq:five} hold on $\Psi_0$ with error $O(u)$. This argument uses neither a Schmidt inverse nor an entropy comparison with the reference state.
+
+\subsection{Extend the root table to the actual full state}\label{dec:sec:extension}
+\begin{lemma}[Nine-sector extension]\label{dec:lem:extension}
+Let exact local sector decompositions have unitaries $T_{s,j}:\cH_{s,0}\to\cH_{s,j}$, $j=0,\ldots,8$, with $T_{s,0}=\id$. Suppose the actual vector $\Xi$ satisfies
+\[
+\norm{\Xi-\sum_{j=0}^8c_j(T_{L,j}\otimes T_{R,j})\Psi_0}\le\eta,
+\qquad c=(1,\sqrt2,\sqrt2,\sqrt2,\sqrt2,2,2,2,2).
+\]
+The local block-unitaries $W_s=\sum_j|j\rangle\otimes T_{s,j}^*$ map to $\mathbb C^9\otimes\cH_{s,0}$. Amplify any root table by $\id_9$. For each bounded local or mirror residual $R$ obtained as the $I_9$ amplification of a fixed root polynomial (or of a fixed root mirror polynomial),
+\begin{equation}\label{dec:eq:extension}
+\norm{R(W_L\otimes W_R\otimes\id_E)\Xi}
+\le5\norm{R\Psi_0}+\norm R\,\eta.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The comparison vector becomes $(\sum_jc_j|jj\rangle)\otimes\Psi_0$. Apply the residual, use $\sum_jc_j^2=25$, and bound the difference vector by its norm times $\norm R$.
+\end{proof}
+
+In the present construction take $T_0=\id$, the four first-magic transports $t_{1,ab}w_1$, and the four second-magic transports $t_{2,ab}v$. The magic units are exact in the comparison representation; pad their multiplicities coherently with the preceding polar repairs. Equation~\eqref{dec:eq:wcomponent} and its two-bridge version give the hypothesis of Lemma~\ref{dec:lem:extension} with $\eta=O(u)$, including the $O(u)$ actual/reference discrepancy in \eqref{dec:eq:reference}. The other three directions in each magic block are exact local images of its selected component. This uses only transport of \emph{state components}, not transport of every decoded label to those directions.
+
+All repaired root generators satisfy exact domain restrictions, so their $\id_9$ amplifications do as well. Every residual has a fixed operator-norm bound, and the root vector residuals are $O(u)$. Equation~\eqref{dec:eq:extension} proves the Bell part of Theorem~\ref{dec:thm:main}, since $u=\sqrt r=O(\eps^{1/4})$. The composition of the physical local maps is one pair of isometries, trivial on $E$. The scalar frame remains inside the root multiplicity space and contributes no postselection factor.
+
+\subsection{The Boolean compiler has a linear loss reduction}\label{dec:sec:compiler}
+Here $r_G$ bounds all compiler mismatch norms and forbidden-event amplitudes. The uniformly sampled fixed game gives $r_G=C_G\sqrt{\eps_G}$. We prove each original rational row has residual $O(r_G)$, not merely $O(\sqrt{r_G})$.
+
+\subsubsection{Raw scalar matrix units and physical slot events}
+Every synchronized old binary projection, scalar binary projection, and column projection $D_t$ has its raw opposite mirror. A measured joint-context marginal matched to one of these projections differs from it by $O(r_G)$ and has the same opposite mirror. Thus context products can be replaced by raw products at $O(r_G)$ using Lemma~\ref{dec:lem:word}. Context commutation and parity transfer at that same order. Invalid-answer mass, if included in a common alphabet, can first be assigned to a fixed valid answer; its amplitude is $O(r_G)$.
+
+The four-corner magic-square algebra from Section~\ref{dec:sec:magic}, now applied to synchronized scalar cells, gives the Pauli relations at $O(r_G)$. Cross-square joint contexts give all cross-square axis commutators at $O(r_G)$. For a row dimension $d_{\rm row}=2^n\le256$, use the fixed polynomials
+\[
+e=\prod_{\ell=1}^n(\id+Z_\ell)/2,\qquad
+E_{ij}=X^ieX^j
+\]
+with a fixed order for each product. Pauli reductions give, with $O(r_G)$ direct and adjoint error,
+\[
+E_{ij}E_{k\ell}\simeq\delta_{jk}E_{i\ell},\quad
+E_{ij}^*\simeq E_{ji},\quad \sum_iE_{ii}\simeq\id.
+\]
+In this section only, $\simeq$ denotes $O(r_G)$ rather than $O(\sqrt r)$. Each finite reduction has the reverse raw-word suffix mirror. Old-projection/axis joint contexts give commutation of every old reflection with the scalar units at the same order. No scalar tensor factor needs to be extracted.
+
+The global bit and parity contexts identify the actual scalar events with
+\[
+R_{d_{\rm row}}\simeq R=\frac{1}{d_{\rm row}}\sum_{i,k}E_{ik},\qquad
+R_j^\pm\simeq\tfrac12(E_{00}+E_{jj}\pm E_{0j}\pm E_{j0}).
+\]
+For $R_j^\pm$, expand the joint spectral factors of $X^j$ and the basis of $j^\perp$ and reduce Pauli monomials. The zero syndrome leaves exactly coordinates $0,j$, and the $X^j$ sign supplies the off-diagonal sign. Replacing the matched measured marginals by the raw axes has $O(r_G)$ error. The six-answer slot PVM has exactly commuting marginals. Therefore its physical coarse graph is
+\[
+G_j^\sigma\simeq\overline G_j^\sigma
+=\tfrac12(E_{00}+E_{jj}+\sigma(E_{0j}+E_{j0})V_j),
+\]
+where each $V_j$ is an \emph{exact} old signed reflection, $V_j^2=\id$, and $V_0=\id$. Their sum is exactly $\sum_jV_j=2LS$ for the original row $S$.
+
+\subsubsection{Identify the column projections in the tested orientation}
+For $\chi_t(j)=(-1)^{t\cdot j}$ define
+\[
+T_t=\sum_j\chi_t(j)E_{j0}V_j,\qquad P_t=d_{\rm row}^{-1}T_tT_t^*.
+\]
+Finite matrix-unit multiplication gives
+\[
+T_t^*T_u\simeq d_{\rm row}\delta_{tu}E_{00},\quad
+P_tP_u\simeq\delta_{tu}P_t,\quad \sum_tP_t\simeq\id.
+\]
+Only $V_j^2=\id$ is used; different $V_j$ need not commute.
+
+A forbidden event $D_{t,L}G_{j,R}^{-\chi_t(j)}$ gives Alice's left kernel
+$D_t\overline G_j^{-\chi_t(j)}\Om=O(r_G)$ using the graph's derived raw mirror, and Bob's right kernel
+$\overline G_j^{-\chi_t(j)}D_t\Om=O(r_G)$ using synchronization of $D_t$. Both conclusions follow from one tested orientation.
+In the kernel and support calculations in this paragraph, $\simeq$ denotes only the displayed one-sided vector estimate. No adjoint estimate for a kernel is assumed. The two-sided raw polynomial identities used as coefficients remain available as before.
+Put $C_j=E_{jj}-\chi_t(j)E_{j0}V_j$ and $C_0=0$. Polynomial reduction gives
+\[
+C_j\simeq2E_{jj}\overline G_j^{-\chi_t(j)},\quad
+C_j^*\simeq2\overline G_j^{-\chi_t(j)}E_{jj},
+\]
+\[
+\sum_jC_j\simeq\id-T_tE_{00},\qquad
+\sum_jC_j^*\simeq\id-E_{00}T_t^*.
+\]
+Thus on Alice $D_t\simeq D_tE_{00}T_t^*\simeq D_tP_t$, and on Bob $D_t\simeq T_tE_{00}D_t\simeq P_tD_t$. The exact column PVM completeness then gives respectively
+\[
+P_t=\sum_uD_uP_t\simeq\sum_uD_uP_uP_t\simeq D_t,
+\quad
+P_t=\sum_uP_tD_u\simeq\sum_uP_tP_uD_u\simeq D_t.
+\]
+Every suffix, including $D_u$, is raw and synchronized, so this costs no square root.
+At the conclusion $D_t\simeq P_t$, the adjoint estimate is also available, since $D_t$ and $P_t=d_{\rm row}^{-1}T_tT_t^*$ are exactly self-adjoint.
+
+\subsubsection{The anchored vector identity}
+The final forbidden event gives $P_0R\Om=O(r_G)$ on Alice and $RP_0\Om=O(r_G)$ on Bob. With $W=\sum_jV_j=2LS$, the anchor $V_0=\id$ yields the \emph{two vector polynomial identities}
+\begin{equation}\label{dec:eq:anchor}
+E_{00}P_0RE_{00}\simeq d_{\rm row}^{-2}E_{00}W,
+\qquad E_{00}RP_0E_{00}\simeq d_{\rm row}^{-2}E_{00}W.
+\end{equation}
+Indeed $P_0\simeq d_{\rm row}^{-1}\sum_{i,j}E_{ij}V_iV_j$ and
+$R=d_{\rm row}^{-1}\sum_{k,\ell}E_{k\ell}$; the $00$ corner of their product is $\sum_jV_0V_j/d_{\rm row}^2$, and the reversed product gives $\sum_iV_iV_0/d_{\rm row}^2$. Transporting this corner through the fixed raw scalar units gives
+\[
+W\simeq d_{\rm row}^2\sum_kE_{k0}[E_{00}P_0RE_{00}]E_{0k}
+\]
+on Alice, with $RP_0$ on Bob. The right suffix $E_{00}E_{0k}$ has its already proved raw mirror. Hence $\norm{S_s\Om}\le Cr_G$ on both parties. Only fixed integers $d_{\rm row},L$ are divided by.
+
+The SOS expression for the restricted old strategy now has row-square terms, mismatch-square terms, and old forbidden probabilities all $O(r_G^2)$. Naimark-dilated projections have zero sharpness defect. Summing the fixed list proves
+\begin{equation}\label{dec:eq:gamebell}
+\operatorname{loss}_{\cB}\le C\eps_G.
+\end{equation}
+Apply the Bell decoder. This proves the game part of Theorem~\ref{dec:thm:main} with the same exponent $1/4$.
+
+\subsection{Dependency, exponent, and suffix ledgers}\label{dec:sec:ledgers}
+The quantitative orders below apply with $r=C\sqrt\eps$ for either input, using Section~\ref{dec:sec:compiler} first for the game.
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{86mm}cc}
+\toprule
+Stage & Vector order & Bell/game exponent\\
+\midrule
+SOS or compiler rows; raw synchronization and event amplitudes & $r$ & $1/2$\\
+Projection overlaps; all raw graph/word/parameter identities & $\sqrt r$ & $1/4$\\
+Actual coarse-sector isometry; normal magic comparison & $\sqrt r$ & $1/4$\\
+Sign compression, sharpness, bounded mirrors, calibration & $\sqrt r$ & $1/4$\\
+Shared refinements and common raw-label transport & $\sqrt r$ & $1/4$\\
+Root token cap, projection threshold, local relations, mirrors & $\sqrt r$ & $1/4$\\
+Nine-sector extension on the actual state & $\sqrt r$ & $1/4$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For completeness, the following table is the entire suffix registry. Arbitrary products use exactly the reverse-product rule \eqref{dec:eq:wordgeneral}; linear combinations use the same coefficients. Thus it covers every suffix in the proof rather than an unspecified collection of permitted replacements.
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{44mm}>{\raggedright\arraybackslash}p{62mm}>{\raggedright\arraybackslash}p{29mm}}
+\toprule
+Local symbol or expression & Previously derived opposite mirror & First available\\
+\midrule
+Raw binary projection & Opposite copy, norm one & SOS/tests\\
+Raw polynomial $p$ & Reversed raw polynomial $p^\flat$, norm $\le a(p)$ & Section~\ref{dec:sec:calculus}\\
+Original FMS fine outcome or cell & Reversed product of matched coarse cells/nonflag projectors & Section~\ref{dec:sec:geometry}\\
+Exact comparison corner or magic unit & Opposite transpose/adjoint on $\Psi$, norm one & Section~\ref{dec:sec:geometry}\\
+Raw original or refined sign & Rotated $LY_cL^{-1}$, norm $\le\sqrt2$ & Section~\ref{dec:sec:fms}\\
+Refined label marginal $Z'$ & Tested opposite binary $Z_R$, norm one & Its label test\\
+$w_g$; $w_g^*$ & $w_{g,R}^*/\sqrt2$; $\sqrt2w_{g,R}$ & Section~\ref{dec:sec:fms}\\
+$v$; $v^*$ & $v_R^*/2$; $2v_R$ & Section~\ref{dec:sec:labels}\\
+Capped raw token and its adjoint & Capped opposite adjoint/token, norm one & Section~\ref{dec:sec:root}\\
+Repaired root $P,Q,C,B,B^*$ & Opposite $P,Q,C,B^*,B$, norm one & Section~\ref{dec:sec:root}\\
+Root $A$; $A^*$ & $2A_R^*$; $A_R/2$ & Section~\ref{dec:sec:root}\\
+Compiler scalar word or column symbol & Reversed raw synchronized word & Section~\ref{dec:sec:compiler}\\
+\bottomrule
+\end{tabular}
+\end{center}
+Rows added later are never used to justify earlier steps. When a comparison vector replaces the actual vector, both residual and mirror errors gain only their fixed operator-norm multiples of the vector discrepancy. The final use of the comparison vector is \eqref{dec:eq:extension}; entropy is never transferred by continuity.
+
+\subsection{Consequences and the sharp ceiling on a decoder exponent}\label{dec:sec:consequences}
+\begin{proposition}[No actual-state mixed-strategy exponent exceeds $1/2$]\label{dec:prop:ceiling}
+A decoder with the local $A^*A$ relation and both $A$ mirrors, acting trivially on a purification environment, cannot have a uniform residual exponent $\gamma>1/2$. This already holds for finite-dimensional mixed near-optimal strategies.
+\end{proposition}
+\begin{proof}
+On a unit product vector $\zeta=a\otimes b$, suppose these three residuals have norm at most $\delta_{\rm prod}$. Put $\alpha=\ip a{A_La}$ and $\beta=\ip b{A_Rb}$. Taking expectations in the mirrors gives
+\[
+|\alpha/2-\overline\beta|\le \delta_{\rm prod},\qquad
+|\alpha-\overline\beta/2|\le \delta_{\rm prod},
+\]
+so $|\alpha|\le2\delta_{\rm prod}$. Project the first mirror onto $a^\perp\otimes\cH_R$: it gives
+$\norm{(\id-|a\rangle\langle a|)A_La}\le2\delta_{\rm prod}$.
+Thus $\norm{A_La}^2\le8\delta_{\rm prod}^2$, while $A_L^*A_L\simeq\id$ gives
+$\norm{A_La}^2\ge1-\delta_{\rm prod}$. Therefore
+\[
+\delta_{\rm prod}\ge c_*=(\sqrt{33}-1)/16.
+\]
+Mix a finite cutoff strategy of loss $\eta\le\eps^2$ with a fixed deterministic product strategy of loss $\ell>0$, using orthogonal local flags and block-diagonal measurements. Set
+$p=(\eps-\eta)/(\ell-\eta)$ for the product branch. The loss is exactly $\eps$ and $p\sim\eps/\ell$. Purify with an orthogonal environment flag. Local isometries preserve the product form of that branch, and residuals cannot cancel across the untouched environment flag. A global residual bound $\delta$ therefore gives a product-branch bound $\delta_{\rm prod}\le\delta/\sqrt p$. Hence
+$\delta\ge c_*\sqrt p=\Omega(\sqrt\eps)$.
+\end{proof}
+
+The constructed exponent is $1/4$. Exponent $1/2$ would yield lower coefficient $1/9$ through Appendix~\ref{sec:rounding}; its attainability remains open.
+

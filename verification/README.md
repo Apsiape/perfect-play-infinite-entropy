@@ -1,6 +1,6 @@
 # Verification bundle
 
-Version 1.0.0, November 2026. Companion to *Perfect play in a finite nonlocal game requires infinite entanglement entropy*, by Seth Douglas and Nidhal Mghirbi.
+Version 1.1.0, November 2026. The original verification objects below are retained; full decoding/rounding proofs and their new checks are in the paper and `v11/`. The unrestricted logarithmic law is proved in the manuscript. Companion to *Perfect play in a finite nonlocal game requires infinite entanglement entropy*, by Seth Douglas and Nidhal Mghirbi.
 
 ## Objects and evidence
 

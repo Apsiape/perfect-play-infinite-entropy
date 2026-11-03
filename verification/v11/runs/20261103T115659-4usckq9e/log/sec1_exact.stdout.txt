@@ -1,0 +1,50 @@
+H= 1 m_h:True Z:True b:True q:True M:True E=0.721928 E-2H/3=0.055261  Z_HH=1.0000 claim=1.0000 mine-formula:True
+H= 2 m_h:True Z:True b:True q:True M:True E=1.404461 E-2H/3=0.071128  Z_HH=2.6667 claim=2.0000 mine-formula:True
+H= 3 m_h:True Z:True b:True q:True M:True E=2.084098 E-2H/3=0.084098  Z_HH=5.5000 claim=3.6667 mine-formula:True
+H= 4 m_h:True Z:True b:True q:True M:True E=2.766819 E-2H/3=0.100152  Z_HH=10.4000 claim=6.5000 mine-formula:True
+H= 5 m_h:True Z:True b:True q:True M:True E=3.451747 E-2H/3=0.118414  Z_HH=19.0000 claim=11.4000 mine-formula:True
+H= 6 m_h:True Z:True b:True q:True M:True E=4.137092 E-2H/3=0.137092  Z_HH=34.2857 claim=20.0000 mine-formula:True
+H= 7 m_h:True Z:True b:True q:True M:True E=4.821545 E-2H/3=0.154878  Z_HH=61.7500 claim=35.2857 mine-formula:True
+H= 8 m_h:True Z:True b:True q:True M:True E=5.504416 E-2H/3=0.171083  Z_HH=111.5556 claim=62.7500 mine-formula:True
+H= 9 m_h:True Z:True b:True q:True M:True E=6.185465 E-2H/3=0.185465  Z_HH=202.6000 claim=112.5556 mine-formula:True
+H=10 m_h:True Z:True b:True q:True M:True E=6.864715 E-2H/3=0.198049  Z_HH=370.1818 claim=203.6000 mine-formula:True
+H=11 m_h:True Z:True b:True q:True M:True E=7.542322 E-2H/3=0.208989  Z_HH=680.5000 claim=371.1818 mine-formula:True
+H=12 m_h:True Z:True b:True q:True M:True E=8.218488 E-2H/3=0.218488  Z_HH=1258.1538 claim=681.5000 mine-formula:True
+H=13 m_h:True Z:True b:True q:True M:True E=8.893420 E-2H/3=0.226754  Z_HH=2338.4286 claim=1259.1538 mine-formula:True
+H=14 m_h:True Z:True b:True q:True M:True E=9.567309 E-2H/3=0.233975  Z_HH=4366.9333 claim=2339.4286 mine-formula:True
+H=15 m_h:True Z:True b:True q:True M:True E=10.240318 E-2H/3=0.240318  Z_HH=8189.8750 claim=4367.9333 mine-formula:True
+H=16 m_h:True Z:True b:True q:True M:True E=10.912586 E-2H/3=0.245920  Z_HH=15418.1176 claim=8190.8750 mine-formula:True
+H=17 m_h:True Z:True b:True q:True M:True E=11.584230 E-2H/3=0.250897  Z_HH=29125.0000 claim=15419.1176 mine-formula:True
+H=18 m_h:True Z:True b:True q:True M:True E=12.255344 E-2H/3=0.255344  Z_HH=55186.1053 claim=29126.0000 mine-formula:True
+H=19 m_h:True Z:True b:True q:True M:True E=12.926007 E-2H/3=0.259340  Z_HH=104855.5000 claim=55187.1053 mine-formula:True
+H=20 m_h:True Z:True b:True q:True M:True E=13.596281 E-2H/3=0.262948  Z_HH=199726.6667 claim=104856.5000 mine-formula:True
+H=21 m_h:True Z:True b:True q:True M:True E=14.266221 E-2H/3=0.266221  Z_HH=381298.2727 claim=199727.6667 mine-formula:True
+H=22 m_h:True Z:True b:True q:True M:True E=14.935871 E-2H/3=0.269204  Z_HH=729442.0870 claim=381299.2727 mine-formula:True
+H=23 m_h:True Z:True b:True q:True M:True E=15.605267 E-2H/3=0.271933  Z_HH=1398099.2500 claim=729443.0870 mine-formula:True
+H=24 m_h:True Z:True b:True q:True M:True E=16.274440 E-2H/3=0.274440  Z_HH=2684352.4800 claim=1398100.2500 mine-formula:True
+H=25 m_h:True Z:True b:True q:True M:True E=16.943417 E-2H/3=0.276750  Z_HH=5162218.2308 claim=2684353.4800 mine-formula:True
+H=26 m_h:True Z:True b:True q:True M:True E=17.612219 E-2H/3=0.278886  Z_HH=9942051.8519 claim=5162219.2308 mine-formula:True
+H=27 m_h:True Z:True b:True q:True M:True E=18.280866 E-2H/3=0.280866  Z_HH=19173959.0714 claim=9942052.8519 mine-formula:True
+H=28 m_h:True Z:True b:True q:True M:True E=18.949374 E-2H/3=0.282707  Z_HH=37025578.0690 claim=19173960.0714 mine-formula:True
+H=29 m_h:True Z:True b:True q:True M:True E=19.617757 E-2H/3=0.284424  Z_HH=71582786.2000 claim=37025579.0690 mine-formula:True
+H=30 m_h:True Z:True b:True q:True M:True E=20.286028 E-2H/3=0.286028  Z_HH=138547330.0645 claim=71582787.2000 mine-formula:True
+--- engine 2 (DP partial sums) and engine 3 (brute force) ---
+H=1 DP(nmax=60): |Z-Zp|=0.000e+00 |M-Mp|=0.000e+00 |b-bp|=0.000e+00  (lambda^nmax=0.00e+00); m-diff max=0.00e+00
+      brute(len<=22): Z-Zb=0.000e+00 M-Mb=0.000e+00 b-bb=0.000e+00
+H=2 DP(nmax=60): |Z-Zp|=5.015e-37 |M-Mp|=3.076e-35 |b-bp|=2.508e-37  (lambda^nmax=7.52e-37); m-diff max=2.51e-37
+      brute(len<=22): Z-Zb=9.934e-08 M-Mb=1.245e-06 b-bb=1.987e-08
+H=3 DP(nmax=60): |Z-Zp|=5.421e-19 |M-Mp|=3.361e-17 |b-bp|=1.084e-19  (lambda^nmax=8.67e-19); m-diff max=2.17e-19
+      brute(len<=22): Z-Zb=2.136e-04 M-Mb=2.869e-03 b-bb=3.052e-05
+H=4 DP(nmax=60): |Z-Zp|=5.145e-12 |M-Mp|=3.236e-10 |b-bp|=4.256e-13  (lambda^nmax=9.01e-12); m-diff max=1.80e-12
+      brute(len<=22): Z-Zb=4.079e-03 M-Mb=5.906e-02 b-bb=1.910e-04
+H=5 DP(nmax=60): |Z-Zp|=1.654e-08 |M-Mp|=1.058e-06 |b-bp|=5.906e-10  (lambda^nmax=3.19e-08); m-diff max=5.32e-09
+H=8 DP(nmax=120): |Z-Zp|=1.294e-07 |M-Mp|=1.663e-05 |b-bp|=4.408e-10  (lambda^nmax=3.29e-07); m-diff max=3.65e-08
+--- top-source path sum: (a) paths from H confined to [1..H]; (b) source at H, first step B, then [1..H-1] ---
+H=1: (a)=1.000000 [2(2^(H+1)-H-2)/(H+1)=1.000000]  (b)=1.000000 [claimed (2^(H+1)-H-2)/H=1.000000]
+H=2: (a)=2.666667 [2(2^(H+1)-H-2)/(H+1)=2.666667]  (b)=2.000000 [claimed (2^(H+1)-H-2)/H=2.000000]
+H=3: (a)=5.500000 [2(2^(H+1)-H-2)/(H+1)=5.500000]  (b)=3.666667 [claimed (2^(H+1)-H-2)/H=3.666667]
+H=4: (a)=10.400000 [2(2^(H+1)-H-2)/(H+1)=10.400000]  (b)=6.500000 [claimed (2^(H+1)-H-2)/H=6.500000]
+H=5: (a)=19.000000 [2(2^(H+1)-H-2)/(H+1)=19.000000]  (b)=11.400000 [claimed (2^(H+1)-H-2)/H=11.400000]
+H=6: (a)=34.285714 [2(2^(H+1)-H-2)/(H+1)=34.285714]  (b)=20.000000 [claimed (2^(H+1)-H-2)/H=20.000000]
+H=10: (a)=370.181818 [2(2^(H+1)-H-2)/(H+1)=370.181818]  (b)=203.600000 [claimed (2^(H+1)-H-2)/H=203.600000]
+ALL boundary-class formulas exact for H=1..30: True

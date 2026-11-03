@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "pages": 65,
+  "all_pages_rendered_and_inspected": true,
+  "method": "All 65 pages inspected on seventeen four-page sheets at 85 dpi. The final clean rebuild changed only page 36; that page was inspected individually. Pages 33 and 58 were also inspected individually.",
+  "findings": "No clipping, overlap, corrupted macro text, broken references or table overflow found.",
+  "pdf_sha256": "31c63c0bee9b58a328a8d96c06360a590e1ff29f3f2e09605e5112cde43ebfe6",
+  "text_layer_search": {
+    "engine": "pypdf PdfReader page.extract_text",
+    "pages_searched": 65,
+    "literal_symptoms": [
+      "ext{",
+      "o0",
+      "heta",
+      "ewline",
+      "abla",
+      "ightarrow"
+    ],
+    "hits": [],
+    "cell_disagreement_pages": [
+      33
+    ],
+    "bottom_edge_pages": [
+      47,
+      58
+    ]
+  },
+  "final_changed_pages": [
+    36
+  ]
+}

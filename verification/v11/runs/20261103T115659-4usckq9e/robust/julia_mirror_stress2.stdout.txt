@@ -1,0 +1,39 @@
+{
+ "trials": 540,
+ "eta_range": [
+  0.8236498603365557,
+  2.8138846425725923
+ ],
+ "opnorm_err_range": [
+  1.56516030603338,
+  1.8855209544868303
+ ],
+ "worst_bridge_over_eta": 1.0014429222180705,
+ "worst_mirrors_over_eta": 1.709570003489741,
+ "worst_small_eta": {
+  "bridge": null,
+  "mirrors": null,
+  "count": 0,
+  "max_opnorm_err": 0
+ },
+ "constrained_adversarial": [
+  {
+   "decay": 0.5,
+   "n": 10,
+   "best_ratio": -1,
+   "eta": 0.034521243347045726
+  },
+  {
+   "decay": 0.0625,
+   "n": 10,
+   "best_ratio": -1,
+   "eta": 0.02528980697030368
+  },
+  {
+   "decay": 1e-06,
+   "n": 10,
+   "best_ratio": -1,
+   "eta": 0.02520652545164149
+  }
+ ]
+}

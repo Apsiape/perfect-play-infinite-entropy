@@ -1,4 +1,6 @@
 \section{Entropy near the optimum}\label{sec:near}
+\paragraph{Changes in version 1.1.0.} The $\varepsilon^{-1/5}$ bound of v1.0.0 remains valid; its rate is a feature of radial truncation. Height cutoffs give a logarithmic upper bound, and Theorem D now proves a matching-order lower bound for all normal spatial strategies (Appendices B-C; Appendix D adds the exact-algebra law and the extraction limit).
+
 Define
 \[
  E_B(\varepsilon)=\inf\{S(\rho_A):B\geq-\varepsilon\},\qquad
@@ -8,19 +10,31 @@ The infima range over normal spatial strategies. Purifying onto Bob preserves Al
 
 \Needspace{15\baselineskip}
 \begin{theoremD}\label{thm:D}
-As $\varepsilon\downarrow0$, both $E_B(\varepsilon)$ and $E_G(\varepsilon)$ tend to infinity. Put
+For $X\in\{B,G\}$ there are constants $K'_X\ge1$ and $\varepsilon_0>0$ such that, for $0<\varepsilon\le\varepsilon_0$, writing $L_\varepsilon=\log_2(1/\varepsilon)$,
+\begin{align*}
+ E_X(\varepsilon)&\ge\frac1{18}L_\varepsilon
+ -\frac{16}{3}\log_2(L_\varepsilon+2)-200-\frac29\log_2K'_X,\\
+ E_X(\varepsilon)&\le\frac23L_\varepsilon
+ -\frac23\log_2L_\varepsilon+O_X(1).
+\end{align*}
+Both inequalities hold for the infimum of either party's marginal entropy over all normal spatial strategies, including mixed states and POVMs. Consequently $E_X(\varepsilon)=\Theta(\log(1/\varepsilon))$.
+\end{theoremD}
+\begin{proof}
+Theorem~\ref{dec:thm:main} gives local isometries and the exact domain restrictions needed by Theorem~\ref{rnd:thm:rounding}, with every vector defect at most $K_X\varepsilon^{1/4}$. Set $K'_X=\max\{1,K_X\}$. For $K'_X\varepsilon^{1/4}\le1$, substitute $L=\tfrac14L_\varepsilon-\log_2K'_X$ in that rounding theorem and use $L+2\le L_\varepsilon+2$. The local isometries, pure local ancillas and zero-state padding preserve each original marginal spectrum. If $K'_X\varepsilon^{1/4}>1$, the displayed lower bound is negative and follows from nonnegativity. The height-and-size construction below proves the upper bound. Infima preserve both bounds.
+\end{proof}
+
+The lower constants are explicit but large. The rounding bound is positive only at very small defect (its first positive integer logarithm is $1144$). Under the unweakened substitution this already requires $\varepsilon\le(K'_X)^{-4}2^{-4576}$; the displayed simplified game bound may require still smaller $\varepsilon$. The leading constant for unrestricted strategies remains open between $1/18$ and $2/3$. Proposition~\ref{dec:prop:ceiling} also shows that this form of actual-state decoder cannot have exponent above $1/2$.
+
+\paragraph{The retained radial result.}
+Put
 \[
  C_L=\frac{24}{25\sqrt\pi},\quad C_S=\frac{64}{45\sqrt\pi},\quad
  C=C_SC_L^{1/5}=0.709793116354\ldots.
 \]
-There are finite-dimensional strategies giving
-\[
- E_B(\varepsilon)\leq(C+o(1))\varepsilon^{-1/5},\qquad
- E_G(\varepsilon)\leq(CQ^{-2/5}+o(1))\varepsilon^{-1/5},
- \quad Q=169\,460.
-\]
-With the infinite canonical measurements fixed, the exponent $1/5$ is optimal among arbitrary scalar spectral filters of their canonical marginal, for $B$ and likewise for $G$. This restricted optimality does not assert a matching lower power for unrestricted strategies.
-\end{theoremD}
+The scalar taper below still gives finite-dimensional strategies with
+$E_B(\varepsilon)\le(C+o(1))\varepsilon^{-1/5}$ and
+$E_G(\varepsilon)\le(CQ^{-2/5}+o(1))\varepsilon^{-1/5}$, where $Q=169\,460$.
+These valid upper bounds are superseded by Theorem~D. With the canonical measurements fixed, the power $1/5$ remains optimal among scalar spectral filters of the canonical marginal for both constructions; its proof is retained below.
 
 \subsection{Divergence at bounded entropy}
 Here is the compactness argument, included to identify precisely what it proves. Sort the Schmidt probabilities $p_1\geq p_2\geq\cdots$ of any pure state of entropy at most $K$. Since $p_j\leq1/j$,
@@ -32,6 +46,8 @@ Compress each POVM to the (separable) state supports; this preserves all probabi
 Bounded effect sets on a separable Hilbert space are sequentially weak-operator compact. Extract a common subsequence for the finitely many effects. Positivity and POVM sums survive the limit. On the first $d$ Schmidt coordinates all probabilities involve only finitely many matrix entries. The tail bound then lets $d$ tend to infinity, uniformly over the measurements. Thus entropy-at-most-$K$ spatial correlations form a compact set in each finite scenario.
 
 If a sequence had vanishing loss and bounded entropy, nearly minimizing pure strategies would have a limit attaining the optimum with finite entropy. Theorems~A and C forbid this. Equivalently each finite entropy budget has a strictly positive loss gap. The argument gives no evaluated modulus for that gap.
+
+\input{sections/v11-height}
 
 \subsection{A spectral taper and its exact loss}
 In the canonical realization, let $r=0,1,2$ denote the corner-weight exponent, with multiplicities $m_0=1,m_1=m_2=4$. Including the qutrit, each marginal eigenvalue is $2^r4^{-n}/150$. Define
@@ -120,6 +136,6 @@ For small $D$ choose $L=\lfloor(32D)^{-2/5}-3\rfloor$, so the right side is at m
  \frac1{3200}\sum_{k=1}^L\frac{k}{(k+3)^{3/2}}
  \geq\frac{\sqrt L}{25600}\quad(L\geq6).
 \]
-If $f_{-2}<1/2$, the low-shell amplitudes are at most $3/4$, so at least $7/16$ of the normalized mass lies above $L$. Then $S\geq7L/32$. Both cases give $S\geq c\ell^{-1/5}$ for an absolute positive $c$. For complex filters apply this argument to their absolute values; their energy is no larger. For filters $f(J)\otimes I$ of the game's canonical marginal, the same compiler extension gives $\ell_G=\ell_B/Q^2$ and $S_G=S_B+8$. Together with the taper this proves restricted optimality for both $B$ and $G$ and completes Theorem~D.
+If $f_{-2}<1/2$, the low-shell amplitudes are at most $3/4$, so at least $7/16$ of the normalized mass lies above $L$. Then $S\geq7L/32$. Both cases give $S\geq c\ell^{-1/5}$ for an absolute positive $c$. For complex filters apply this argument to their absolute values; their energy is no larger. For filters $f(J)\otimes I$ of the game's canonical marginal, the same compiler extension gives $\ell_G=\ell_B/Q^2$ and $S_G=S_B+8$. Together with the taper this proves restricted optimality for both $B$ and $G$ and proves the retained restricted radial statement.
 
-An unrestricted lower power remains open. Exact dense-range cancellation has no uniform operator-norm version at small marginal eigenvalues. Approximate magic blocks, compatible labels, and a simultaneous word-sector extraction would need additional estimates. We make no claim that an arbitrary near-optimal strategy is a scalar spectral deformation.
+The height upper bound rules out every positive unrestricted lower power. The matching-order lower bound instead uses the actual-state decoding and rounding appendices; it makes no assumption that a near-optimal strategy is a scalar spectral deformation.

@@ -1,0 +1,41 @@
+== bottom/top source formulas (exact, sympy) ==
+H=  2 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=0.72193 SH=1.00000 (2H-2)/3=0.66667 S0-t=0.0553 logZH-(H-log2H)=0.0000
+H=  3 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=1.40446 SH=2.35932 (2H-2)/3=1.33333 S0-t=0.0711 logZH-(H-log2H)=0.4594
+H=  4 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=2.08410 SH=4.23890 (2H-2)/3=2.00000 S0-t=0.0841 logZH-(H-log2H)=0.7004
+H=  5 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=2.76682 SH=6.73903 (2H-2)/3=2.66667 S0-t=0.1002 logZH-(H-log2H)=0.8329
+H=  6 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=3.45175 SH=9.92193 (2H-2)/3=3.33333 S0-t=0.1184 logZH-(H-log2H)=0.9069
+H= 10 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=6.18546 SH=29.88570 (2H-2)/3=6.00000 S0-t=0.1855 logZH-(H-log2H)=0.9915
+H= 20 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=12.92601 SH=128.67953 (2H-2)/3=12.66667 S0-t=0.2593 logZH-(H-log2H)=1.0000
+H= 30 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=19.61776 SH=294.75978 (2H-2)/3=19.33333 S0-t=0.2844 logZH-(H-log2H)=1.0000
+H= 40 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=26.29681 SH=527.67807 (2H-2)/3=26.00000 S0-t=0.2968 logZH-(H-log2H)=1.0000
+H= 50 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=32.97085 SH=827.35614 (2H-2)/3=32.66667 S0-t=0.3042 logZH-(H-log2H)=1.0000
+H= 60 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=39.64242 SH=1193.75978 (2H-2)/3=39.33333 S0-t=0.3091 logZH-(H-log2H)=1.0000
+H= 70 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=46.31257 SH=1626.87072 (2H-2)/3=46.00000 S0-t=0.3126 logZH-(H-log2H)=1.0000
+H= 80 z:True m:True Z0:True M0/Z0:True ztop:True ZH:True S0=52.98185 SH=2126.67807 (2H-2)/3=52.66667 S0-t=0.3152 logZH-(H-log2H)=1.0000
+min S0-(2H/3-2/3) over H=2..80: 0.055261428220695685  min SH-(...): 0.33333333333333337
+stated S0(H=2)=0.7219280949 computed=0.7219280949
+stated S0(H=3)=1.4044611248 computed=1.4044611248
+stated S0(H=4)=2.0840975992 computed=2.0840975992
+== brute-force path enumeration cross-check ==
+H=2 Z0 enum=1.250000000000 formula=1.250000000000  ZH enum=2.0000000000 formula=2.0000000000
+H=3 Z0 enum=1.416666666667 formula=1.416666666667  ZH enum=3.6666666667 formula=3.6666666667
+H=4 Z0 enum=1.531250000000 formula=1.531250000000  ZH enum=6.5000000000 formula=6.5000000000
+H=5 Z0 enum=1.612500000000 formula=1.612500000000  ZH enum=11.4000000000 formula=11.4000000000
+H=6 Z0 enum=1.671875000000 formula=1.671875000000  ZH enum=20.0000000000 formula=20.0000000000
+H=7 Z0 enum=1.716517857143 formula=1.716517857143  ZH enum=35.2857142857 formula=35.2857142857
+H=8 Z0 enum=1.750976562500 formula=1.750976562500  ZH enum=62.7500000000 formula=62.7500000000
+H=9 Z0 enum=1.778211805550 formula=1.778211805556  ZH enum=112.5555555528 formula=112.5555555556
+== killed fair walk: mean killing time and survival ==
+H=  2 max|E-claimed|=0.00e+00 max E=1.50 H^2/2=2.0 survival-bound violations=0 sum_n ||U^n|| ~ 1.71 vs 4H^2=16
+H=  3 max|E-claimed|=0.00e+00 max E=2.00 H^2/2=4.5 survival-bound violations=0 sum_n ||U^n|| ~ 3.41 vs 4H^2=36
+H=  4 max|E-claimed|=4.44e-16 max E=4.00 H^2/2=8.0 survival-bound violations=0 sum_n ||U^n|| ~ 6.83 vs 4H^2=64
+H=  5 max|E-claimed|=8.88e-16 max E=6.00 H^2/2=12.5 survival-bound violations=0 sum_n ||U^n|| ~ 10.70 vs 4H^2=100
+H=  8 max|E-claimed|=1.78e-15 max E=16.00 H^2/2=32.0 survival-bound violations=0 sum_n ||U^n|| ~ 28.63 vs 4H^2=256
+H= 16 max|E-claimed|=7.11e-15 max E=64.00 H^2/2=128.0 survival-bound violations=0 sum_n ||U^n|| ~ 115.70 vs 4H^2=1024
+H= 32 max|E-claimed|=7.96e-13 max E=256.00 H^2/2=512.0 survival-bound violations=0 sum_n ||U^n|| ~ 463.91 vs 4H^2=4096
+H= 64 max|E-claimed|=9.78e-12 max E=1024.00 H^2/2=2048.0 survival-bound violations=0 sum_n ||U^n|| ~ 1856.76 vs 4H^2=16384
+== long-path tail inequality ==
+tail inequality checked H=2..199
+H=2 N_hist=128
+H=3 N_hist=378
+H=4 N_hist=768

@@ -2,8 +2,7 @@
   "title": "Perfect play in a finite nonlocal game requires infinite entanglement entropy",
   "upload_type": "publication",
   "publication_type": "preprint",
-  "version": "1.0.0",
-  "publication_date": "2026-11-02",
+  "version": "1.1.0",
   "creators": [
     {
       "name": "Douglas, Seth",
@@ -14,7 +13,7 @@
       "orcid": "0009-0005-6534-1118"
     }
   ],
-  "description": "How much infinity can a finite nonlocal game require? We construct a finite two-player game with classical questions, classical answers and a Boolean winning rule. It has a perfect strategy on a tensor product of separable Hilbert spaces. Every perfect normal spatial strategy contains, under local isometries, the same pure entangled state with infinite entropy. For mixed strategies, both marginal entropies are infinite and the pure state remains a tensor factor. Thus infinite dimension can be strengthened to infinite entropy without losing spatial attainment.\n\nThe proof first constructs a rational Bell functional that extracts a state whose Schmidt multiplicities are Catalan numbers. A finite compiler then turns rational linear identities among synchronized projections into winning conditions, using a finite maximally entangled ancilla. Near the optimum, the minimum marginal entropy diverges. Explicit finite-dimensional strategies give an upper bound of order the inverse fifth root of the loss. This exponent is optimal among scalar spectral filters of the canonical state, with the canonical measurements fixed; an unrestricted matching lower bound remains open.",
+  "description": "How much infinity can a finite nonlocal game require? We construct a finite two-player game with classical questions, classical answers and a Boolean winning rule. It has a perfect strategy on a tensor product of separable Hilbert spaces. Every perfect normal spatial strategy contains, under local isometries, the same pure entangled state with infinite entropy. For mixed strategies, both marginal entropies are infinite and the pure state remains a tensor factor. Thus infinite dimension can be strengthened to infinite entropy without losing spatial attainment.\n\nThe proof constructs a rational Bell functional whose perfect strategies contain a state with Catalan Schmidt multiplicities, and compiles it into Boolean tests. For either construction, the minimum marginal entropy at loss $\\varepsilon$ is $\\Theta(\\log(1/\\varepsilon))$. The lower bound holds for every normal spatial strategy, including mixed states and POVMs. It follows from polynomial decoding on the actual state and a finite-strip entropy estimate. Height and size cutoffs give the matching upper order. The sharp leading constant remains open.",
   "keywords": [
     "nonlocal games",
     "entanglement entropy",
@@ -26,7 +25,7 @@
   "access_right": "open",
   "license": "cc-by-4.0",
   "language": "eng",
-  "notes": "Preprint. It has not been peer reviewed. Text: CC BY 4.0. Scripts: MIT or Apache 2.0.",
+  "notes": "Version 1.1.0: new Theorem D (logarithmic entropy law), with full decoding and rounding proofs in Appendices B-D.",
   "related_identifiers": [
     {
       "identifier": "10.5281/zenodo.23772890",
@@ -35,6 +34,11 @@
     },
     {
       "identifier": "10.5281/zenodo.23787124",
+      "scheme": "doi",
+      "relation": "references"
+    },
+    {
+      "identifier": "10.5281/zenodo.23753741",
       "scheme": "doi",
       "relation": "references"
     }

@@ -1,0 +1,11 @@
+{
+  "individual_sigma_constants_phase_independent": 392,
+  "weighted_active_pairs": 718,
+  "pairs_with_nonconstant_leakage": 0,
+  "row_columns_constant_exact": "259423/90000",
+  "arbitrary_phases": [
+    "z",
+    "t"
+  ],
+  "seconds": 1.0032873000018299
+}

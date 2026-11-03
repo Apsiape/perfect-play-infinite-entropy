@@ -1,0 +1,30 @@
+{
+ "threshold_lemma_commuting_max_K": 20.603713677567512,
+ "threshold_lemma_commuting_analytic_K": 48.0,
+ "noncommuting_counterexample": {
+  "norm_XminusY_v": 0.0,
+  "integral_mismatch_sq": 0.3535603389210839
+ },
+ "recurrence_max_excess_over_u": 3.999999997129423,
+ "green_function_mass": 4.0,
+ "compiler_star_laplacian": {
+  "4": {
+   "Jt_orthonormal_err": 4.440892098500626e-16,
+   "sum_Pt_err": 4.441861194611419e-16,
+   "min_eig_Kt_minus_half_I_minus_Pt": -2.5104926330468357e-16,
+   "column_overlap_identity_err": 1.962615573354719e-17
+  },
+  "8": {
+   "Jt_orthonormal_err": 2.612012026770126e-16,
+   "sum_Pt_err": 7.771563730046327e-16,
+   "min_eig_Kt_minus_half_I_minus_Pt": -8.116695908482051e-16,
+   "column_overlap_identity_err": 3.7367087251761353e-17
+  },
+  "16": {
+   "Jt_orthonormal_err": 2.220446049250313e-16,
+   "sum_Pt_err": 7.272609648381693e-16,
+   "min_eig_Kt_minus_half_I_minus_Pt": -2.105723057632457e-15,
+   "column_overlap_identity_err": 4.4226944273466224e-18
+  }
+ }
+}

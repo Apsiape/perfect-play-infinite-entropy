@@ -1,0 +1,13 @@
+trial 0 n=79 N=4 delta=1.06e-01 e=4.01e-04 eta=1.06e-01 d=1.34e-01 rowdir=1.34e-01 (sqrt(Kd)=2.85e+00) rowadj=1.09e-04 viol=[]
+trial 1 n=149 N=5 delta=1.18e-01 e=4.57e-03 eta=1.18e-01 d=1.62e-01 rowdir=1.62e-01 (sqrt(Kd)=3.14e+00) rowadj=1.15e-03 viol=[]
+trial 2 n=275 N=6 delta=9.96e-02 e=5.00e-02 eta=1.96e-01 d=1.83e-01 rowdir=1.74e-01 (sqrt(Kd)=3.33e+00) rowadj=1.51e-02 viol=[]
+trial 3 n=79 N=4 delta=1.42e-01 e=1.12e-01 eta=4.36e-01 d=2.09e-01 rowdir=1.51e-01 (sqrt(Kd)=3.56e+00) rowadj=4.19e-02 viol=[]
+trial 4 n=149 N=5 delta=1.18e-01 e=1.48e-03 eta=1.18e-01 d=1.62e-01 rowdir=1.62e-01 (sqrt(Kd)=3.14e+00) rowadj=1.19e-04 viol=[]
+trial 5 n=275 N=6 delta=9.36e-02 e=1.52e-02 eta=9.36e-02 d=1.73e-01 rowdir=1.73e-01 (sqrt(Kd)=3.25e+00) rowadj=1.25e-03 viol=[]
+trial 6 n=79 N=4 delta=1.11e-01 e=3.87e-02 eta=1.54e-01 d=1.42e-01 rowdir=1.36e-01 (sqrt(Kd)=2.94e+00) rowadj=1.22e-02 viol=[]
+trial 7 n=149 N=5 delta=1.50e-01 e=1.27e-01 eta=4.96e-01 d=2.49e-01 rowdir=1.82e-01 (sqrt(Kd)=3.89e+00) rowadj=5.19e-02 viol=[]
+trial 8 n=275 N=6 delta=9.36e-02 e=1.44e-02 eta=9.36e-02 d=1.73e-01 rowdir=1.73e-01 (sqrt(Kd)=3.25e+00) rowadj=1.22e-04 viol=[]
+trial 9 n=79 N=4 delta=1.07e-01 e=3.83e-03 eta=1.07e-01 d=1.34e-01 rowdir=1.34e-01 (sqrt(Kd)=2.85e+00) rowadj=1.16e-03 viol=[]
+trial 10 n=149 N=5 delta=1.22e-01 e=4.40e-02 eta=1.74e-01 d=1.70e-01 rowdir=1.64e-01 (sqrt(Kd)=3.22e+00) rowadj=1.34e-02 viol=[]
+trial 11 n=275 N=6 delta=1.32e-01 e=1.36e-01 eta=5.32e-01 d=2.82e-01 rowdir=2.00e-01 (sqrt(Kd)=4.14e+00) rowadj=6.12e-02 viol=[]
+TOTAL violations: 0  worst rowdir/sqrt(d): 0.414734828054161  (sqrt(K*)= 7.795482834417665 )

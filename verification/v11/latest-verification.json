@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "version": "1.1.0",
+  "commands": 23,
+  "run": "runs/20261103T115659-4usckq9e",
+  "all_exit_zero": true,
+  "asserted_results": "runs/20261103T115659-4usckq9e/asserted-results.json",
+  "execution": "Fresh execution from a relocated bundle after all source fixes.",
+  "script_copies_byte_identical": true,
+  "scope": "Finite identities, exact formulas and numerical stress tests only; not a proof of unrestricted lower bounds."
+}

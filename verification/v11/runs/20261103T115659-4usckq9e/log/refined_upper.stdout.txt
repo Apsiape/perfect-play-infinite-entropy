@@ -1,0 +1,19 @@
+{'H': 8, 'func': 'B', 'worst_const': 8.928286108669107}
+{'H': 8, 'func': 'G', 'worst_const': -3.3165275164767745}
+{'H': 10, 'func': 'B', 'worst_const': 9.055576221868733}
+{'H': 10, 'func': 'G', 'worst_const': -3.474722303495231}
+{'H': 20, 'func': 'B', 'worst_const': 9.250490490585259}
+{'H': 20, 'func': 'G', 'worst_const': -3.89960033029309}
+{'H': 39, 'func': 'B', 'worst_const': 9.314558484663053}
+{'H': 39, 'func': 'G', 'worst_const': -4.219701693419956}
+{'H': 60, 'func': 'B', 'worst_const': 9.330724190179373}
+{'H': 60, 'func': 'G', 'worst_const': -4.377369287980729}
+{'H': 100, 'func': 'B', 'worst_const': 9.338514869052858}
+{'H': 100, 'func': 'G', 'worst_const': -4.517999247451643}
+{'H': 200, 'func': 'B', 'worst_const': 9.34041112925576}
+{'H': 200, 'func': 'G', 'worst_const': -4.642935755213548}
+{'H': 400, 'func': 'B', 'worst_const': 9.338998566054109}
+{'H': 400, 'func': 'G', 'worst_const': -4.71450996874134}
+{'H': 800, 'func': 'B', 'worst_const': 9.33709989814835}
+{'H': 800, 'func': 'G', 'worst_const': -4.753613044345899}
+max over H of the (8) constant: B 9.34041112925576  G -3.3165275164767745

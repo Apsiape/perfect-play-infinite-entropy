@@ -1,0 +1,23 @@
+{
+ "sym_identity_9_residual": "0",
+ "sym_identity_9_bob_residual": "0",
+ "identity_24_residual": 0.0,
+ "overlaps_c_x_r_y_times_sqrt2": [
+  [
+   1.0,
+   1.0
+  ],
+  [
+   1.0,
+   -1.0
+  ]
+ ],
+ "sigma_matches_overlaps": true,
+ "W00=W01=W10=H": true,
+ "W11=J_L H=H J_R": true,
+ "numeric_identity_9_residual": 8.881784197001252e-16,
+ "numeric_identity_9_bob_residual": 4.742874840267547e-16,
+ "identity_7_max_relative_residual": 4.56296208023432e-15,
+ "identity_12_max_relative_residual": 2.5006815050140673e-15,
+ "diag_equals_half_anticommutator_residual": 8.881784197001252e-16
+}

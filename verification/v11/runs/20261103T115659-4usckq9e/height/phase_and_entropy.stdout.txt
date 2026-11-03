@@ -1,0 +1,18 @@
+{
+  "individual_sigma_constants_phase_independent": 392,
+  "weighted_active_pairs": 718,
+  "pairs_with_nonconstant_leakage": 0,
+  "row_columns_constant_exact": "259423/90000",
+  "arbitrary_phases": [
+    "z",
+    "t"
+  ],
+  "seconds": 1.0032873000018299
+}
+{
+  "S_bound_constant": 4.962152023829213,
+  "B_rounding_H2": 8.855972737796748,
+  "G_rounding_H2": -5.273647511367555,
+  "H_ge_3_B_bound": 8.666130342878747,
+  "H_ge_3_G_bound": -5.4634899062855595
+}

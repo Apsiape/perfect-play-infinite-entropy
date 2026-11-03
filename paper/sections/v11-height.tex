@@ -1,0 +1,98 @@
+\subsection{Height cutoffs and the logarithmic upper bound}\label{sec:v11-height}
+This subsection gives the height-and-size construction proving the upper bound in Theorem~D.
+
+Choose the unitary polar completions in Section~\ref{sec:assembly} as follows. For $B$, cycle each chain $r,rB,\ldots,rB^{h-1}$, where $r$ ends in $A$ and has height $h$, and fix the empty word. For the amplified $a$, interchange $e_0\otimes w$ and $e_2\otimes wA$, fixing the complement. The cycle preserves word size and maximum prefix height. The swap preserves the scaffold weight because $4\cdot4^{-(n+1)}=4^{-n}$. Both are permitted centralizer polar completions. Transport the same choices along the two bridges.
+
+For a prefix-closed, $B$-closed set $S$, write
+\[
+ Z_S=\sum_{w\in S}4^{-n(w)},\quad M_S=\sum_{w\in S}n(w)4^{-n(w)},\quad
+ b_S=\sum_{\substack{w\in S\\wA\notin S}}4^{-n(w)},\quad q_S=b_S/Z_S.
+\]
+The coefficient operator of the scaffold state restricted to $S$ is diagonal, with entries
+\[
+ K_S(f,c,w)=\sqrt{d_c4^{-n(w)}/(75Z_S)},\qquad
+ (d_c)=(1,2,2,2,2,4,4,4,4).
+\]
+For a binary projection $E$, its synchronization loss is $\|EK_S-K_SE\|_2^2$.
+The $B$ cycles reduce $S$. Only a swap whose parent is in the $A$ boundary crosses its support. The finite word list contains no label mixing an $a$ token and a $B$ token; labels with two $a$ tokens preserve histories. All core rows are still zero operator identities, and all old FMS and refinement losses vanish. Thus
+\[
+ \ell_B(S)=\sum_E\kappa_E\sigma_E,\qquad
+ \kappa_E=1+\sum_{r:E\in r}\left(1+\tfrac12\sum_{F\ne I}\alpha_{r,F}^2\right).
+\]
+The exact symbolic crossing calculation in the verification bundle gives 392 active symbols: 78 $G$, 78 $H$, 156 complements and 80 triangles. On these symbols the range of $\kappa_E$ is $[7/2,221/2]$. Summation gives
+\begin{equation}\label{eq:v11-boundary}
+ \ell_B(S)=\Lambda_Bq_S,\quad
+ \ell_G(S)=\Lambda_Gq_S/Q^2,\quad
+ \Lambda_B=\frac{50808529}{540000},\quad
+ \Lambda_G=\frac{14844029}{54000}.
+\end{equation}
+For the game, each old symbol contributes $49\sigma_E$, each nonzero row slot contributes another $3\sigma_E$, and column synchronization and graph orthogonality supply the remaining terms. The old sign-event formula $\ell_G=\ell_B/Q^2$ is specific to radial filters and is not used here. The exact phase calculation checks arbitrary unit-modulus counter phases, not only selected heights. The bundle records the exact rational crossing certificate, its independent implementation and the arbitrary-phase audit.
+
+Let $S_H$ consist of histories whose every prefix has height at most $H$. The mass at current height $h$ is
+\[
+ m_h=\frac{H+1-h}{(H+1)2^h},\qquad 0\le h\le H.
+\]
+Indeed $m_0=1$, $m_h=m_{h-1}/4+m_{h+1}$ and $m_{H+1}=0$; the repeated-root recurrence gives the displayed solution. Consequently
+\begin{equation}\label{eq:v11-height-formulas}
+ Z_H=\frac{2H+2^{-H}}{H+1},\quad b_H=\frac{2^{-H}}{H+1},\quad
+ q_H=\frac1{H2^{H+1}+1}.
+\end{equation}
+For completeness the moment can be calculated without enumerating histories. Let $T_h(x)$ count continuations from height $h$ and put $Z_H(x)=1+xT_1(x)$. Then
+\[
+ T_h=1+xT_{h+1}+\mathbf1_{h\ge2}T_{h-1},\qquad T_{H+1}=0.
+\]
+If $Y_h=xT'_h(x)$, differentiation gives the same linear system with inhomogeneous term $xT_{h+1}$. Solving at $x=1/4$ gives
+\[
+ M_H=xZ'_H(x)\big|_{1/4}
+ =\frac{2H(H-1)}{3(H+1)}+\frac{H(H+5)2^{-H}}{6(H+1)}.
+\]
+The equations uniquely determine the solution because the finite-strip transfer matrix has spectral radius less than one. These formulas can also be verified by substitution in the two linear systems.
+Including the finite scaffold, the marginal entropy is
+\begin{equation}\label{eq:v11-height-entropy}
+ S_B(H)=\log_2 75-\frac85+\log_2Z_H+\frac{2M_H}{Z_H},\qquad S_G(H)=S_B(H)+8.
+\end{equation}
+Write $q=2^{-H}$ and
+\[
+ \frac{M_H}{Z_H}=\frac{H-1}{3}+\delta_H,\quad
+ \delta_H=\frac{q(H+1)(H+2)}{6(2H+q)},\quad
+ c_\infty=\log_2 150-\frac85-\frac23.
+\]
+The inequality $2^{-H}(H+1)^2(H+2)\le6H$ follows at $H=1$ by equality and then by comparing successive ratios. Hence $2\delta_H\le1/(H+1)$, whereas
+\[
+ -\log_2(Z_H/2)\ge\frac{2-q}{2(H+1)\ln2}>\frac1{H+1}.
+\]
+It follows that $S_B(H)\le2H/3+c_\infty$ and $S_B(H)=2H/3+c_\infty+o(1)$.
+
+Here is an integer-rounding check for the refined Bell constant. Choose the least $H$ with $\Lambda_Bq_H<\varepsilon$. If $\varepsilon\le\Lambda_Bq_7$, then $H\ge8$. Put $a=\log_2\Lambda_B$, $x=H-1$, and $L=\log_2(1/(\Lambda_Bq_{H-1}))$. The function $y-\log_2y$ is increasing for $y>1/\ln2$, so the worst endpoint of the interval is its upper-loss endpoint. Furthermore
+\[
+ \frac Lx=1+\frac{1+\log_2x-a+e_x}{x},\qquad
+ 0<e_x=\log_2(1+(x2^{x+1})^{-1})<0.001.
+\]
+The maximum of $(\log_2x+1.001-a)/x$ over positive real $x$ is
+$1/(\ln2\,2^{a-1.001+1/\ln2})<0.0114$. Therefore
+\[
+ S_B(H)-\frac23L+\frac23\log_2 L
+ \le c_\infty+\frac23a+\frac23\log_2(1.0114)<9.35.
+\]
+With the fixed game normalization the same calculation changes only the additive constant. In particular the construction gives
+\begin{align*}
+ E_B(\varepsilon)&\le\frac23\log_2(1/\varepsilon)-\frac23\log_2\log_2(1/\varepsilon)+9.35,\\
+ E_G(\varepsilon)&\le\frac23\log_2(1/\varepsilon)-\frac23\log_2\log_2(1/\varepsilon)+O(1).
+\end{align*}
+Equation~\eqref{eq:v11-boundary} is an exact rational computation checked by two implementations; it affects only the constant in these upper bounds, not their order. The lower bound is proved by the decoding and rounding appendices.
+
+\paragraph{Finite-dimensional implementation.}
+The pure height cutoff has infinite Schmidt rank for every $H\ge2$: all words $A(AB)^k$ survive. It must not be called a finite-dimensional strategy. Instead use
+\[
+ S_{H,N}=\{w:\max_{v\preceq w}\operatorname{ht}(v)\le H,\ n(w)\le N\}.
+\]
+This is a finite, prefix-closed, $B$-closed set. At fixed $H$ its mass and first moment converge to $Z_H,M_H$ exponentially in $N$; the finite-strip transfer eigenvalue is $\cos^2(\pi/(H+1))<1$ for $H\ge2$, and $H=1$ is already finite. Its boundary ratio also converges to $q_H$. Compress each full measurement to the finite Schmidt support; positivity and the POVM sums are preserved, as are all probabilities on that state. The strict loss slack in the choice of $H$ and the strict constant slack above allow a finite $N$. Explicitly, enumerate increasing $N$ until the rational loss is below $\varepsilon$ and the entropy from $Z_{H,N},M_{H,N}$ is below the displayed bound. Convergence guarantees termination. The exact height-only loss formula is not asserted for this additional cutoff.
+
+\paragraph{The explicit $S_4$ witness.}
+Starting from $S_4$, forbid the $A$ edge at surviving height-three words with $n(w)\ge18$. At $u_0=AAAABABABA$, which has seven $A$ letters and height four, add the $A$ child and all its continuations of height at most five. The added subtree uses that height-five rule rather than the pruning rule. Exact finite-strip summation gives
+\[
+ Z'=\frac{55409916813}{34359738368},\quad
+ M'=\frac{57550635573}{34359738368},\quad
+ b'=\frac{1288366711}{103079215104}.
+\]
+Thus $q'=1288366711/166229750439<1/129=q_4$ and the history entropy decreases from $2.7668185404$ to $2.7666935844$ bits. Fixed scaffold factors add the same entropy to both states. This checked witness rules out exact optimality of pure height caps; it does not identify the unrestricted entropy frontier.

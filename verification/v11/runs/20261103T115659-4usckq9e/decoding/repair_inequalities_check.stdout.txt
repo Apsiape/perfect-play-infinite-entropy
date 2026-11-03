@@ -1,0 +1,6 @@
+{"cap": 0.4858456839915389, "capadj": 0.48540840464074103, "thr": 0.2499663915063305, "polar": 0.8906486354114662, "polar_adj": 0.8959386121782982, "cover": 0.9722758111597168}
+thr scalar max ratio 1.0
+polar scalar 0.0
+cap scalar 0.0
+sqrt scalar 0.0
+ceiling root 0.2965351654086268 0.0

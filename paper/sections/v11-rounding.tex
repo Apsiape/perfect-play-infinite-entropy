@@ -1,0 +1,1008 @@
+\section{State-weighted Catalan rounding}\label{sec:rounding}
+\subsection{Statement and conventions}
+All logarithms and entropies are in base two. The logarithmic variable $L_\delta=\log_2(1/\delta)$ is written $L$ only inside this appendix; subscripts $L,R$ always denote parties. The band count $N$ in the banding subsection and the history cutoff $N$ in the renewal lemma are independent parameters, denoted $N_{\rm band}$ and $N_{\rm hist}$ when used together in the assembly. The band error $\eta$ is renamed $u$ before the renewal comparison error is introduced. Let $\rho$ be a normal state on $\mathcal H_L\otimes\mathcal H_R$ and fix a purification $\Omega\in\mathcal H_L\otimes\mathcal H_R\otimes\mathcal E$. For a local operator $X_s$, its state-weighted norm is $\|X_s\Omega\|$. All operators and physical isometries below act trivially on $\mathcal E$. Local Hilbert spaces, multiplicity spaces, and $\mathcal E$ may be infinite dimensional. Entropy means marginal von Neumann entropy; for mixed states we do not identify it with a mixed-state entanglement measure.
+
+Suppose on each party $s=L,R$ that
+\[
+ \|A_s\|,\|B_s\|\le1,\quad 0\le C_s\le I,
+ \quad P_s^2=P_s=P_s^*,\quad Q_s^2=Q_s=Q_s^*.
+\]
+Assume that each of the following local residuals has norm at most $\delta$ on $\Omega$:
+\begin{equation}\label{rnd:eq:local-input}
+\begin{gathered}
+ A_s^*A_s-I,\quad A_sA_s^*+B_sB_s^*+P_s-I,\quad
+ B_s^*B_s+P_s+Q_s-I,\\
+ C_sP_s-P_s,\quad C_sQ_s-Q_s/2,\quad
+ C_sA_s-A_sC_s/2,\quad C_sB_s-2B_sC_s,\quad P_sQ_s.
+\end{gathered}
+\end{equation}
+The five mirror residuals are
+\begin{equation}\label{rnd:eq:mirror-input}
+ A_L/2-A_R^*,\quad A_L^*-A_R/2,\quad
+ B_L-B_R^*,\quad B_L^*-B_R,\quad C_L-C_R,
+\end{equation}
+and each likewise has vector norm at most $\delta$. Tensor identities are suppressed.
+
+\begin{theorem}[Catalan rounding]\label{rnd:thm:rounding}
+Under these assumptions, for $0<\delta\le1$ and $L=\log_2(1/\delta)$,
+\begin{equation}\label{rnd:eq:main}
+ S(\rho_s)\ge \frac29L-\frac{16}{3}\log_2(L+2)-200,
+ \qquad s=L,R.
+\end{equation}
+The bound is uniform over all dimensions, auxiliary spaces, multiplicities, and normal mixed states. If all defects vanish, both marginal entropies are infinite.
+\end{theorem}
+
+The proof is constructive at the level of local zero-state extensions and local isometries. Comparison vectors are used only to estimate a finite-register conditional entropy; they are never substituted for the physical state. The proof of the theorem is completed in Section~\ref{rnd:sec:assemble}. Every lemma needed for it is proved below. The Catalan construction supplies the notation; no external quantitative rounding theorem is invoked.
+
+\paragraph{The bounded-mirror rule.}
+If $\|(X_L-Y_R)\Omega\|\le e$, then for every bounded left-local map $R_L$,
+\[
+ \|R_LX_L\Omega\|\le\|Y_R\|\|R_L\Omega\|+\|R_L\|e.
+\]
+This follows by inserting $Y_R\Omega$ and commuting opposite-party operators. The mirror must already have been established before this rule is applied. A one-sided vector error is never propagated through an arbitrary same-party suffix.
+
+\subsection{Spectral banding with explicit constants}
+\label{rnd:sec:bands-explicit}
+
+All Hilbert spaces below may be infinite dimensional.  An environment is
+suppressed from the notation and every operator acts trivially on it.  Let
+$\Omega$ be a unit vector.  Assume that $A_s,B_s$ are contractions,
+$0\leq C_s\leq I$, and $P_s,Q_s$ are projections, for $s=L,R$.
+Assume that all the local residuals in \eqref{rnd:eq:local-input} have norm at most
+$\delta$ on $\Omega$, as do the five mirror residuals in \eqref{rnd:eq:mirror-input}.  Products on
+opposite parties commute.  Put
+\[
+ R_{A,s}=A_s^*A_s-I,\quad
+ R_{B,s}=B_s^*B_s+P_s+Q_s-I,\quad
+ R_{\mathrm r,s}=A_sA_s^*+B_sB_s^*+P_s-I.
+\]
+Their operator norms are at most $1,2,2$, respectively.
+
+\subsubsection{Mirrors needed before any localization}
+The given mirrors imply
+\begin{align}
+ \|(P_L-P_R)\Omega\|&\leq6\delta,\\
+ \|(Q_L-Q_R)\Omega\|&\leq10\delta.                 \tag{B1}
+\end{align}
+Indeed
+\[
+ A_LA_L^*\Omega-A_RA_R^*\Omega
+ =A_L(A_L^*-A_R/2)\Omega
+   +\tfrac12A_R(A_L-2A_R^*)\Omega,
+\]
+whose norm is at most $2\delta$.  For the other two products the explicit expansions are
+\[
+ B_LB_L^*-B_RB_R^*
+ =B_L(B_L^*-B_R)+B_R(B_L-B_R^*),
+\]
+\[
+ B_L^*B_L-B_R^*B_R
+ =B_L^*(B_L-B_R^*)+B_R^*(B_L^*-B_R).
+\]
+Each has vector error at most $2\delta$.  Subtract the two range residuals
+to obtain the first inequality in (B1), and then subtract the two source
+residuals for $B$ to obtain the second.  No state-dependent error has been
+multiplied on the right in this argument.
+
+For $T\in\{A,A^*,B,B^*\}$ let
+\[
+ k_A=k_{B^*}=\tfrac12,\qquad k_{A^*}=k_B=2.
+\]
+On either party, with $\bar s$ denoting the other party,
+\[
+ \|(C_s-k_TC_{\bar s})T_s\Omega\|\leq c_T\delta,
+ \qquad(c_A,c_{A^*},c_B,c_{B^*})=(3/2,7/2,3,5/2). \tag{B2}
+\]
+For $A$ and $B$ this follows directly from their local covariance relation
+and the $C$ mirror.  For example,
+\[
+ (C_L-C_R/2)A_L\Omega
+ =(C_LA_L-A_LC_L/2)\Omega
+   +\tfrac12A_L(C_L-C_R)\Omega.
+\]
+For $A^*$ first replace $A_L^*\Omega$ by $A_R\Omega/2$, at error
+$\delta$.  The commuting operator $C_L-2C_R$ has norm at most $2$;
+the remaining expression is
+\[
+ \tfrac12A_R(C_L-C_R)\Omega
+  -(C_RA_R-A_RC_R/2)\Omega.
+\]
+This proves the constant $7/2$.  For $B^*$ replace $B_L^*\Omega$ by
+$B_R\Omega$.  Now $\|C_L-C_R/2\|\leq1$, and the remaining expression is
+\[
+ B_R(C_L-C_R)\Omega
+  -\tfrac12(C_RB_R-2B_RC_R)\Omega.
+\]
+The other party is identical.  Thus every spectral comparison below is
+between commuting opposite-party operators.
+
+\subsubsection{The common random partition}
+Fix $N\geq4$.  For $t\in[2/3,3/4]$, define a partition of $[0,\infty)$ by
+\[
+ I_0=[t,\infty),\quad
+ I_h=[t2^{-h},t2^{-(h-1)})\ (1\leq h<N),\quad
+ I_N=[0,t2^{-(N-1)}).
+\]
+Write $\Pi_h(X)=1_{I_h}(X)$, $E_h^s=\Pi_h(C_s)$ and
+\[
+ \eta=40\,2^{N/2}\delta^{1/2}.                    \tag{B3}
+\]
+Assume for the remainder of this section that $\eta\leq1/128$.
+For commuting positive operators $X,Y$ and a vector $v$, their joint
+spectral measure gives
+\[
+ \mathbb E_t\sum_{h=0}^N
+ \|(\Pi_h(X)-\Pi_h(Y))v\|^2
+ \leq48\,2^N\|v\|\|(X-Y)v\|.                 \tag{B4}
+\]
+To see this, a scalar threshold $t2^{-j}$ separates $x,y$ for a set of
+$t$ of length at most $2^j|x-y|$.  The sum of squared indicator
+differences is twice the indicator that the two points lie in different
+bands.  Divide by the interval length $1/12$, sum over $0\leq j<N$,
+and use Cauchy--Schwarz in the joint spectral measure.  In fact the same
+proof gives $24(2^N-1)$ in place of $48\,2^N$.
+
+Apply (B4) to $(C_L,C_R,\Omega)$ and to the eight triples
+$(C_s,k_TC_{\bar s},T_s\Omega)$.  By (B2), the expected sum of all nine
+nonnegative quantities is at most
+\[
+ (48+8\cdot192)2^N\delta=1584\,2^N\delta\leq\eta^2.
+\]
+Fix a value of $t$ at which this sum is at most $\eta^2$.
+Let
+\[
+ M=\sum_{h=0}^NE_h^LE_h^R,\qquad
+ \Phi=M\Omega,\qquad\Phi_h=E_h^LE_h^R\Omega.
+\]
+These vectors are intentionally not normalized.  They satisfy
+\[
+ E_h^L\Phi=E_h^R\Phi=\Phi_h,\qquad
+ e:=\|\Omega-\Phi\|\leq\eta,\qquad
+ q:=\|\Phi\|\geq\sqrt{1-\eta^2}.                \tag{B5}
+\]
+The equality underlying (B5) is
+$1-q^2=\frac12\sum_h\|(E_h^L-E_h^R)\Omega\|^2$.
+In particular the terminal band remains in $\Phi$ throughout all the
+following algebraic estimates.
+
+\subsubsection{Localization without a new square root}
+The local relations $(C-I)P\Omega=O(\delta)$ and
+$(C-I/2)Q\Omega=O(\delta)$ imply
+\[
+ \|(I-E_0^s)P_s\Omega\|\leq4\delta,\qquad
+ \|(I-E_1^s)Q_s\Omega\|\leq8\delta.              \tag{B6}
+\]
+For $Q$, the distance of $1/2$ from the complement of
+$[t/2,t)$ is at least $1/8$.  The constant $6$ would not be justified
+uniformly for this interval of thresholds.
+Using the already established mirrors (B1), matching (B5), and then (B6),
+one obtains
+\begin{align}
+ \left(\sum_{h\geq1}\|P_s\Phi_h\|^2\right)^{1/2}
+ &=\|(I-E_0^{\bar s})P_s\Phi\|\leq11\eta,\\
+ \left(\sum_{h\ne1}\|Q_s\Phi_h\|^2\right)^{1/2}
+ &=\|(I-E_1^{\bar s})Q_s\Phi\|\leq19\eta.       \tag{B7}
+\end{align}
+For example the first right side is bounded by
+$6\delta+4\delta+e$.  This is precisely where a prior $P,Q$ mirror
+avoids an unnecessary square-root loss.
+
+Every local residual $R_s$ satisfies the useful aggregate estimate
+\[
+ \left(\sum_h\|R_s\Phi_h\|^2\right)^{1/2}
+ =\|R_s\Phi\|\leq\delta+\|R_s\|e.             \tag{B8}
+\]
+The equality holds because $\Phi_h=E_h^{\bar s}\Phi$, and the
+opposite-party projections commute with $R_s$.  Thus the source and
+range residuals have bounds $2\eta,3\eta,3\eta$ on the matched vector.
+No terminal mass appears in (B8).
+
+The spectral comparisons chosen above also imply the following four
+aggregate leakage bounds, on each party:
+\begin{align}
+ \left(\sum_{h=0}^{N-2}
+ \|(I-E_{h+1})A\Phi_h\|^2\right)^{1/2}&\leq2\eta,\\
+ \left(\sum_{h=1}^{N-1}
+ \|(I-E_{h-1})B\Phi_h\|^2\right)^{1/2}&\leq2\eta,\\
+ \left(\sum_{h=1}^{N-1}
+ \|(I-E_{h-1})A^*\Phi_h\|^2\right)^{1/2}&\leq2\eta,\\
+ \left(\sum_{h=0}^{N-2}
+ \|(I-E_{h+1})B^*\Phi_h\|^2\right)^{1/2}&\leq2\eta. \tag{B9}
+\end{align}
+For completeness, replace $\Phi_h$ by $E_h^{\bar s}\Phi$, commute this
+projection past the generator, and observe that the unwanted joint
+spectral block is contained in the mismatch event for
+$(C_s,k_TC_{\bar s})$.  The sum over $h$ is orthogonal on the opposite
+party.  Its norm on $T_s\Omega$ is at most $\eta$, and replacing
+$\Omega$ by $\Phi$ costs at most $e$.  The shift at $h=0$ for
+$k_T=1/2$ is valid because $2t>1$; the top two cases excluded in (B9)
+are not asserted.
+
+The forbidden bottom actions have bounds
+\[
+ \|B_s\Phi_0\|\leq10\eta,\qquad
+ \|A_s^*\Phi_0\|\leq12\eta.                    \tag{B10}
+\]
+Indeed on $E_0^{\bar s}$, the commuting operator
+$C_s-2C_{\bar s}$ has absolute value at least $2t-1\geq1/3$.
+Apply (B2) and then replace $\Omega$ by $\Phi$.
+
+\subsubsection{The exact input to the incoming-row repair lemma}
+For $1\leq v\leq N-2$ define the incoming edges
+\[
+ x_{A,v}=E_vAE_{v-1},\qquad x_{B,v}=E_vBE_{v+1}.
+\]
+The following estimates hold separately on each party, with all sums
+taken over this entire collection of rows:
+\begin{align}
+ \left(\sum_v
+ \|(x_{A,v}^*x_{A,v}-E_{v-1})\Phi_{v-1}\|^2\right)^{1/2}
+ &\leq4\eta,\\
+ \left(\sum_v
+ \|(x_{B,v}^*x_{B,v}-E_{v+1})\Phi_{v+1}\|^2\right)^{1/2}
+ &\leq35\eta,\\
+ \left(\sum_v
+ \|(x_{A,v}x_{A,v}^*+x_{B,v}x_{B,v}^*-E_v)\Phi_v\|^2\right)^{1/2}
+ &\leq18\eta.                                  \tag{B11}
+\end{align}
+Here and below an edge on each party is denoted by the same letter.
+For the first line, expand
+\[
+ (x_{A,v}^*x_{A,v}-E_{v-1})\Phi_{v-1}
+ =E_{v-1}(A^*A-I)\Phi_{v-1}
+  -E_{v-1}A^*(I-E_v)A\Phi_{v-1}
+\]
+and use (B8)--(B9).  The second line has the additional terms
+$P\Phi_{v+1},Q\Phi_{v+1}$, bounded by (B7); its constants are
+$3+11+19+2=35$.  For the third line compress the range residual by
+$E_v$, then subtract
+$E_vA(I-E_{v-1})A^*\Phi_v$ and
+$E_vB(I-E_{v+1})B^*\Phi_v$, and use (B7)--(B9).
+The constants are $3+11+2+2=18$.
+
+Both oriented edge mirrors also hold in aggregate.  For example,
+\[
+ x_{A,v,L}\Phi_{v-1}-2x_{A,v,R}^*\Phi_v
+ =E_v^LE_{v-1}^R(A_L-2A_R^*)\Phi.
+\]
+The projections for distinct $v$ are orthogonal.  Consequently the
+aggregate direct $A$ mirror error is at most $5\eta$ on each party, so in particular $m_e^R$ for an $A$ edge has bound $5\eta$. The adjoint orientation is bounded by $(5/2)\eta$; including it again below is a harmless overestimate.  Each $B$ orientation costs at
+most $3\eta$.  The same statements hold after interchanging parties.
+Combining the squares of all source, range and oriented mirror errors
+in (B11), on both parties, gives at most
+\[
+ 2(4^2+35^2+18^2)\eta^2
+ +2\bigl(5^2+(5/2)^2\bigr)\eta^2+4\cdot3^2\eta^2
+ =\tfrac{6457}{2}\eta^2<57^2\eta^2.
+\]
+After replacing $\Phi$ by the normalized matched vector $\Phi/q$, the
+aggregate row-repair input is therefore bounded by
+\[
+ d\leq64\eta\leq1.                             \tag{B12}
+\]
+This bound has no factor depending on $N$.  In particular it contains
+neither the terminal mass nor its square root.
+
+\subsubsection{The unused bottom block}
+The edge $B_1:1\to0$ is absent from the retained incoming rows. The renewal operator has no incoming edge at level zero, and the optional exact extension sets $\widehat B=0$ on levels $0,1$. Thus the unused bottom block is vacuous; no deletion error enters the argument.
+
+\subsubsection{A cumulative-tail recurrence with kernel mass four}
+Define, for $0\leq j<N$,
+\[
+ F_j^s=1_{[0,t2^{-j})}(C_s)=\sum_{h=j+1}^NE_h^s,
+ \qquad \alpha_j=\|F_j^L\Phi\|^2.
+\]
+Set $F_{-1}^s=I$.  Endpoint conventions use the same half-open
+partition as above.  For $0\leq j\leq N-2$, matching, the original
+mirrors on $\Phi$, and the selected spectral comparisons give
+\begin{align}
+ \|A_L^*F_j^L\Phi-\tfrac12A_RF_{j-1}^L\Phi\|
+   &\leq\tfrac72\eta,\\
+ \|B_L^*F_j^L\Phi-B_RF_{j+1}^L\Phi\|
+   &\leq5\eta.                                  \tag{B16}
+\end{align}
+For the first line, commute $F_j^R$ past $A_L^*$; its mirror costs
+$\delta+(3/2)e\leq(5/2)\eta$.  The remaining threshold comparison is
+\[
+ F_j(C_R)A_R\Phi-F_j(C_L/2)A_R\Phi,
+\]
+and costs at most $2\eta$, multiplied by $1/2$.  The second line is
+the same argument with $B_L^*\simeq B_R$ and
+$F_j(C_R)$ versus $F_j(2C_L)=F_{j+1}(C_L)$.
+A threshold mismatch is a subset of the corresponding partition
+mismatch, so these comparisons are covered by the already selected
+$t$.  There is no new random choice.
+
+The range equation on $F_j^L\Phi$ costs at most $3\eta$, by commuting
+the opposite-party tail projection.  Its $P$ term is at most
+$121\eta^2$.  The squared-norm comparison in the first line of (B16)
+costs at most $(3/2)(7/2)\eta$, and the $A$ source equation contributes
+at most $\eta/2$.  For the second line the squared-norm comparison
+costs at most $10\eta$.  The $B$ source equation contributes
+$3\eta$, and its $P,Q$ terms contribute at most
+$(11^2+19^2)\eta^2$.  Thus, for $1\leq j\leq N-2$,
+\[
+ |\alpha_j-\tfrac14\alpha_{j-1}-\alpha_{j+1}|
+ \leq\tfrac{87}{4}\eta+603\eta^2\leq640\eta.    \tag{B17}
+\]
+The same formula at $j=0$ uses $\|\Phi\|^2$ in place of $\alpha_{-1}$,
+but is not needed.
+
+Since $0\leq \alpha_1\leq \alpha_0\leq1$, solving the scalar recurrence gives,
+for $0\leq k<N$,
+\[
+ \alpha_k\leq(k+1)2^{-k}+2560\eta.                   \tag{B18}
+\]
+Indeed the homogeneous solution is
+$[\alpha_0+(2\alpha_1-\alpha_0)k]2^{-k}$, bounded above by
+$(k+1)2^{-k}$.  The impulse kernel is $(n+1)2^{-n}$, and its total
+mass is exactly
+\[
+ \sum_{n=0}^{\infty}(n+1)2^{-n}=4.
+\]
+Finally $M$ commutes with $F_k^L$, so the two vectors
+$F_k^L\Phi$ and $F_k^L(\Omega-\Phi)$ are orthogonal.  Consequently
+the original state satisfies
+\[
+ \|F_k^L\Omega\|^2
+ \leq(k+1)2^{-k}+2561\eta,\qquad0\leq k<N.      \tag{B19}
+\]
+Matching gives the same bound on the other party.  The large constants
+are explicit and dimension independent; they were chosen for transparent
+bookkeeping rather than optimization.
+
+\paragraph{Dependency ledger.}
+The order is: original local equations and five mirrors; product mirrors
+and then $P,Q$ mirrors; commuting generator-image covariance; one common
+random partition; a matched vector retaining its terminal band; spectral
+localization of $P,Q$; aggregate local defects and edge leakages; source,
+range and both edge-mirror inputs; the unused bottom block.  The cumulative
+tail recurrence uses only the items preceding row repair.  No estimate in
+the row-repair input uses bottom-block handling, tail truncation, a repaired
+operator, or any entropy comparison.
+\subsection{Repair of incoming rows}
+\begin{lemma}[State-weighted repair of incoming rows]\label{rnd:lem:row-repair}
+Let $\mathcal G=(V,E)$ be a finite directed graph with in- and out-degree at most $D\ge1$. For $s=L,R$ let $\mathcal H^s=\bigoplus_{v\in V}\mathcal H_v^s$, and let
+\[
+ \Phi=\sum_{v\in V}\Phi_v,\qquad
+ \Phi_v\in\mathcal H_v^L\otimes\mathcal H_v^R\otimes\mathcal K,
+ \qquad\sum_v\|\Phi_v\|^2=1.
+\]
+Every row to be repaired is assumed to have at least one incoming edge. For each edge $e$, let $x_e^s:\mathcal H_{s(e)}^s\to\mathcal H_{t(e)}^s$ have norm at most $M_{\rm op}\ge1$, and let $0<\lambda_e\le\Lambda$, where $\Lambda\ge1$. Put
+\[
+ g_e^s=(x_e^s)^*x_e^s,\qquad
+ r_v^s=\sum_{t(e)=v}x_e^s(x_e^s)^*-I_{\mathcal H_v^s},\qquad
+ m_e^s=x_e^s\Phi_{s(e)}-\lambda_e(x_e^{\bar s})^*\Phi_{t(e)}.
+\]
+The sums over $v$ below range over the rows to be repaired, and all edges considered end in those rows. Suppose
+\[
+ d^2\ge\sum_{s=L,R}\left\{
+ \sum_e\|(g_e^s-I)\Phi_{s(e)}\|^2+
+ \sum_v\|r_v^s\Phi_v\|^2+
+ \sum_e\|m_e^s\|^2\right\},\qquad 0\le d\le1.
+\]
+After adjoining zero-state local summands, there are edge operators $u_e^s$ such that every incoming row $U_v^s=(u_e^s)_{t(e)=v}$ is unitary from the direct sum of its source spaces onto the enlarged target space. In particular,
+\[
+ (u_e^s)^*u_f^s=\delta_{ef}I\quad(t(e)=t(f)),\qquad
+ \sum_{t(e)=v}u_e^s(u_e^s)^*=I.
+\]
+Set $\mathfrak b=DM_{\rm op}^2+1$ and
+\[
+ K=2\bigl(\Lambda^2M_{\rm op}^2D+2\mathfrak b\Lambda M_{\rm op}\sqrt D+M_{\rm op}^2\sqrt D+\mathfrak b+1\bigr).
+\]
+Then
+\begin{align*}
+ \left(\sum_{s,e}\|(u_e^s-x_e^s)\Phi_{s(e)}\|^2\right)^{1/2}&\le\sqrt K\,\sqrt d,\\
+ \left(\sum_{s,e}\|((u_e^s)^*-(x_e^s)^*)\Phi_{t(e)}\|^2\right)^{1/2}&\le d.
+\end{align*}
+Consequently the aggregate repaired mirror error is at most $\sqrt K\sqrt d+(1+\Lambda)d$. The padding acts trivially on $\Phi$ and its purifying environment, so it changes neither marginal spectrum.
+\end{lemma}
+
+\begin{proof}
+Fix a party and suppress its superscript. Write $R_v=(x_e)_{t(e)=v}$ and let $j_e$ be the canonical inclusion of the $e$th source space in the row domain. For $\phi=\Phi_{s(e)}$ and $v=t(e)$, expansion of $r_v$ gives the exact cross-Gram identity
+\[
+ \sum_{\substack{t(f)=v\\f\ne e}}\|x_f^*x_e\phi\|^2
+ =\langle x_e\phi,r_vx_e\phi\rangle+
+ \langle\phi,g_e(I-g_e)\phi\rangle.
+ \tag{RG}
+\]
+This identity does not require $x_e$ to be a contraction. Its left side is nonnegative, although the two terms on the right need not be.
+
+Let $q_e=\|m_e\|$, and write $x_e\Phi_{s(e)}=w_e+m_e$, where $w_e=\lambda_e(x_e^{\bar s})^*\Phi_v$. Since $\|r_v\|\le\mathfrak b$,
+\[
+ |\langle x_e\Phi_{s(e)},r_vx_e\Phi_{s(e)}\rangle|
+ \le |\langle w_e,r_vw_e\rangle|+2\mathfrak b\Lambda M_{\rm op}\|\Phi_v\|q_e+\mathfrak b q_e^2.
+\]
+Operators on opposite parties commute, whence
+\[
+ |\langle w_e,r_vw_e\rangle|
+ =\lambda_e^2|\langle\Phi_v,x_e^{\bar s}(x_e^{\bar s})^*r_v\Phi_v\rangle|
+ \le\Lambda^2M_{\rm op}^2\|\Phi_v\|\,\|r_v\Phi_v\|.
+\]
+This is the only propagation through a suffix in the argument: it uses the already assumed opposite-party edge mirror, followed by exact inter-party commutation. Summing over edges, the degree bound and Cauchy--Schwarz give
+\[
+ \sum_e|\langle x_e\Phi_{s(e)},r_{t(e)}x_e\Phi_{s(e)}\rangle|
+ \le \Lambda^2M_{\rm op}^2D\,d+2\mathfrak b\Lambda M_{\rm op}\sqrt D\,d+\mathfrak b d^2.
+\]
+Likewise,
+\[
+ \sum_e|\langle\Phi_{s(e)},g_e(I-g_e)\Phi_{s(e)}\rangle|
+ \le M_{\rm op}^2\sum_e\|\Phi_{s(e)}\|\,\|(I-g_e)\Phi_{s(e)}\|
+ \le M_{\rm op}^2\sqrt D\,d.
+\]
+Thus (RG) bounds the sum of all off-diagonal Gram errors for this party. The diagonal entries of $(R_v^*R_v-I)j_e\Phi_{s(e)}$ are exactly $(g_e-I)\Phi_{s(e)}$. Adding their squared norms, and then adding both parties, proves
+\[
+ \sum_{s,e}\|((R_{t(e)}^s)^*R_{t(e)}^s-I)j_e\Phi_{s(e)}\|^2\le Kd.
+ \tag{GG}
+\]
+
+For completeness, the required unitary polar extension is available simultaneously at all vertices. Choose an infinite cardinal $\kappa$ at least as large as the dimensions of every local vertex space, and adjoin a copy of $\ell^2(\kappa)$ to each vertex space, placing zero state on every new summand. Extend each original $x_e^s$ by zero. For a nonempty incoming row both the kernel and the cokernel of the enlarged row have dimension $\kappa$. Its polar partial isometry therefore extends to a unitary $U_v^s$ from its enlarged row domain onto its enlarged codomain. Choices at different vertices are independent: each edge is a column of exactly one incoming row. In separable spaces one may take $\kappa=\aleph_0$.
+
+Write $R=U|R|$ for such a polar extension. For every $\zeta$, spectral calculus and $|1-t|\le|1-t^2|$ for $t\ge0$ give
+\[
+ \|(U-R)\zeta\|=\|(I-|R|)\zeta\|\le\|(I-R^*R)\zeta\|.
+\]
+Since $RR^*=U|R|^2U^*$, the same argument gives
+\[
+ \|(U^*-R^*)\eta\|\le\|(I-RR^*)\eta\|.
+\]
+These inequalities remain valid after tensoring with all spectator spaces. Applying the first to $j_e\Phi_{s(e)}$ and using (GG) proves the direct estimate. For the adjoint estimate, orthogonality of the row-domain summands gives
+\[
+ \sum_{t(e)=v}\|(u_e^*-x_e^*)\Phi_v\|^2
+ =\|(U_v^*-R_v^*)\Phi_v\|^2\le\|r_v\Phi_v\|^2.
+\]
+Summing proves its asserted constant $1$. Finally, each new mirror is the sum of its direct repair error, its old mirror error, and $\lambda_e$ times the opposite-party adjoint repair error. Minkowski's inequality gives the last claim.
+\end{proof}
+
+\begin{remark}
+An empty incoming row cannot be made unitary merely by padding the existing source spaces: its domain is zero. Root vertices must be excluded from the row lemma or supplied with an explicit source edge. No inverse bound on $\lambda_e$ is needed for the displayed orientation; it is needed only when the input mirrors are supplied in the opposite normalization.
+\end{remark}
+\subsection{Finite-strip renewal and its entropy}\label{rnd:sec:renewal}
+
+\begin{lemma}[Finite-strip renewal]\label{rnd:lem:renewal}
+Let $H\ge2$. On each party let $\mathcal H=\bigoplus_{h=0}^H\mathcal H_h$.
+Let $a_h:\mathcal H_h\to\mathcal H_{h+1}$, $0\le h\le H-2$, and
+$b_h:\mathcal H_h\to\mathcal H_{h-1}$, $2\le h\le H$, be isometries.
+Assume that the ranges of $a_{h-1}$ and $b_{h+1}$ are orthogonal whenever
+both enter the same vertex. Write $a=\sum a_h$, $b=\sum b_h$, and, on the
+matched space $\mathcal M=\bigoplus_h(\mathcal H_h^L\otimes\mathcal H_h^R)$,
+\[
+ T=\tfrac12a_L\otimes a_R+b_L\otimes b_R.
+\]
+The identity on an arbitrary purifying environment is suppressed. The retained local direct sums may sit in larger physical spaces with arbitrary additional orthogonal summands; all local isometries constructed below are extended to those summands. Then
+\[
+ \|(I-T)^{-1}\|\le 4H^2 2^{H/2}.
+\]
+If $\xi_s\in\mathcal H_s^L\otimes\mathcal H_s^R\otimes\mathcal E$,
+$s\in\{0,H\}$, and $y=(I-T)^{-1}(\xi_0+\xi_H)\ne0$, there are local
+isometries, acting trivially on $\mathcal E$, and a finite register $F$
+on the left with
+\[
+ \log_2\dim F\le N+2,\qquad
+ N=2H^2\lceil8\log_2(2H)\rceil,
+\]
+such that the normalized state $\widehat y=y/\|y\|$ satisfies
+\[
+ H(F\mid J)_{\widehat y}\ge\tfrac23H-\tfrac83.
+\]
+Here $J$ is the remaining left system and conditional entropy is understood
+in its finite-$F$ extension, so no finiteness assumption on the multiplicity
+entropy is needed.
+\end{lemma}
+
+\begin{proof}
+Put $D=\sum_{h=0}^H2^{h/2}E_h$ on $\mathcal M$. The two allowed edge
+coefficients of $U=DTD^{-1}$ are both $1/\sqrt2$. Distinct directed paths
+of equal length have orthogonal ranges: cancel equal final edges, using
+their isometry property, until distinct final edges have orthogonal ranges.
+Consequently $\|U^n\|^2$ is bounded by the largest survival probability
+through time $n$ of the fair nearest-neighbor walk on the strip, killed
+when it attempts a missing edge. There are no incoming edges at $0,H$.
+At an internal starting vertex $h$ the mean killing time is $h(H-h)$.
+At either source it is $1+(H-1)/2$. Thus every mean is at most $H^2/2$.
+For $\ell_{\rm blk}=2H^2$, Markov's inequality and the Markov property give
+\[
+ \|U^n\|^2\le4^{-\lfloor n/\ell_{\rm blk}\rfloor}.
+\]
+In particular the Neumann series converges in operator norm and
+\[
+ \|(I-T)^{-1}\|
+ \le 2^{H/2}\sum_{n\ge0}\|U^n\|
+ \le 2^{H/2}\ell_{\rm blk}\sum_{j\ge0}2^{-j}=4H^2 2^{H/2}.
+\]
+
+All path ranges originating at the two sources are mutually orthogonal,
+even for different path lengths. Indeed, after cancellation of common
+final edges, either two distinct incoming edges remain, or one path has
+ended at a source while the other would have to enter that source. The
+latter is impossible because both sources have no incoming retained edge.
+The same argument applies on both parties. A legal path $w$ having
+$n_A(w)$ up steps contributes $2^{-n_A(w)}W_w^L\otimes W_w^R\xi_s$.
+Thus, up to local isometries, each source contributes a pure path register
+with probabilities
+\[
+ p_s(w)=4^{-n_A(w)}/Z_s,
+ \qquad Z_s=\sum_{w\text{ from }s}4^{-n_A(w)},
+\]
+tensored with the normalized source vector. The two source labels are
+locally distinguishable.
+
+For the bottom source the strip is the height cutoff $n=H-1$:
+\[
+ Z_0=\frac{2n+2^{-n}}{n+1},\qquad
+ \frac{M_0}{Z_0}=\frac{n-1}{3}
+ +\frac{2^{-n}(n+1)(n+2)}{6(2n+2^{-n})},
+ \quad M_0=\sum_w n_A(w)4^{-n_A(w)}.
+\]
+Here is an explicit derivation. If $z_h(x)$ is the unnormalized mass at
+height $h$ when each up edge has squared weight $x$, then
+$z_0(x)=1$, $z_H(x)=0$, and
+$z_h(x)=xz_{h-1}(x)+z_{h+1}(x)$ for $1\le h\le H-1$.
+At $x=1/4$ the solution is $z_h=(H-h)/(H2^h)$.
+Writing $m_h=xz'_h(x)|_{x=1/4}$ gives $m_0=m_H=0$ and
+$m_h=m_{h-1}/4+m_{h+1}+z_{h-1}/4$. Its explicit solution is
+\[
+ m_h=\frac{h(H-h)(2H+3-h)}{6H2^h}.
+\]
+Substitution verifies both recurrences, and uniqueness follows from the
+strictly subunit spectral radius of the finite strip. Summing $z_h$ and
+$m_h$ gives the displayed formulas for $Z_0$ and $M_0/Z_0$. In particular
+$S_0=\log_2Z_0+2M_0/Z_0\ge2H/3-2/3$. For $n\ge4$ this follows from
+$Z_0\ge8/5$, $\log_2(8/5)>2/3$, and $M_0/Z_0\ge(n-1)/3$.
+For $H=2,3,4$ the entropies respectively are
+\[
+ \log_25-\tfrac85,\qquad
+ \log_2(17/12)+\tfrac{46}{51},\qquad
+ \log_2(49/32)+\tfrac{72}{49}.
+\]
+The first exceeds $2/3$ because $5^{15}>2^{34}$. For the next two use
+$\log_2x\ge20(x-1)/(7(x+1))$, which follows from
+$\ln x\ge2(x-1)/(x+1)$ and $\ln2<7/10$.
+
+For the top source the unnormalized mass at height $h$ is
+$z_h=(h/H)2^{H-h}$ for $1\le h\le H$, and zero at $0$. This is the unique
+solution of $z_h=z_{h-1}/4+z_{h+1}$, $z_0=0$, $z_H=1$. Therefore
+\[
+ Z_H=\frac{2^{H+1}-H-2}{H}\ge\frac{2^H}{H}.
+\]
+Its path entropy is at least $\log_2Z_H\ge H-\log_2H\ge2H/3-2/3$.
+The last inequality follows by checking $H=2,3,4,5$ and differentiating
+$H/3+2/3-\log_2H$ for $H\ge5$; the $H=5$ check is $5^3<2^7$.
+
+It remains to use a finite register without assuming finite entropy of
+the source vectors. A length-$k$ path from source $s$ ending at height $h$
+has weight $4^{-n_A(w)}=2^{s-h}2^{-k}$. Since
+$Z_s\ge2^s/(H+1)$, the normalized total probability at length $k$ is at most
+\[
+ (H+1)4^{-\lfloor k/\ell_{\rm blk}\rfloor}.
+\]
+Set $J_0=\lceil8\log_2(2H)\rceil$ and $N=\ell_{\rm blk}J_0$. Because
+$\log_2(1/p_s(w))\le2|w|+H+1$, the entropy carried by paths longer than
+$N$ is at most
+\[
+ (H+1)\ell_{\rm blk}4^{-J_0}
+ \left\{2\ell_{\rm blk}\left[\tfrac43(J_0+1)+\tfrac49\right]
+                  +\tfrac43(H+1)\right\}<1.
+\]
+For example, use $H+1\le3H/2$, $J_0+2\le10H$, and
+$4^{-J_0}\le(2H)^{-16}$ to bound this by
+$162H^6/(2H)^{16}<1$. If $q_s$ is the short-path probability, the entropy
+chain rule therefore gives
+\[
+ q_s H(p_s\mid |w|\le N)\ge S_s-2.
+\]
+
+On the left, map each short path space isometrically to its binary word
+in $F$, together with its source label, a short flag, and its source
+vector in $J$. Map each long path to one extra symbol $\perp$ in $F$ and
+retain its word and source information in $J$. Map the entire orthogonal complement isometrically into $|\perp\rangle_F\otimes J_{\rm extra}$, where $J_{\rm extra}$ is a separate copy of that complement inside $J$. This is a genuine local isometry on the full physical space, including any actual-state mass outside the path spaces. There are fewer than
+$2^{N+2}$ register symbols. Right path orthogonality makes the reduced
+left state block diagonal in the path and source labels. Its finite
+conditional entropy is exactly
+\[
+ H(F\mid J)_{\widehat y}
+ =\sum_{s\in\{0,H\}}\frac{Z_s\|\xi_s\|^2}{\|y\|^2}
+                   q_s H(p_s\mid |w|\le N),
+\]
+which proves the asserted bound.
+\end{proof}
+
+\begin{lemma}[Entropy comparison with the actual state]\label{rnd:lem:entropy-comparison}
+Under the preceding assumptions let $\Omega$ be normalized in the retained spaces or in larger physical local spaces containing them as orthogonal summands, with
+$\|\Omega-y\|\le\kappa\le1/2$. Then
+\[
+ S(\rho_L)\ge\frac23H-\frac{14}{3}-4\kappa(N+2).
+\]
+\end{lemma}
+
+\begin{proof}
+Normalization gives $\|\Omega-\widehat y\|\le2\kappa$, hence the trace
+distance of the reduced states after the same local isometry is at most
+$t=2\kappa$. The Alicki--Fannes continuity method \cite{AF} gives the following inequality in the finite-register form of \cite[Lemma 2]{Winter}, with the infinite-dimensional conditioning-system extension of \cite{Kuznetsova}; we include its proof. For a finite register $F$ of dimension $d$ and an arbitrary
+conditioning space $J$,
+\[
+ |H(F\mid J)_\rho-H(F\mid J)_\sigma|
+ \le 2t\log_2d+(1+t)h_2\!\left(\frac{t}{1+t}\right).
+\]
+For completeness, write the Jordan decomposition of $\rho-\sigma$ as
+$t(\tau_+-\tau_-)$ and use the two decompositions
+\[
+ \omega=\frac{\rho+t\tau_-}{1+t}
+       =\frac{\sigma+t\tau_+}{1+t}.
+\]
+Conditional entropy of a binary mixture exceeds the averaged conditional
+entropy by a quantity between zero and the binary mixing entropy.
+Subtracting the two decompositions and using
+$|H(F\mid J)|\le\log_2d$ proves the inequality. The argument, expressed
+using conditional mutual information with a classical binary flag,
+is valid for infinite-dimensional $J$.
+
+If $S(\rho_L)=\infty$ there is nothing to prove. Otherwise the isometry
+preserves $S(\rho_L)=S(FJ)$ and Araki--Lieb gives
+$S(J)\le S(FJ)+\log_2d<\infty$. Thus $S(\rho_L)\ge H(F\mid J)$.
+Use $\log_2d\le N+2$, $t\le2\kappa\le1$, and the bound
+$(1+t)h_2(t/(1+t))\le2$ to conclude.
+\end{proof}
+
+\subsection{Assembly and explicit logarithmic remainder}\label{rnd:sec:assemble}
+\begin{proof}[Proof of Theorem~\ref{rnd:thm:rounding}]
+It suffices to prove the left marginal bound. The assumptions are symmetric under exchange of the parties, with the two displayed $A$ mirrors exchanged up to sign.
+
+Put $L=\log_2(1/\delta)$ and
+\begin{equation}\label{rnd:eq:cutoff}
+ H=\left\lfloor\frac{L}{3}-8\log_2(L+2)-128\right\rfloor.
+\end{equation}
+First suppose $H\ge64$. Use the spectral-banding section with
+\[
+ N_{\rm band}=H+1,\qquad
+ u=40\,2^{(H+1)/2}\delta^{1/2}.
+\]
+The letter $u$ denotes the quantity called $\eta$ in that section; it is distinct from the eventual renewal comparison error. The choice \eqref{rnd:eq:cutoff} implies $u\le2^{-60}$, since
+\[
+ u\le40\sqrt2\,2^{-L/3}(L+2)^{-4}2^{-64}<2^{-58}(L+2)^{-4}
+\]
+and $H\ge64$ implies $L\ge192$. In particular all the banding smallness conditions hold.
+
+Write $\Phi^{\rm all}=M\Omega=\sum_{h=0}^{H+1}\Phi_h$ for the matched, unnormalized vector retaining the terminal band. Define only now
+\[
+ \Psi=\sum_{h=0}^{H}\Phi_h,\qquad q=\|\Psi\|,
+ \qquad \phi=\Psi/q=\sum_{h=0}^{H}\phi_h.
+\]
+The projection defining $\Psi$ is orthogonal. Equations (B5) and (B18) give
+\begin{equation}\label{rnd:eq:terminal}
+ 1-q^2\le (H+1)2^{-H}+2561u=:v.
+\end{equation}
+Our parameter choices give $v<1/4$, hence $q>1/2$, and
+\begin{equation}\label{rnd:eq:state-close}
+ \|\Omega-\phi\|\le2\sqrt v.
+\end{equation}
+This is a comparison of vectors, not a postselection operation. The original terminal local spaces are retained as orthogonal complements throughout: the actual vector still contains its terminal and unmatched components. Each later local isometry is extended to these complements, and every padding inclusion embeds the entire actual vector.
+
+Repair precisely the incoming rows with targets $1,\ldots,H-1$. Their edges are
+\[
+ A_h:h\longrightarrow h+1\ (0\le h\le H-2),\qquad
+ B_h:h\longrightarrow h-1\ (2\le h\le H).
+\]
+All source and target bands are genuine bands; the terminal band $H+1$ is absent from these rows. The estimates (B11) and the projected mirrors concern the individual vectors $\Phi_h$ and are unchanged by removing the terminal component. Their aggregate before normalization is less than $57u$. After dividing by $q>1/2$, the row-repair input therefore satisfies
+\begin{equation}\label{rnd:eq:row-input}
+ d\le128u\le1.
+\end{equation}
+The square root of the terminal mass has not entered $d$.
+
+For $D=2$, $M_{\rm op}=1$ and $\Lambda=2$, Lemma~\ref{rnd:lem:row-repair} gives
+\[
+ K_*=2(12+13\sqrt2),\qquad
+ L_*=2K_*+18=66+52\sqrt2<140.
+\]
+Let $a_h,b_h$ denote the repaired columns, and write
+\[
+ a=\sum_{h=0}^{H-2}a_h,\qquad
+ b=\sum_{h=2}^{H}b_h,\qquad
+ T=\tfrac12a_L\otimes a_R+b_L\otimes b_R.
+\]
+Every incoming interior row is unitary, and the aggregate repaired edge-mirror norm is at most
+\[
+ \sqrt{K_*}\sqrt d+3d\le\sqrt{L_*d}.
+\]
+The two sources are the \emph{whole} matched components $\phi_0$ and $\phi_H$.
+
+We spell out the renewal residual. On each interior level $h$ the exact left row identity gives
+\begin{align*}
+ \phi_h-\tfrac12(a_{h-1,L}\otimes a_{h-1,R})\phi_{h-1}
+             -(b_{h+1,L}\otimes b_{h+1,R})\phi_{h+1}
+ ={}&a_{h-1,L}\bigl(a_{h-1,L}^*\phi_h
+                         -\tfrac12a_{h-1,R}\phi_{h-1}\bigr)\\
+ &+b_{h+1,L}\bigl(b_{h+1,L}^*\phi_h
+                         -b_{h+1,R}\phi_{h+1}\bigr).
+\end{align*}
+The two summands have orthogonal left ranges, and different target levels are orthogonal. The bracketed terms are the already repaired mirrors in the opposite orientation, with an extra factor $1/2$ on $A$. Consequently
+\[
+ \|\phi-T\phi-\phi_0-\phi_H\|\le\sqrt{L_*d}.
+\]
+Set $y=(I-T)^{-1}(\phi_0+\phi_H)$. Lemma~\ref{rnd:lem:renewal} yields
+\begin{align}
+ \|\phi-y\|
+ &\le4H^2 2^{H/2}\sqrt{L_*d}\nonumber\\
+ &\le4096H^2 2^{3H/4}\delta^{1/4}.              \label{rnd:eq:renewal-error}
+\end{align}
+For the numerical inequality use $d\le128u$, $L_*<140$, and
+$u=40\sqrt2\,2^{H/2}\delta^{1/2}$; the resulting prefactor
+$4\sqrt{128\cdot140\cdot40\sqrt2}$ is less than $4096$.
+Combining \eqref{rnd:eq:state-close}--\eqref{rnd:eq:renewal-error}, and absorbing the $\sqrt u$ term, gives
+\begin{equation}\label{rnd:eq:total-error}
+ \|\Omega-y\|\le
+ 8192H^2 2^{3H/4}\delta^{1/4}
+ +2\sqrt{H+1}\,2^{-H/2}=:\zeta.
+\end{equation}
+For the absorption, $2\sqrt{2561u}$ has prefactor less than $762$ in front of $2^{H/4}\delta^{1/4}$, which is dominated by the unused $4096H^2 2^{3H/4}\delta^{1/4}$.
+
+Let
+\[
+ N_{\rm hist}=2H^2\lceil8\log_2(2H)\rceil.
+\]
+For integers $H\ge2$, $\log_2(2H)\le H$, so
+$N_{\rm hist}+2\le18H^3$.
+The first term of \eqref{rnd:eq:total-error}, after multiplication by $N_{\rm hist}+2$, is at most
+\[
+ 18\,2^{-83}\frac{H^5}{(L+2)^6}<\frac1{32},
+\]
+using \eqref{rnd:eq:cutoff} and $H\le L+2$. The second is bounded by
+\[
+ 36H^3\sqrt{H+1}\,2^{-H/2}<\frac1{32}\qquad(H\ge64).
+\]
+For the latter, the expression decreases for $H\ge64$: the logarithmic derivative is
+$3/H+1/[2(H+1)]-(\ln2)/2<0$. At $H=64$ its value is
+$36\sqrt{65}/2^{14}<1/32$. We have proved
+\[
+ \zeta(N_{\rm hist}+2)<1/16,\qquad \zeta<1/2.
+\]
+In particular $y\ne0$. Lemma~\ref{rnd:lem:entropy-comparison} gives
+\[
+ S(\rho_L)\ge\frac23H-\frac{14}{3}-\frac14
+ =\frac23H-\frac{59}{12}.
+\]
+Since the floor in \eqref{rnd:eq:cutoff} loses at most one,
+\[
+ S(\rho_L)\ge\frac29L-\frac{16}{3}\log_2(L+2)-91.
+\]
+This is stronger than \eqref{rnd:eq:main} in the range just considered.
+
+If the integer in \eqref{rnd:eq:cutoff} is less than $64$, then
+$L/3-8\log_2(L+2)-128<64$. The right side of \eqref{rnd:eq:main} equals
+\[
+ \frac23\left(\frac L3-8\log_2(L+2)-128\right)-\frac{344}{3}<0.
+\]
+It is therefore bounded by $S(\rho_L)\ge0$. Finally, if the defects vanish, the hypotheses hold for every positive $\delta$, and the right side of \eqref{rnd:eq:main} tends to infinity as $\delta\downarrow0$.
+\end{proof}
+\subsection{A full exact extension, with a simpler top boundary}\label{rnd:sec:exact-completion}
+We now construct an exact extension. After the top masses have been bounded, arbitrary unitary completion has the required squared-error order. The top-source convention of Section~\ref{rnd:sec:renewal} remains in force.
+
+\begin{lemma}[Exact extension from repaired finite rows]\label{rnd:lem:exact-extension}
+Let $H\ge2$. On each party let $\mathcal H^s=\bigoplus_{h=0}^H\mathcal H_h^s$, and let $\Phi=\sum_{h=0}^H\Phi_h$ be a unit matched vector, with $\mu_h=\|\Phi_h\|^2$. Suppose the finite graph with edges
+\[
+ A_h:h\longrightarrow h+1\quad(0\le h\le H-2),\qquad
+ B_h:h\longrightarrow h-1\quad(2\le h\le H)
+\]
+has contractions satisfying the hypotheses of Lemma~\ref{rnd:lem:row-repair} with aggregate defect $d\le1$ and mirror weights $2$ for $A_h$ and $1$ for $B_h$. Thus precisely the rows with targets $1,\dots,H-1$ are repaired. Put
+\[
+ K_*=2(12+13\sqrt2),\qquad L_*=2K_*+18.
+\]
+After local zero-state padding there are contractions $\widehat A^s,\widehat B^s$, a positive contraction $\widehat C^s$, and projections $\widehat P^s,\widehat Q^s$ obeying every local Catalan relation exactly as operator identities. Their five squared mirror defects on $\Phi$ have sum at most
+\[
+ \Delta_\Phi\le L_*d+\mu_{H-1}+7\mu_H.
+ \tag{EX}
+\]
+If $\Omega$ is any unit vector in the same original local spaces, possibly including additional local orthogonal summands, with $\|\Omega-\Phi\|\le\eta$, the same operators, on the unchanged embedded $\Omega$, satisfy
+\[
+ \Delta_\Omega\le2L_*d+2\mu_{H-1}+14\mu_H+27\eta^2.
+ \tag{EX'}
+\]
+In particular no postselection or replacement of the physical state is made in this extension.
+\end{lemma}
+
+\begin{proof}
+Apply Lemma~\ref{rnd:lem:row-repair} with $D=2,M_{\rm op}=1,\Lambda=2$. The displayed $K_*$ is its constant. Each interior incoming row
+\[
+ [\widehat A_{h-1}^s,\widehat B_{h+1}^s]:
+ \widetilde{\mathcal H}_{h-1}^s\oplus\widetilde{\mathcal H}_{h+1}^s
+ \longrightarrow\widetilde{\mathcal H}_h^s,
+ \qquad 1\le h\le H-1,
+\]
+is unitary. Make all padded vertex spaces have the same infinite Hilbert dimension $\kappa$. Add vertex spaces $\widetilde{\mathcal H}_h^s\cong\ell^2(\kappa)$ for every $h>H$. If the actual vector has additional original local orthogonal summands, embed those isometrically into level $H+1$, choosing $\kappa$ large enough also for them. All remaining new summands have zero actual-state component. Every level above $H$ has zero comparison-state component in $\Phi$. For every $h\ge H$, choose an arbitrary unitary row with the same displayed domain and codomain. Each column is assigned exactly once, by its target row, so these choices are compatible. Define the global operators by their columns and put
+\[
+ \widehat P^s=E_0^s,\quad \widehat Q^s=E_1^s,\quad
+ \widehat C^s=\sum_{h\ge0}2^{-h}E_h^s,
+\]
+where $E_h^s$ projects onto the enlarged level-$h$ space. Set $\widehat B^s=0$ on levels $0,1$. Orthogonality of the vertex spaces and unitarity of every incoming row give
+\[
+ (\widehat A^s)^*\widehat A^s=I,\quad
+ \widehat A^s(\widehat A^s)^*+\widehat B^s(\widehat B^s)^*=I-E_0^s,
+ \quad (\widehat B^s)^*\widehat B^s=I-E_0^s-E_1^s.
+\]
+The counter relations and $\widehat P\widehat Q=0$ follow directly from the source and target levels. All operator identities hold on the entire enlarged space, not merely on the state.
+
+The sum of squared repaired edge-mirror errors in the finite graph is at most
+\[
+ (\sqrt{K_*}\sqrt d+3d)^2\le(2K_*+18)d=L_*d.
+\]
+For an $A$ edge the corresponding original mirror has an additional factor $1/2$, so this bound also bounds its contribution to the five original mirrors. Different edge indices belong to orthogonal pairs of local levels, hence their squared contributions add without cross terms.
+
+Only three new edges can contribute on $\Phi$: $A_{H-1}$, $A_H$, and $B_{H+1}$. The two oriented original mirrors at $A_{H-1}$ contribute at most $\mu_{H-1}+4\mu_H$, by
+\[
+ \|\tfrac12\widehat A_{H-1}^s\Phi_{H-1}-(\widehat A_{H-1}^{\bar s})^*\Phi_H\|^2
+ \le\tfrac12\mu_{H-1}+2\mu_H.
+\]
+The two mirrors at $A_H$ contribute $\mu_H/2$, and those at $B_{H+1}$ contribute at most $2\mu_H$. Their sum is at most $\mu_{H-1}+7\mu_H$. The $C$ mirror vanishes exactly on the matched vector. This proves (EX).
+
+Let $M_1,\ldots,M_5$ be the five global mirror operators. Their norms are at most $3/2,3/2,2,2,1$, respectively; the final bound uses that the two counter operators commute and have spectrum in $[0,1]$. Consequently $\sum_j\|M_j\|^2\le27/2$. Minkowski followed by $(x+y)^2\le2x^2+2y^2$ gives
+\[
+ \sum_j\|M_j\Omega\|^2
+ \le2\sum_j\|M_j\Phi\|^2+27\|\Omega-\Phi\|^2,
+\]
+proving (EX'). The only maps applied to $\Omega$ are inclusions into local zero-state summands. They preserve its marginal spectra and act as identity on the purifying environment.
+\end{proof}
+
+\begin{remark}[Bounding the next-to-top mass]
+If a discarded top contraction $X^s:\mathcal H_{H-1}^s\to\mathcal H_H^s$ satisfies
+\[
+ \|((X^L)^*X^L-I)\Phi_{H-1}\|\le e,\qquad
+ \|X^L\Phi_{H-1}-2(X^R)^*\Phi_H\|\le e,\qquad0\le e\le1,
+\]
+then
+\[
+ \mu_{H-1}\le4\mu_H+6e.
+\]
+Indeed $\mu_{H-1}\le\|X^L\Phi_{H-1}\|^2+e\le(2\sqrt{\mu_H}+e)^2+e\le4\mu_H+6e$. Thus (EX') becomes
+\[
+ \Delta_\Omega\le2L_*d+22\mu_H+12e+27\eta^2.
+\]
+The completion alters the top-boundary edges after their state mass has been bounded. It preserves the desired order $\Delta=O(d+\mu_H+e+\eta^2)$ and therefore the same leading exponent.
+\end{remark}
+
+\begin{corollary}[Quantitative exact extension]
+With the spectral bands and notation of the assembly, for $H\ge64$ and $u=40\,2^{(H+1)/2}\delta^{1/2}\le2^{-60}$, the original state admits a local zero-state embedding and exact Catalan operators whose five squared mirror errors have sum
+\[
+ \Delta\le 2^{21}\bigl(u+H2^{-H}\bigr).
+\]
+The embedded state's marginal spectra are unchanged.
+\end{corollary}
+\begin{proof}
+For the normalized comparison vector $\phi$, put $\mu_h=\|\phi_h\|^2$ and use $d\le128u$ and $\|\Omega-\phi\|^2\le4v$ in \textup{(EX')}. The cumulative-tail bound and $q^{-2}\le4$ give
+\[
+ \mu_{H-1}+\mu_H\le4\bigl((H-1)2^{-(H-2)}+2560u\bigr)
+ \le16H2^{-H}+10240u.
+\]
+Thus \textup{(EX')} is at most
+\[
+ 2(140)(128)u+14(16H2^{-H}+10240u)
+       +108((H+1)2^{-H}+2561u).
+\]
+For $H\ge64$, this is bounded by $2^{21}(u+H2^{-H})$. All inclusions are local and the state is unchanged.
+\end{proof}
+
+\subsection{Compatibility with the decoder and the game corollary}\label{rnd:sec:decoder}
+Theorem~\ref{dec:thm:main} asserts exactly the domain restrictions and residual list \eqref{rnd:eq:local-input}--\eqref{rnd:eq:mirror-input}, with $\delta=K\eps^{1/4}$ on
+\[
+ \widehat\Omega=(V_L\otimes V_R\otimes I_{\mathcal E})\Omega.
+\]
+The local maps are isometries and hence preserve all nonzero marginal eigenvalues and hence entropy; dilations and padding may add zero eigenvalues.
+
+\paragraph{The nine sectors.}
+The final decoded operators have the form $I_9\otimes A$, and similarly for $B,C,P,Q$. Tensoring with $I_9$ preserves every norm restriction and polynomial relation. The decoder's comparison vector has coefficients
+\[
+ (1,\sqrt2,\sqrt2,\sqrt2,\sqrt2,2,2,2,2),
+ \qquad\sum_jc_j^2=25.
+\]
+Its extension lemma bounds each residual on the \emph{actual} transformed state by five times its root-vector error plus the residual operator norm times the comparison-vector error. Thus the amplification is part of the decoder constant $K$; no corner is postselected here, and no factor $1/25$ or $1/75$ multiplies the entropy coefficient. The scalar $M_3$ frame remains in the root multiplicity space, which the rounding theorem treats without a dimension bound.
+
+\paragraph{Mixed states.}
+The theorem uses the actual purification throughout. The environment is not absorbed into a physical party or acted upon. The normalized matched vector and the renewal vector are proof comparisons only. The final entropy estimate concerns the original marginal $\rho_L$, because the finite-register isometry preserves its nonzero spectrum. It follows equally for $\rho_R$ by symmetry. This proves compatibility with the decoder's mixed-state convention without an entropy-continuity assumption on the comparison junk state.
+
+\begin{corollary}[Game and Bell lower bounds; proved from the decoding input]\label{rnd:cor:game}
+Use Theorem~\ref{dec:thm:main}, with constants $K_{\mathcal B}$ and $K_G$, for the fixed Bell functional and game. Put $K_X'=\max\{1,K_X\}$ for $X\in\{\mathcal B,G\}$. If $0<\eps\le1$ and $L_\eps=\log_2(1/\eps)$, then
+\[
+ E_X(\eps)\ge\frac1{18}L_\eps
+ -\frac{16}{3}\log_2(L_\eps+2)
+ -200-\frac29\log_2 K_X'.
+\]
+Here $E_X$ is the infimum of the left marginal entropy over normal spatial strategies of loss at most $\eps$. The same statement holds for the right marginal entropy. With the height-and-size cutoff construction, this gives
+\[
+ E_{\mathcal B}(\eps),\ E_G(\eps)=\Theta(\log(1/\eps)).
+\]
+This is an order-of-growth law; it does not identify a sharp leading constant.
+\end{corollary}
+\begin{proof}
+For $K_X'\eps^{1/4}\le1$, substitute
+$L=\tfrac14L_\eps-\log_2 K_X'$ in Theorem~\ref{rnd:thm:rounding} and use $L+2\le L_\eps+2$. Isometries preserve the original marginal entropy. If $K_X'\eps^{1/4}>1$, the displayed lower bound is negative, so nonnegativity of entropy suffices. Taking infima proves the lower bound. The height-and-size construction of Section~\ref{sec:v11-height} gives
+\[
+ E_X(\eps)\le\frac23\log_2(1/\eps)
+ -\frac23\log_2\log_2(1/\eps)+O_X(1),
+\]
+which proves the last assertion. The decoder is proved in Appendix~\ref{sec:decoding}; the cutoff crossing identities are independently checked in the finite verification bundle.
+\end{proof}
+
+\subsection{Dependency order and boundary conventions}\label{rnd:sec:ledger}
+\begin{center}
+\small
+\begin{tabular}{p{37mm}p{107mm}}
+\toprule
+Stage & Estimates already available before any use\\
+\midrule
+$P,Q$ mirrors & Original $A,A^*,B,B^*$ mirrors and local source/range equations; all products expanded with bounded left prefixes.\\
+Generator-image spectra & Original $C$ covariance; adjoint images first use the original opposite-party adjoint mirror.\\
+Common partition & Only commuting pairs $(C_s,kC_{\bar s})$, on the specified generator-image vectors.\\
+Localization and rows & The fixed partition, matched vector including its terminal band, $P,Q$ mirrors, and aggregate local defects.\\
+Unused bottom block & The edge $B_1:1\to0$ is absent from both renewal and row repair; its deletion costs nothing.\\
+Unitary row repair & Both oriented edge mirrors are proved before the range residual is moved past an edge in the cross-Gram estimate.\\
+Tail truncation & Per-component interior-row data have already been bounded without terminal mass. Truncation is solely a comparison.\\
+Renewal & Exact repaired incoming rows and their repaired mirrors. Neither boundary has an incoming retained edge.\\
+Entropy comparison & Orthogonal source-generated path spaces, exponential path-length tail, finite register, and conditional-entropy continuity.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Entropy comparison in unbounded dimension.}
+A small vector distance between $\Omega$ and a matched or renewed vector does not control their full marginal entropy in unbounded dimension. Replacing the last section by such an assertion would invalidate the theorem. The proof instead builds a register of explicitly bounded dimension, retains the entire remaining system as the conditioner, and proves the conditional-entropy continuity inequality with no bound on that system's dimension. The inequality $S(FJ)\ge H(F\mid J)$ then concerns the actual state.
+
+The top-source convention is essential. If the incoming edge $A_{H-1}$ were retained while the whole height-$H$ component remained a source, variable-length path spaces could overlap, and the orthogonality proof and stated $Z_H$ would not apply. We remove that edge from $T$ and use exactly
+\[
+ T=\tfrac12a_L\otimes a_R+b_L\otimes b_R,\quad
+ a=\sum_{h=0}^{H-2}a_h,\quad b=\sum_{h=2}^{H}b_h,
+\]
+with source $\phi_0+\phi_H$ throughout. The optional exact extension has a different purpose and never changes this renewal operator.
+
+The order of row localization is also essential. If one first discards the terminal band and then transfers every local residual by the global norm distance to the truncated vector, the square root of the tail enters the row input and destroys the claimed rate. Equations (B8)--(B12) are proved with the terminal band present, and only individual retained components are subsequently normalized. This order is essential.
+
+\subsection{What is proved about possible improvements}\label{rnd:sec:limits}
+\paragraph{Proved exponent accounting.}
+If the vector residual before the renewal inverse has the form
+$C H^m2^{bH}\eps^a$, then the inverse contributes $2^{H/2}$ and polynomial factors. Taking
+\[
+ H=\frac{a}{b+1/2}\log_2(1/\eps)-O(\log\log(1/\eps))
+\]
+gives the leading entropy coefficient
+\[
+ \frac{4a}{3(1+2b)}.
+\]
+Here spectral banding gives $u\asymp2^{H/2}\delta^{1/2}$, row repair gives vector error $O(\sqrt u)$, and thus $a=\gamma/4$, $b=1/4$ when $\delta=K\eps^\gamma$. The coefficient is $2\gamma/9$, yielding $1/18$ at $\gamma=1/4$ and, conditionally, $1/9$ at $\gamma=1/2$.
+
+\paragraph{Heuristic improvement direction; no improved leading coefficient claimed.}
+The square root in the direct row-repair estimate is the explicit rate loss after banding. A stronger estimate for these specific Catalan rows could improve the coefficient. For example, if their direct repair error were $O(d)$ with the same hypotheses and uniform constants, the same bookkeeping would give coefficient $\gamma/3$ at game level, or $1/3$ in $\log_2(1/\delta)$. This is only a sufficient hypothetical strengthening; the present proof does not establish it, either for Catalan rows or for arbitrary graphs. Logarithmic remainders and additive constants can be reduced by tuning the cutoff without changing the leading coefficient.
+
+\paragraph{Decoder ceiling.}
+Proposition~\ref{dec:prop:ceiling} proves $\gamma\le1/2$ for actual-state mixed-strategy decoding. Attainment of this ceiling is open. A squared-mirror defect $\Delta$ must be distinguished from a vector defect $\delta=\sqrt\Delta$ when comparing leading constants.
+
+\subsection{The single finite-strip lemma supporting the rounding}\label{rnd:sec:central}
+\begin{lemma}[State-weighted Catalan strip]\label{rnd:lem:central}
+Fix $H\ge2$. Let a unit vector $\phi=\sum_{h=0}^H\phi_h$ be matched in vertex spaces on the two parties, with arbitrary environment. Let contractions $x_{A,h}:h\to h+1$ for $0\le h\le H-2$ and $x_{B,h}:h\to h-1$ for $2\le h\le H$ be given on both parties. For every edge $e$, put $\lambda_e=2$ for $A$ and $\lambda_e=1$ for $B$, and set
+\[
+ g_e^s=(x_e^s)^*x_e^s,\quad
+ r_v^s=\sum_{t(e)=v}x_e^s(x_e^s)^*-I_v,\quad
+ m_e^s=x_e^s\phi_{s(e)}-\lambda_e(x_e^{\bar s})^*\phi_{t(e)}.
+\]
+Suppose, summing over $s=L,R$, all retained edges, and interior targets $1\le v\le H-1$, that
+\[
+ \sum_{s,e}\|(g_e^s-I)\phi_{s(e)}\|^2
+ +\sum_{s,v}\|r_v^s\phi_v\|^2
+ +\sum_{s,e}\|m_e^s\|^2\le d^2\le1.
+\]
+Let $\Omega$ be any actual unit vector in those spaces or in larger local spaces containing them as orthogonal summands, and put
+\[
+ K_*=2(12+13\sqrt2),\quad
+ \tau=\|\Omega-\phi\|+
+ 4H^2 2^{H/2}\bigl(\sqrt{K_*}\sqrt d+3d\bigr),
+\]
+\[
+ N=2H^2\lceil8\log_2(2H)\rceil.
+\]
+If $\tau\le1/2$, then
+\[
+ \boxed{\displaystyle
+ S(\rho_L^\Omega)\ge\frac23H-\frac{14}{3}-4\tau(N+2).}
+\]
+The statement is uniform in dimensions and multiplicities. Its proof uses local zero-state extensions and local isometries only; no operation acts on the environment or postselects the actual state.
+\end{lemma}
+\begin{proof}
+Lemma~\ref{rnd:lem:row-repair} gives exact incoming rows and aggregate mirror error at most $\sqrt{K_*}\sqrt d+3d$. The orthogonal-row expansion displayed in Section~\ref{rnd:sec:assemble} gives the renewal residual with this same bound. Lemma~\ref{rnd:lem:renewal} constructs the two-source renewal vector at distance at most $\tau$ from $\Omega$. Lemma~\ref{rnd:lem:entropy-comparison} proves the displayed entropy inequality. Each of these lemmas was proved independently before the assembly, so this reduction is not circular.
+\end{proof}
+

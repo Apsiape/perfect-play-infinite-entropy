@@ -1,0 +1,14 @@
+{
+  "version": "1.1.0",
+  "status": "PASS",
+  "pages": 65,
+  "clean_build_directory": "build/clean-0g2psbel",
+  "commands": "pdflatex -no-shell-escape; BibTeX; three pdflatex -no-shell-escape reference passes",
+  "warnings": 0,
+  "bibtex_warnings": 0,
+  "overfull_boxes": 0,
+  "underfull_boxes": 0,
+  "undefined_references": 0,
+  "undefined_citations": 0,
+  "pdf_sha256": "31c63c0bee9b58a328a8d96c06360a590e1ff29f3f2e09605e5112cde43ebfe6"
+}

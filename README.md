@@ -1,14 +1,14 @@
 # Perfect play in a finite nonlocal game requires infinite entanglement entropy
 
-Seth Douglas and Nidhal Mghirbi. Version 1.0.0, 2 November 2026. DOI: [10.5281/zenodo.23902656](https://doi.org/10.5281/zenodo.23902656).
+Seth Douglas and Nidhal Mghirbi. Version 1.1.0, 3 November 2026. Prior v1.0.0 DOI: [10.5281/zenodo.23902656](https://doi.org/10.5281/zenodo.23902656).
 
-**This is a preprint. It has not been peer reviewed.**
+The minimum marginal entropy at loss epsilon is Theta(log(1/epsilon)) for all normal spatial strategies. The full decoding and rounding proofs are in the paper. The radial inverse-fifth-root bound remains valid and optimal within scalar spectral filters.
 
 ## Abstract
 
 How much infinity can a finite nonlocal game require? We construct a finite two-player game with classical questions, classical answers and a Boolean winning rule. It has a perfect strategy on a tensor product of separable Hilbert spaces. Every perfect normal spatial strategy contains, under local isometries, the same pure entangled state with infinite entropy. For mixed strategies, both marginal entropies are infinite and the pure state remains a tensor factor. Thus infinite dimension can be strengthened to infinite entropy without losing spatial attainment.
 
-The proof first constructs a rational Bell functional that extracts a state whose Schmidt multiplicities are Catalan numbers. A finite compiler then turns rational linear identities among synchronized projections into winning conditions, using a finite maximally entangled ancilla. Near the optimum, the minimum marginal entropy diverges. Explicit finite-dimensional strategies give an upper bound of order the inverse fifth root of the loss. This exponent is optimal among scalar spectral filters of the canonical state, with the canonical measurements fixed; an unrestricted matching lower bound remains open.
+The proof constructs a rational Bell functional whose perfect strategies contain a state with Catalan Schmidt multiplicities, and compiles it into Boolean tests. For either construction, the minimum marginal entropy at loss $\varepsilon$ is $\Theta(\log(1/\varepsilon))$. The lower bound holds for every normal spatial strategy, including mixed states and POVMs. It follows from polynomial decoding on the actual state and a finite-strip entropy estimate. Height and size cutoffs give the matching upper order. The sharp leading constant remains open.
 
 ## Contents and reproduction
 

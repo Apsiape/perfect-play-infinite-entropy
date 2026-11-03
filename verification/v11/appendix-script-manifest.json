@@ -1,0 +1,38 @@
+{
+  "version": "1.1.0",
+  "description": "Released appendix verification scripts; copied unchanged into each execution directory.",
+  "files": [
+    {
+      "path": "decoding/magic_rigidity_check.py",
+      "sha256": "5ddb25fca097559ccaa68909875c20fb055124c7d59b72ce2a3a76c721ce7dde"
+    },
+    {
+      "path": "decoding/repair_inequalities_check.py",
+      "sha256": "ef4f2ed788399bf726772cf45e18a52d34b06fb02996fbee8ee2bfbb238dd7a4"
+    },
+    {
+      "path": "decoding/sign_mirror_check.py",
+      "sha256": "d134f717329d0d594cd61e53e8d26eb6fbcc54b7f2bf6d8e3cdfa92346dfe4e5"
+    },
+    {
+      "path": "decoding/sign_mirror_pure.py",
+      "sha256": "b14eb08a287f33910016b4511411742e2a79dbe58ef5d7cfc69e9d227bc96461"
+    },
+    {
+      "path": "rounding/check1_paths.py",
+      "sha256": "f6bb9fdfd3107fd6c94b7bcf2937edec3c36be0a0d775b29679716366f89cc75"
+    },
+    {
+      "path": "rounding/check1b_exact.py",
+      "sha256": "14d223357d3671a03cbd28a8a550dcd4fc21fed93342b3b7872cdfb62fd01c9e"
+    },
+    {
+      "path": "rounding/check2_banding.py",
+      "sha256": "7f1af6ca89d01fa4a80d418b47cf521f986e6bf30127c888008b42a51a4f656c"
+    },
+    {
+      "path": "rounding/check3_arith.py",
+      "sha256": "0ae917fbc1899dd924accaa0df88da8de9cbca8fcc40855958a1b17416351224"
+    }
+  ]
+}

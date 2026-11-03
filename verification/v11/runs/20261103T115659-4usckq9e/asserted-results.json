@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Alice and Bob symbolic bridge identities; numerical residuals <1e-11",
+    "Commuting partition; expected noncommuting failure; recurrence; compiler identities",
+    "Exact-local-model renewal and recurrence checks",
+    "1872 Julia stress samples; small-error hostile cases retained; numerical ratios below 11",
+    "Exact Bell/game constants; 392 active symbols; repaired penalty range; arbitrary phases",
+    "Height formulas H=1..100, with independent exact transfer solves H<=20",
+    "Explicit n0=7,N=18 witness: rational data exact; entropy gain >0.00012 bits; second DP residual <1e-35"
+  ],
+  "scope": "Finite identities, exact formulas and numerical stress tests only; not a proof of unrestricted lower bounds."
+}

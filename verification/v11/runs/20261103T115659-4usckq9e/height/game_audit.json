@@ -1,0 +1,8 @@
+{
+  "Q": 169460,
+  "variables_with_16_joint_contexts_and_32_oriented_bindings": 5590,
+  "rows_checked": 4529,
+  "slot_contexts_checked": 69375,
+  "retained_old_events_checked": 6916,
+  "nonzero_rule_classes_have_disjoint_ordered_question_pairs": true
+}

@@ -1,0 +1,190 @@
+[
+  {
+    "group": "log",
+    "script": "sec1_exact.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 5.587,
+    "stdout": "log/sec1_exact.stdout.txt"
+  },
+  {
+    "group": "log",
+    "script": "sec2_identities.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 1.442,
+    "stdout": "log/sec2_identities.stdout.txt"
+  },
+  {
+    "group": "log",
+    "script": "inverse_bound.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 0.779,
+    "stdout": "log/inverse_bound.stdout.txt"
+  },
+  {
+    "group": "log",
+    "script": "refined_upper.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 0.312,
+    "stdout": "log/refined_upper.stdout.txt"
+  },
+  {
+    "group": "log",
+    "script": "s4_witness.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 0.314,
+    "stdout": "log/s4_witness.stdout.txt"
+  },
+  {
+    "group": "log",
+    "script": "smoothing.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 0.684,
+    "stdout": "log/smoothing.stdout.txt"
+  },
+  {
+    "group": "height",
+    "script": "independent.py",
+    "args": [
+      "atoms"
+    ],
+    "exit_code": 0,
+    "seconds": 1.64,
+    "stdout": "height/independent_atoms.stdout.txt"
+  },
+  {
+    "group": "height",
+    "script": "independent.py",
+    "args": [
+      "constants"
+    ],
+    "exit_code": 0,
+    "seconds": 11.701,
+    "stdout": "height/independent_constants.stdout.txt"
+  },
+  {
+    "group": "height",
+    "script": "phase_and_entropy.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 3.497,
+    "stdout": "height/phase_and_entropy.stdout.txt"
+  },
+  {
+    "group": "height",
+    "script": "audit_game.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 4.663,
+    "stdout": "height/audit_game.stdout.txt"
+  },
+  {
+    "group": "robust",
+    "script": "bridge_identities.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 1.321,
+    "stdout": "robust/bridge_identities.stdout.txt"
+  },
+  {
+    "group": "robust",
+    "script": "julia_mirror_stress.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 19.602,
+    "stdout": "robust/julia_mirror_stress.stdout.txt"
+  },
+  {
+    "group": "robust",
+    "script": "julia_mirror_stress2.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 9.915,
+    "stdout": "robust/julia_mirror_stress2.stdout.txt"
+  },
+  {
+    "group": "robust",
+    "script": "julia_mirror_stress3.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 8.04,
+    "stdout": "robust/julia_mirror_stress3.stdout.txt"
+  },
+  {
+    "group": "robust",
+    "script": "rounding_and_compiler_checks.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 27.333,
+    "stdout": "robust/rounding_and_compiler_checks.stdout.txt"
+  },
+  {
+    "group": "decoding",
+    "script": "magic_rigidity_check.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 312.48,
+    "stdout": "decoding/magic_rigidity_check.stdout.txt"
+  },
+  {
+    "group": "decoding",
+    "script": "sign_mirror_check.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 0.353,
+    "stdout": "decoding/sign_mirror_check.stdout.txt"
+  },
+  {
+    "group": "decoding",
+    "script": "sign_mirror_pure.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 0.3,
+    "stdout": "decoding/sign_mirror_pure.stdout.txt"
+  },
+  {
+    "group": "decoding",
+    "script": "repair_inequalities_check.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 0.516,
+    "stdout": "decoding/repair_inequalities_check.stdout.txt"
+  },
+  {
+    "group": "rounding",
+    "script": "check1_paths.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 97.05,
+    "stdout": "rounding/check1_paths.stdout.txt"
+  },
+  {
+    "group": "rounding",
+    "script": "check1b_exact.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 31.025,
+    "stdout": "rounding/check1b_exact.stdout.txt"
+  },
+  {
+    "group": "rounding",
+    "script": "check2_banding.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 267.004,
+    "stdout": "rounding/check2_banding.stdout.txt"
+  },
+  {
+    "group": "rounding",
+    "script": "check3_arith.py",
+    "args": [],
+    "exit_code": 0,
+    "seconds": 1.974,
+    "stdout": "rounding/check3_arith.stdout.txt"
+  }
+]
