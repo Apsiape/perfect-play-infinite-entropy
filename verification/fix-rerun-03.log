@@ -1,0 +1,57 @@
+{
+ "A_all_match": true,
+ "A_count": 41,
+ "B_rows": [
+  4529,
+  4529
+ ],
+ "B_mismatches": 0,
+ "B_word_problems": 0,
+ "B_scales": {
+  "1": 4529
+ }
+}
+A axis_X_1 match, scale 1
+A axis_Z_1 match, scale 1
+A axis_X_2 match, scale 1
+A axis_Z_2 match, scale 1
+A cover match, scale 1
+A unitary_outside_0_bplus match, scale 1
+A unitary_outside_0_bminus match, scale 1
+A unitary_outside_0_p match, scale 1
+A unitary_outside_0_q match, scale 1
+A unitary_outside_0_c match, scale 1
+A unitary_outside_1_bplus match, scale 1
+A unitary_outside_1_bminus match, scale 1
+A unitary_outside_1_p match, scale 1
+A unitary_outside_1_q match, scale 1
+A unitary_outside_1_c match, scale 1
+A unitary_outside_2_bplus match, scale 1
+A unitary_outside_2_bminus match, scale 1
+A unitary_outside_2_p match, scale 1
+A unitary_outside_2_q match, scale 1
+A unitary_outside_2_c match, scale 1
+A reflection_p match, scale 1
+A reflection_q match, scale 1
+A bridge_block_1_bplus match, scale 1
+A bridge_block_1_bminus match, scale 1
+A bridge_block_1_p match, scale 1
+A bridge_block_1_q match, scale 1
+A bridge_block_1_c match, scale 1
+A bridge_block_2_bplus match, scale 1
+A bridge_block_2_bminus match, scale 1
+A bridge_block_2_p match, scale 1
+A bridge_block_2_q match, scale 1
+A bridge_block_2_c match, scale 1
+A a_support match, scale 1
+A R_isometry match, scale 1
+A R_range match, scale 1
+A R_B_initial match, scale 1
+A PQ match, scale 1
+A R_CP match, scale 1
+A R_CQ match, scale 1
+A R_CA match, scale 1
+A R_CB match, scale 1
+A _extra_inputs_in_core []
+A _count 41
+A _all_match True

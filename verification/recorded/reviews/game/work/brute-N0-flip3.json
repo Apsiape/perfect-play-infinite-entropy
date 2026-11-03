@@ -1,0 +1,32 @@
+{
+ "offdiag_G12_0": {
+  "flip": [
+   3
+  ],
+  "noncommuting_variable_pairs": 3,
+  "pvm_sum": true,
+  "idempotent": true,
+  "hermitian": true,
+  "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+  "commutes_h": true,
+  "graph_forbidden_pairs": 480,
+  "graph_loss": "1/8",
+  "rowzero_loss": "1/1024",
+  "D_sync_loss": "0"
+ },
+ "R_isometry": {
+  "flip": [
+   3
+  ],
+  "noncommuting_variable_pairs": 0,
+  "pvm_sum": true,
+  "idempotent": true,
+  "hermitian": true,
+  "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+  "commutes_h": true,
+  "graph_forbidden_pairs": 480,
+  "graph_loss": "1/8",
+  "rowzero_loss": "1/1024",
+  "D_sync_loss": "0"
+ }
+}

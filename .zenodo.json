@@ -1,0 +1,42 @@
+{
+  "title": "Perfect play in a finite nonlocal game requires infinite entanglement entropy",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "version": "1.0.0",
+  "publication_date": "2026-11-02",
+  "creators": [
+    {
+      "name": "Douglas, Seth",
+      "orcid": "0009-0007-4708-3252"
+    },
+    {
+      "name": "Mghirbi, Nidhal",
+      "orcid": "0009-0005-6534-1118"
+    }
+  ],
+  "description": "How much infinity can a finite nonlocal game require? We construct a finite two-player game with classical questions, classical answers and a Boolean winning rule. It has a perfect strategy on a tensor product of separable Hilbert spaces. Every perfect normal spatial strategy contains, under local isometries, the same pure entangled state with infinite entropy. For mixed strategies, both marginal entropies are infinite and the pure state remains a tensor factor. Thus infinite dimension can be strengthened to infinite entropy without losing spatial attainment.\n\nThe proof first constructs a rational Bell functional that extracts a state whose Schmidt multiplicities are Catalan numbers. A finite compiler then turns rational linear identities among synchronized projections into winning conditions, using a finite maximally entangled ancilla. Near the optimum, the minimum marginal entropy diverges. Explicit finite-dimensional strategies give an upper bound of order the inverse fifth root of the loss. This exponent is optimal among scalar spectral filters of the canonical state, with the canonical measurements fixed; an unrestricted matching lower bound remains open.",
+  "keywords": [
+    "nonlocal games",
+    "entanglement entropy",
+    "infinite-dimensional quantum strategies",
+    "quantum self-testing",
+    "Bell inequalities",
+    "Catalan numbers"
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "notes": "Preprint. It has not been peer reviewed. Text: CC BY 4.0. Scripts: MIT or Apache 2.0.",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23772890",
+      "scheme": "doi",
+      "relation": "references"
+    },
+    {
+      "identifier": "10.5281/zenodo.23787124",
+      "scheme": "doi",
+      "relation": "references"
+    }
+  ]
+}

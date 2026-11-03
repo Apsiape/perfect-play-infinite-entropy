@@ -1,0 +1,257 @@
+[
+  {
+    "index": 0,
+    "directory": "analytic",
+    "arguments": [
+      "independent_d.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.16,
+    "log": "release-rerun-00.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 1,
+    "directory": "analytic",
+    "arguments": [
+      "checks.py"
+    ],
+    "exit_code": 0,
+    "seconds": 4.3,
+    "log": "release-rerun-01.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 2,
+    "directory": "reviews/bell/work",
+    "arguments": [
+      "sos_check.py"
+    ],
+    "exit_code": 0,
+    "seconds": 0.12,
+    "log": "release-rerun-02.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 3,
+    "directory": "reviews/bell/work",
+    "arguments": [
+      "audit_core.py",
+      "../unz5/core.json"
+    ],
+    "exit_code": 0,
+    "seconds": 0.31,
+    "log": "release-rerun-03.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 4,
+    "directory": "reviews/bell/work",
+    "arguments": [
+      "reconstruct_table.py",
+      "../unz5",
+      "reconstruct_small.json"
+    ],
+    "exit_code": 0,
+    "seconds": 1.64,
+    "log": "release-rerun-04.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 5,
+    "directory": "out5",
+    "arguments": [
+      "evaluate.py",
+      "small"
+    ],
+    "exit_code": 0,
+    "seconds": 43.36,
+    "log": "release-rerun-05.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 6,
+    "directory": "reviews/bell/work",
+    "arguments": [
+      "my_evaluate.py",
+      "../unz5",
+      "0",
+      "1",
+      "2"
+    ],
+    "exit_code": 0,
+    "seconds": 185.08,
+    "log": "release-rerun-06.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 7,
+    "directory": "out6",
+    "arguments": [
+      "check_game.py",
+      "0",
+      "1",
+      "2"
+    ],
+    "exit_code": 0,
+    "seconds": 61.58,
+    "log": "release-rerun-07.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 8,
+    "directory": "out6",
+    "arguments": [
+      "check_verifier.py"
+    ],
+    "exit_code": 0,
+    "seconds": 20.1,
+    "log": "release-rerun-08.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 9,
+    "directory": "reviews/game/work",
+    "arguments": [
+      "audit_interface.py"
+    ],
+    "exit_code": 0,
+    "seconds": 6.71,
+    "log": "release-rerun-09.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 10,
+    "directory": "reviews/game/work",
+    "arguments": [
+      "test_spec.py"
+    ],
+    "exit_code": 0,
+    "seconds": 3.73,
+    "log": "release-rerun-10.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 11,
+    "directory": "reviews/game/work",
+    "arguments": [
+      "old_eval.py",
+      "0"
+    ],
+    "exit_code": 0,
+    "seconds": 9.74,
+    "log": "release-rerun-11.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 12,
+    "directory": "reviews/game/work",
+    "arguments": [
+      "new_eval.py",
+      "0"
+    ],
+    "exit_code": 0,
+    "seconds": 464.76,
+    "log": "release-rerun-12.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 13,
+    "directory": "reviews/game/work",
+    "arguments": [
+      "old_eval.py",
+      "1"
+    ],
+    "exit_code": 0,
+    "seconds": 17.25,
+    "log": "release-rerun-13.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 14,
+    "directory": "reviews/game/work",
+    "arguments": [
+      "new_eval.py",
+      "1"
+    ],
+    "exit_code": 0,
+    "seconds": 446.62,
+    "log": "release-rerun-14.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 15,
+    "directory": "reviews/game/work",
+    "arguments": [
+      "old_eval.py",
+      "2"
+    ],
+    "exit_code": 0,
+    "seconds": 67.41,
+    "log": "release-rerun-15.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 16,
+    "directory": "reviews/game/work",
+    "arguments": [
+      "new_eval.py",
+      "2"
+    ],
+    "exit_code": 0,
+    "seconds": 438.5,
+    "log": "release-rerun-16.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 17,
+    "directory": "reviews/game/work",
+    "arguments": [
+      "brute.py",
+      "0",
+      "R_isometry"
+    ],
+    "exit_code": 0,
+    "seconds": 17.43,
+    "log": "release-rerun-17.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 18,
+    "directory": "reviews/game/work",
+    "arguments": [
+      "brute.py",
+      "0",
+      "--flip=3",
+      "offdiag_G12_0"
+    ],
+    "exit_code": 0,
+    "seconds": 17.76,
+    "log": "release-rerun-18.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 19,
+    "directory": "reviews/theoremD/work",
+    "arguments": [
+      "eval_taper.py",
+      "1"
+    ],
+    "exit_code": 0,
+    "seconds": 21.46,
+    "log": "release-rerun-19.log",
+    "result_comparison_passed": true
+  },
+  {
+    "index": 20,
+    "directory": "reviews/theoremD/work",
+    "arguments": [
+      "eval_taper.py",
+      "2"
+    ],
+    "exit_code": 0,
+    "seconds": 57.05,
+    "log": "release-rerun-20.log",
+    "result_comparison_passed": true
+  }
+]

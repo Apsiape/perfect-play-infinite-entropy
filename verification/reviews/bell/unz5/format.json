@@ -1,0 +1,32 @@
+{
+  "format": "single-rational-bell-functional-v1",
+  "variant": "small",
+  "score": "maximize sum coefficient * p(a,b|x,y); bound 0",
+  "record_format": "little endian <uint64 key,int64 numerator>; coefficient=numerator/2048; key=(event_A<<32)|event_B; event=16*question_id+answer_index",
+  "denominator": 2048,
+  "nonzero_coefficients": 73769,
+  "coefficient_bytes": 1180304,
+  "coefficient_sha256": "7549723983b64088f158821b256d40fdb378b0c7315eaab7039c30e2193a08fb",
+  "questions_per_party": {
+    "A": 5625,
+    "B": 5625
+  },
+  "answer_histograms": {
+    "A": {
+      "1": 1,
+      "2": 5592,
+      "6": 10,
+      "12": 22
+    },
+    "B": {
+      "1": 1,
+      "2": 5592,
+      "6": 10,
+      "12": 22
+    }
+  },
+  "projection_rows": 4529,
+  "word_labels": 358,
+  "refined_questions": 44,
+  "normalization": "All losses have unit weight; one additional synchrony mismatch per binary symbol. F_alpha uses the original displayed rational row without rescaling."
+}

@@ -1,0 +1,49 @@
+projections done 6.43252158164978 {'hermitian': 5592, 'idempotent': 5592, 'commutes_h': 5592}
+rows done 8.795191287994385 ['R_isometry']
+gadgets done 14.028268098831177 {4300: ('R_isometry', 16, '32/375')}
+fms built 14.669803142547607 {'povm_sum_identity': 64, 'effects': 648, 'hermitian': 648, 'idempotent': 648}
+{
+ "N": 1,
+ "old_local_dimension": 54,
+ "NW": 2,
+ "Z_N": "5/4",
+ "polynomial_relations_failing": [
+  "R_isometry"
+ ],
+ "binary_projection_checks": {
+  "hermitian": 5592,
+  "idempotent": 5592,
+  "commutes_h": 5592
+ },
+ "binary_projections": 5592,
+ "rows_checked": 4529,
+ "rows_failing": [
+  "R_isometry"
+ ],
+ "R_isometry_boundary_matches": true,
+ "R_isometry_trhS2": "2/375",
+ "t_N": "1/5",
+ "2t_N/75": "2/375",
+ "row_gadgets_with_nonzero_Sigma": {
+  "4300": [
+   "R_isometry",
+   16,
+   "32/375"
+  ]
+ },
+ "fms_refined_checks": {
+  "povm_sum_identity": 64,
+  "effects": 648,
+  "hermitian": 648,
+  "idempotent": 648
+ },
+ "fms_refined_questions": {
+  "A": 32,
+  "B": 32
+ },
+ "old_forbidden_events_evaluated": 6916,
+ "old_forbidden_events_nonzero": 0,
+ "old_forbidden_nonzero_sample": [],
+ "normalisation_check_fms_pair": "1",
+ "seconds": 15.864990472793579
+}

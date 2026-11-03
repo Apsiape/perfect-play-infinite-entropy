@@ -1,0 +1,77 @@
+{
+  "out5/evaluate.py": {
+    "sha256": "24464738fc322a50450899d29ae4ad03beba11a344a67b2dc6de29e330f6bf7a",
+    "byte_identical": true,
+    "origin": "Construction implementation",
+    "source_sha256": "24464738fc322a50450899d29ae4ad03beba11a344a67b2dc6de29e330f6bf7a"
+  },
+  "out6/check_game.py": {
+    "sha256": "d7ba0c9dc765a23505bf462d002715afd0a964d31380e5943d7038e19b876344",
+    "byte_identical": true,
+    "origin": "Construction implementation",
+    "source_sha256": "d7ba0c9dc765a23505bf462d002715afd0a964d31380e5943d7038e19b876344"
+  },
+  "out6/check_verifier.py": {
+    "sha256": "7e74add379ffc282a696c09fdc5f2fdfe64fb640a4ba895b6faa9dc5c070eacc",
+    "byte_identical": true,
+    "origin": "Construction implementation",
+    "source_sha256": "7e74add379ffc282a696c09fdc5f2fdfe64fb640a4ba895b6faa9dc5c070eacc"
+  },
+  "out6/build_game.py": {
+    "sha256": "06c71e2c8f47bc23669f3b4d6f92eca4030d2a044ad3b93fb1283e4076704dc4",
+    "byte_identical": true,
+    "origin": "Construction implementation",
+    "source_sha256": "06c71e2c8f47bc23669f3b4d6f92eca4030d2a044ad3b93fb1283e4076704dc4"
+  },
+  "reviews/bell/work/my_evaluate.py": {
+    "sha256": "a1d8e757947f947c420f4b0b1965a6cc8092f5f5dfced4595c906acc7780c070",
+    "byte_identical": false,
+    "origin": "Independent review implementation",
+    "source_sha256": "4d9e20f9d1c3d434bd31093862e676c11a09e11af86988a80175f6df8221d3f1",
+    "adaptation": "Bob question-list variable renamed to Q_bob; initial-projection comment clarified."
+  },
+  "reviews/game/work/old_eval.py": {
+    "sha256": "abc65b9cffbdbb30defa6f1ca3093847e9199db8da0105448fb38b7f9b2164af",
+    "byte_identical": true,
+    "origin": "Independent review implementation",
+    "source_sha256": "abc65b9cffbdbb30defa6f1ca3093847e9199db8da0105448fb38b7f9b2164af"
+  },
+  "reviews/game/work/new_eval.py": {
+    "sha256": "78a438969f89ccf9c6c00a6acefac3c23eca0f925da2b2a63f9c08167c2021b4",
+    "byte_identical": true,
+    "origin": "Independent review implementation",
+    "source_sha256": "78a438969f89ccf9c6c00a6acefac3c23eca0f925da2b2a63f9c08167c2021b4"
+  },
+  "analytic/checks.py": {
+    "sha256": "1d9b4532b23d07389a805cbb79b227b6161d52753bddad9ee9dbc7c037394ab8",
+    "byte_identical": true,
+    "origin": "Construction implementation",
+    "source_sha256": "1d9b4532b23d07389a805cbb79b227b6161d52753bddad9ee9dbc7c037394ab8"
+  },
+  "analytic/independent_d.py": {
+    "origin": "fresh independent same-family review, not copied from handoff",
+    "sha256": "f948ada2b9b9dbd30de36a4fcb2b3a7f2fa35f862ba45f7573055ae81c305535",
+    "source_sha256": "f948ada2b9b9dbd30de36a4fcb2b3a7f2fa35f862ba45f7573055ae81c305535"
+  },
+  "reviews/theoremD/work/eval_taper.py": {
+    "source_sha256": "09cdc940d69c8af75646ea579329ffb176a8ab43382c3489df57bc701914b985",
+    "sha256": "82deb6a5030c7c115b1876dab7ad729362268e5ef47acb7cfe7c0e0e4f2563ea",
+    "byte_identical": false,
+    "adaptation": "Archive path made bundle-relative; no computational changes.",
+    "origin": "Independent review implementation"
+  },
+  "reviews/theoremD/work/out5_evaluate_copy.py": {
+    "source_sha256": "24464738fc322a50450899d29ae4ad03beba11a344a67b2dc6de29e330f6bf7a",
+    "sha256": "24464738fc322a50450899d29ae4ad03beba11a344a67b2dc6de29e330f6bf7a",
+    "byte_identical": true,
+    "adaptation": "None; verbatim measurement builder.",
+    "origin": "Independent review implementation"
+  },
+  "reviews/bell/work/reconstruct_table.py": {
+    "origin": "Independent review implementation",
+    "source_sha256": "6c051c338028ec4154851ebdab5ea16d49a968ac1ce68cc511a6bbe88158f481",
+    "sha256": "f85d62d45a05cebffeb21113d6fb100a163dd55e5eebc3830678c9cce29ef8c4",
+    "byte_identical": false,
+    "adaptation": "Bob question-list variable renamed to Q_bob; no computational changes."
+  }
+}

@@ -1,0 +1,36 @@
+\section{Reproducibility}\label{sec:repro}
+The accompanying \texttt{verification/} directory contains both archives, two independent Bell evaluators, two game evaluators, the literal verifier checks, scalar near-optimality checks, recorded outputs and fresh execution logs. Its README gives commands, dependencies, provenance and limitations. \texttt{SHA256SUMS} identifies every bundled file apart from itself. Paths in public files are relative.
+
+The Bell producer-side evaluator reads every literal coefficient and uses exact arithmetic in $\mathbb Q(i,\sqrt2,\sqrt3)$. The review evaluator reconstructs the measurements independently in $\mathbb Q(\zeta_{24})$, using a different field representation. Both give
+\[
+ B_0=-2/75,\qquad B_1=-2/375,\qquad B_2=-2/825.
+\]
+Each finds only the isometry row failing, the predicted full boundary matrix, and zero direct FMS/refinement loss.
+
+The producer-side game checker reuses the producer-side Bell evaluator's matrix kernel. It is independent of the game producer, but its old measurements are not a second independent implementation. The game review supplies that implementation: it independently rebuilds every old projection, FMS/refined measurement and forbidden event, then reconstructs the new gadgets from predicate data. Both game evaluators give the exact losses
+\begin{center}
+\begin{tabular}{rrl}
+\toprule
+$N$&Local dimension&$1-\omega_N$\\
+\midrule
+0&$6\,912$&$1/275680239360000$\\
+1&$13\,824$&$1/1378401196800000$\\
+2&$27\,648$&$1/3032482632960000$\\
+\bottomrule
+\end{tabular}
+\end{center}
+These agree with \eqref{eq:gamecutoff}. The public verifier is checked on $10\,076\,128$ column-graph and spectator answer cases, together with the complete pair-rule index. Independent brute-force and changed-column controls accompany the reduced game evaluator. The checks evaluate rule classes and exact structural zeros, not a dense enumeration of every answer pair in the full question square.
+
+The scalar checker audits the literal direct-event classes, performs thirty-two exact rank-one contractions, checks rational taper losses, and evaluates positive scalar sums through $N=10^6$. A second engine for \eqref{eq:filteredloss} contracts all $73\,769$ literal coefficients on filtered states at word cutoffs $M=1,2$, including the tapers and mixed-sign rational filters. It reuses the cross-checked Bell measurement builder; its state construction, contraction, aggregation and comparison are separate. The scripts and recorded and fresh outputs are bundled with hashes. Floating-point asymptotic illustrations do not replace the analytic limits or provide an unrestricted entropy lower rate.
+
+The functional archive SHA-256 is
+\begin{quote}\small\ttfamily
+bb5c0bf32e9a7175bef73d9b156a5c6f3\\
+e3a0487462c90a9138e82f809927aaf.
+\end{quote}
+The game archive SHA-256 is
+\begin{quote}\small\ttfamily
+f29237d3920afe1b4ff9a3749b6893416\\
+9d8109bbaa0fa19dbbcc34f334824d2.
+\end{quote}
+The line breaks above split each hash after thirty-two hexadecimal characters. Neither archive was regenerated for packaging. No proof-assistant certification is claimed.

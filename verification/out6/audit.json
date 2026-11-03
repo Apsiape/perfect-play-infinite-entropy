@@ -1,0 +1,11 @@
+{
+  "all_serialized_bindings_checked": 459138,
+  "all_column_graph_tests_checked": 69375,
+  "all_rational_row_expansions_checked": 4529,
+  "scalar_pair_contexts_checked": 333,
+  "spectator_masks_checked": true,
+  "character_orthogonality_exact": true,
+  "old_forbidden_events_checked": 6916,
+  "questions": 169460,
+  "max_answers": 256
+}

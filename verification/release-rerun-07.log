@@ -1,0 +1,64 @@
+{"all_serialized_bindings_checked": 459138, "all_column_graph_tests_checked": 69375, "all_rational_row_expansions_checked": 4529, "scalar_pair_contexts_checked": 333, "spectator_masks_checked": true, "character_orthogonality_exact": true, "old_forbidden_events_checked": 6916, "questions": 169460, "max_answers": 256}
+model words 0 358 distinct 134
+effect classes 0 4256 checking projectivity
+{
+  "N": 0,
+  "old_local_dimension": 27,
+  "local_dimension": 6912,
+  "top_shell_mass": "1",
+  "failed_rows": [
+    "R_isometry"
+  ],
+  "old_forbidden_probabilities_exactly_zero": 6916,
+  "old_binary_mismatch_events_exactly_zero": 11184,
+  "rows_contracted": 4529,
+  "unnormalized_event_loss": "1/9600",
+  "uniform_game_loss": "1/275680239360000",
+  "uniform_game_score": "275680239359999/275680239360000",
+  "row_ancilla_dimension": 16,
+  "row_denominator": 2,
+  "peak_working_set_bytes": 674103296,
+  "elapsed_seconds": 5.439143899828196
+}
+model words 1 358 distinct 250
+effect classes 1 7580 checking projectivity
+{
+  "N": 1,
+  "old_local_dimension": 54,
+  "local_dimension": 13824,
+  "top_shell_mass": "1/5",
+  "failed_rows": [
+    "R_isometry"
+  ],
+  "old_forbidden_probabilities_exactly_zero": 6916,
+  "old_binary_mismatch_events_exactly_zero": 11184,
+  "rows_contracted": 4529,
+  "unnormalized_event_loss": "1/48000",
+  "uniform_game_loss": "1/1378401196800000",
+  "uniform_game_score": "1378401196799999/1378401196800000",
+  "row_ancilla_dimension": 16,
+  "row_denominator": 2,
+  "peak_working_set_bytes": 674103296,
+  "elapsed_seconds": 15.01364709995687
+}
+model words 2 358 distinct 281
+effect classes 2 9448 checking projectivity
+{
+  "N": 2,
+  "old_local_dimension": 108,
+  "local_dimension": 27648,
+  "top_shell_mass": "1/11",
+  "failed_rows": [
+    "R_isometry"
+  ],
+  "old_forbidden_probabilities_exactly_zero": 6916,
+  "old_binary_mismatch_events_exactly_zero": 11184,
+  "rows_contracted": 4529,
+  "unnormalized_event_loss": "1/105600",
+  "uniform_game_loss": "1/3032482632960000",
+  "uniform_game_score": "3032482632959999/3032482632960000",
+  "row_ancilla_dimension": 16,
+  "row_denominator": 2,
+  "peak_working_set_bytes": 674103296,
+  "elapsed_seconds": 34.01877849991433
+}

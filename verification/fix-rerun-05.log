@@ -1,0 +1,96 @@
+model words 0 358 distinct 134
+effect classes 0 4256 checking projectivity
+aggregated literal table small 0 73769 effect pairs 27744
+{
+  "variant": "small",
+  "N": 0,
+  "tree_dimension": 1,
+  "local_dimension": 27,
+  "records_evaluated": 73769,
+  "coefficient_sha256": "7549723983b64088f158821b256d40fdb378b0c7315eaab7039c30e2193a08fb",
+  "effect_classes": 4256,
+  "aggregated_effect_pairs": 27744,
+  "top_shell_mass": "1",
+  "exact_score": "-2/75",
+  "predicted_boundary_score": "-2/75",
+  "irrational_components": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "all_PVMs_exact": true,
+  "external_event_penalty": "0",
+  "only_failed_polynomial_row": [
+    "R_isometry"
+  ],
+  "peak_working_set_bytes": 62631936,
+  "elapsed_seconds": 2.700744300032966
+}
+model words 1 358 distinct 250
+effect classes 1 7580 checking projectivity
+aggregated literal table small 1 73769 effect pairs 48181
+{
+  "variant": "small",
+  "N": 1,
+  "tree_dimension": 2,
+  "local_dimension": 54,
+  "records_evaluated": 73769,
+  "coefficient_sha256": "7549723983b64088f158821b256d40fdb378b0c7315eaab7039c30e2193a08fb",
+  "effect_classes": 7580,
+  "aggregated_effect_pairs": 48181,
+  "top_shell_mass": "1/5",
+  "exact_score": "-2/375",
+  "predicted_boundary_score": "-2/375",
+  "irrational_components": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "all_PVMs_exact": true,
+  "external_event_penalty": "0",
+  "only_failed_polynomial_row": [
+    "R_isometry"
+  ],
+  "peak_working_set_bytes": 90628096,
+  "elapsed_seconds": 12.533709399984218
+}
+model words 2 358 distinct 281
+effect classes 2 9448 checking projectivity
+aggregated literal table small 2 73769 effect pairs 57311
+{
+  "variant": "small",
+  "N": 2,
+  "tree_dimension": 4,
+  "local_dimension": 108,
+  "records_evaluated": 73769,
+  "coefficient_sha256": "7549723983b64088f158821b256d40fdb378b0c7315eaab7039c30e2193a08fb",
+  "effect_classes": 9448,
+  "aggregated_effect_pairs": 57311,
+  "top_shell_mass": "1/11",
+  "exact_score": "-2/825",
+  "predicted_boundary_score": "-2/825",
+  "irrational_components": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "all_PVMs_exact": true,
+  "external_event_penalty": "0",
+  "only_failed_polynomial_row": [
+    "R_isometry"
+  ],
+  "peak_working_set_bytes": 135208960,
+  "elapsed_seconds": 30.545354899950325
+}

@@ -1,0 +1,90 @@
+\section{The normal flagged magic-square bridge}\label{sec:bridge}
+The magic-square relations originate with Mermin and Peres \cite{Mermin,Peres}. We use Man\v{c}inska's flagged magic-square (FMS) geometry \cite{Mancinska}. We spell out the predicate and prove its normal extension because the published finite-dimensional statement does not suffice here. All indices start at zero.
+
+\subsection{Questions, calibration and exact bindings}
+Alice has $R_0,R_1,R_2,T_0,T_1$ and Bob has $C_0,C_1,C_2,U_0,U_1$. A row question has a flag answer $f$ or a triple of product $+1$. A column question has $f$ or a triple of product $+1,+1,-1$ according to its column. The magic square is
+\begin{equation}\label{eq:square}
+\begin{pmatrix}XI&IX&XX\\ IZ&ZI&ZZ\\ XZ&ZX&YY\end{pmatrix}.
+\end{equation}
+Here the displayed matrices describe a canonical realization; the predicate only checks the corresponding signs. Select column-zero outcomes $c_0=(+++)$, $c_1=(+--)$ and row-zero outcomes $r_0=(+++)$, $r_1=(+--)$. Question $T_x$ has answers $+,-$ and the three column-zero triples other than $c_x$; $U_y$ analogously retains all row-zero triples other than $r_y$.
+
+On $R_i,C_j$, reject flag/nonflag mismatch and otherwise check the intersecting cell; two flags are accepted. On $T_x,C_0$, a sign is allowed only against $f$ or $c_x$; a retained triple must equal the opposite triple. On $R_0,U_y$ use the analogous rule with $r_y$. On $T_x,U_y$, reject two signs $a,b\in\{+1,-1\}$ unless $ab=(-1)^{xy}$; all pairs with a nonsign answer are accepted. Other question pairs are accepted. For a conditional instance add an inactive answer $\perp$, accept two inactive answers, and reject exactly one inactive answer. Bind each noninactive event to its synchronized active projection and all row/column flags to the synchronized flag.
+
+Let $M$ be the nonflag magic support. The four column-zero projections $m_{00},m_{01},m_{10},m_{11}$ correspond respectively to $(+++),(+--),(-+-),(--+)$. On Alice, $m_{00}$ is read from the retained $(+++)$ answer of $T_1$ and the other three from $T_0$. On Bob all four come from $C_0$. Each of these chosen occurrences is matched to its opposite synchronized binary question. The positive nonflag $ZI$ event is read from Alice's $R_1$ component 1 and Bob's $C_1$ component 1. The positive $IX$ event comes from Alice's $R_0$ component 1 and Bob's $C_1$ component 0. Put
+\[
+ x=I-2M+2E_{ZI,+},\quad z=I-2M+2E_{IX,+},\quad
+ t_{ab}=x^az^bm_{00}.
+\]
+These are reflections extended by identity outside $M$, and $t_{ab}^*t_{ab}=m_{00}$, $t_{ab}t_{ab}^*=m_{ab}$.
+
+\subsection{Normal bridge theorem}
+\Needspace{12\baselineskip}
+\begin{lemma}\label{lem:bridge}
+A perfect normal conditional FMS strategy has on its active supports the decomposition
+\[
+ \HH_{\rm active}=\HH_f\oplus(\mathbb C^4\otimes\mathcal J),
+ \qquad h=h_f\oplus(I_4\otimes h_m).
+\]
+The calibrated transports $w_A,w_B$ from the flag to the selected $c_0$ corner satisfy $w^*w=f$, $ww^*=m_{00}$ and $hw=2wh$. On a purification their matched components satisfy
+\begin{equation}\label{eq:bridgevector}
+ \Omega_{c_0c_0}=\sqrt2(w_A\otimes w_B\otimes I_E)\Omega_{ff}.
+\end{equation}
+The other three magic directions obey the transported versions of this equation.
+\end{lemma}
+\begin{proof}
+First apply Section~\ref{sec:support} to the activity, flags and checked cells. They reduce the original state supports and are sharp there. On the compressed nonflag space each compressed fine effect lies below its assigned sharp cell marginals. Thus it is their joint spectral projection. The projective-compression fact then makes the original fine effects reduce the support. Alice's row relations and Bob's column relations transfer through the dense coefficient range, in reversed product order; within a context the products commute.
+
+For completeness, write $a=M_{00},b=M_{01},c=M_{10},d=M_{11}$ for the four corner reflections of the square. Context relations give
+\[
+ [a,b]=[c,d]=[a,c]=[b,d]=0,\qquad
+ (ac)(bd)=-(ab)(cd).
+\]
+Cancel the outside $a,d$ to obtain $cb=-bc$. Commutation of $ac$ and $bd$ then gives $da=-ad$. The pairs $(a,d)$ and $(b,c)$ are anticommuting Pauli pairs commuting across pairs. Each pair exchanges its two eigenspaces unitarily. Hence they generate $M_4\otimes I_{\mathcal J}$. Marginal commutation gives the stated density form. The synchronized magic units identify its coefficient block as $I_4\otimes D$, with $D$ positive, injective and dense-range. Write the flag coefficient block as $F$ with the same properties.
+
+Calibration makes Alice's sign support $S_x^A=f+\Pi_{c_x}$ and Bob's $S_y^B=f+\Pi_{r_y}$. The selected directions have overlap $\langle c_x,r_y\rangle=\sigma_{xy}/\sqrt2$, where $\sigma_{xy}=(-1)^{xy}$. Their compressed coefficient operator is
+\[
+ W_{xy}=\operatorname{diag}(F,\sigma_{xy}D/\sqrt2).
+\]
+For compressed sign effects $E_a,B_b$, a forbidden pair gives
+$E_a^{1/2}W_{xy}(B_b^T)^{1/2}=0$, and therefore $E_aW_{xy}B_b^T=0$. Summing the two complete binary effects gives
+\[
+ E_aW_{xy}=W_{xy}B_{\sigma_{xy}a}^T
+            =E_aW_{xy}B_{\sigma_{xy}a}^T.
+\]
+Injectivity and dense range imply $B_b^2=B_b$ and $E_a^2=E_a$ on the sign supports. Their zero extensions give projective compressions; thus the original sign effects reduce the state supports. Their differences $X_x,Y_y$ obey
+\begin{equation}\label{eq:sign}
+ X_xW_{xy}=\sigma_{xy}W_{xy}Y_y^T.
+\end{equation}
+Identify the magic directions using the actual matrix units. Set $H=\operatorname{diag}(F,D/\sqrt2)$ and $J=\operatorname{diag}(I,-I)$. The three positive equations give a common $X,Y$ with $XH=HY^T$. The remaining one gives $XJH=-JHY^T$, hence $XJ=-JX$. Thus
+\[
+ X=\begin{pmatrix}0&\beta^*\\\beta&0\end{pmatrix},\qquad
+ \beta:\HH_f\longrightarrow\mathcal J\ \hbox{unitary}.
+\]
+Self-adjointness and $XH=HY^T$ imply $[X,H^2]=0$. Its off-diagonal block gives $h_m\beta=2\beta h_f$. The corresponding corner transport has the required ratio.
+
+The actual Alice extraction is $w_A=\Pi_{c_0}X_0f$. Bob's $r_0$ projection is the retained $(+++)$ answer of $U_1$, equivalently the sign support of $U_0$ minus its flag. His extraction to the same $c_0$ direction is
+\[
+ w_B=\sqrt2\Pi_{c_0}\Pi_{r_0}Y_0f.
+\]
+The coefficient $\sqrt2$ occurs in extraction, not in the predicate. To see the phase in \eqref{eq:bridgevector} directly, put $\Omega'=(S_0^A\otimes S_0^B)\Omega$. The zero sign events give $X_0\Omega'=Y_0\Omega'$. Project onto $c_0\otimes f$. The left side is $(w_A\otimes I)\Omega_{ff}$; the right side is
+\[
+ 2^{-1/2}(I\otimes fY_0|r_0\rangle\langle c_0|)
+       \Omega_{c_0c_0}.
+\]
+Apply Bob's flag-to-$r_0$ block and then $|c_0\rangle\langle r_0|=\sqrt2\Pi_{c_0}\Pi_{r_0}$. This gives \eqref{eq:bridgevector}.
+
+For a mixed state, first apply the pure-vector calculation on the cut $A\mid BE$. The synchronized opposite effects reduce the Schmidt support, and the sign effects do so after their compressed sharpness is proved. Thus every compressed product used above is the restriction of an original Bob-only product tensored with $I_E$. The resulting Alice identities hold on her original marginal support. Repeat on $B\mid AE$ for Bob's identities. The component calculation then gives Eq.~\eqref{eq:bridgevector} on the original purification, using $w_A\otimes w_B\otimes I_E$. Tracing $E$ preserves the claimed pure factor.
+\end{proof}
+
+\Needspace{16\baselineskip}
+\subsection{A shared question fixes transported labels}
+\begin{lemma}[Label refinement]\label{lem:label}
+Retain the original FMS questions. For a synchronized projection $Z$, add Alice's $T_0[Z]$ with answers $(a,z)$. Ignore $z$ against the unchanged $U_0,U_1,C_0$ and use the original predicates; match $z$ to Bob's binary $Z$. Add the symmetric $U_0[Z]$ against unchanged $T_0,T_1,R_0$. Also retain activity matching. In every perfect normal strategy the coarse signs equal the original signs and commute with $Z$ on their state supports. Conversely commuting labels give these refinements. Distinct labels require no mutual commutation.
+\end{lemma}
+\begin{proof}
+Write $P_A$ for the state support and $R_A$ for the sign support. For an arbitrary new fine effect $Q_{a,z}$ first form $q_{a,z}=P_AQ_{a,z}P_A$. Calibration identifies its compressed retained effects and the coarse sign sum $R_A$. Let $X'$ be its compressed sign difference. The unchanged opposite sign gives $X'W_{0y}=W_{0y}Y_y^T$, with exactly the same dense-range $W_{0y}$ as for $X_0$. Hence $X'=X_0$. Its coarse effects are $(R_A\pm X_0)/2$, hence projections. Projective compression now makes the original coarse effects reduce $P_A$.
+
+Label matching gives $P_A(\sum_aQ_{a,1})P_A=Z_A$. Positivity gives $0\leq q_{a,1}\leq Z_A$ and $0\leq q_{a,0}\leq I-Z_A$. Thus the compressed coarse effects commute with $Z_A$, and so does $X_0$. The symmetric argument applies on Bob. Conversely use $E_aZ,E_a(I-Z)$ when the original coarse effects commute with $Z$. A separate duplicated question for each label always returns the same original sign. This proves the final assertion.
+\end{proof}
+
+If a label is block diagonal with flag block $Z_f$ and identical magic blocks $Z_m$, the commutator says $\beta Z_f=Z_m\beta$. In particular, for a graph projection of a block unitary it certifies transport of that same unitary by the calibrated $w$. It does not supply a fresh bridge with an independent gauge.

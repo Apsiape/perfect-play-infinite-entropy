@@ -1,0 +1,50 @@
+\section{Introduction}\label{sec:intro}
+How ``inherently infinite'' can a finite quantum correlation be? Coladangelo and Stark posed this question and exhibited a finite correlation that requires infinite dimension \cite{CS}. Dimension does not measure the amount of entanglement: a state can have infinitely many nonzero Schmidt coefficients and finite entropy. The game $\Gamma$ gives this distinction in a perfect-winning setting: it has a perfect spatial strategy, no finite-dimensional perfect strategy, and a finite-entropy perfect strategy \cite[Theorems 1.1 and 13.1]{Gamma}. A different rung is provided by Douglas and Mghirbi: a finite $0/1$ game has perfect normal commuting play in type III and none when either ambient algebra is semifinite \cite[Theorem 1.1]{ReadType}. We ask whether a finite game can force infinite entropy at every perfect spatial strategy.
+
+We answer this question affirmatively. The optimum is attained by a normal state on a tensor product. The conclusion therefore concerns an actual spatial strategy, rather than a limit of strategies or a commuting-operator optimum outside the tensor-product model. The game has a perfect normal spatial strategy, and perfect play extracts the same pure state with infinite entropy from every such strategy, including mixed states. The rational-row compiler gives a separate way to convert synchronized additive identities into Boolean tests.
+
+A \emph{normal spatial strategy} consists of local POVMs on Hilbert spaces $\HH_A,\HH_B$ and a positive trace-class operator $\rho$ of trace one on $\HH_A\otimes\HH_B$. Its probabilities are
+\[
+p(a,b\mid x,y)=\Tr\bigl(\rho(E_{a|x}\otimes F_{b|y})\bigr).
+\]
+We use entropy in bits, $S(h)=-\Tr(h\log_2h)$, allowing the value $+\infty$. For pure bipartite states this is entanglement entropy. For mixed states our conclusion is infinite marginal entropy together with a pure entangled tensor factor.
+
+Let $\WW$ be the words generated from the empty word by appending $A$ at any height and $B$ only at height at least two. The letters respectively raise and lower the height by one. Write $n(w)$ for the number of $A$ letters. There are $\Cat_n=(n+1)^{-1}\binom{2n}{n}$ words of size $n$. Define
+\begin{equation}\label{eq:psicat}
+ \psicat=\frac1{\sqrt2}\sum_{w\in\WW}2^{-n(w)}|w,w\rangle.
+\end{equation}
+The Catalan generating function normalizes this vector. Its reduced density has infinite entropy.
+
+\Needspace{17\baselineskip}
+\begin{theoremC}\label{thm:C}
+The explicitly specified game $G$ has $169\,460$ questions per party, at most $256$ answers per question, the uniform distribution on all question pairs, and a $\{0,1\}$ winning predicate. It has a perfect normal spatial strategy on $\ell^2\otimes\ell^2$. For every perfect normal spatial strategy there are local isometries $V_A,V_B$ and a normal state $\tau$ such that
+\begin{equation}\label{eq:factor}
+(V_A\otimes V_B)\rho(V_A\otimes V_B)^*
+ =|\psicat\rangle\langle\psicat|\otimes\tau.
+\end{equation}
+Both original marginal entropies are infinite. No finite-dimensional strategy is perfect, and finite-dimensional winning probabilities approach one.
+\end{theoremC}
+
+Here and below local isometries are asserted on the state supports and extended to unused space by enlarging the target auxiliary spaces. The finite specification of $G$ is in \texttt{game.zip}. Sections~\ref{sec:projection}--\ref{sec:compiler} also give finite rules generating every constraint. This is a large construction; the size is an explicit bound, not an optimality claim.
+
+The core is the following Bell equality. The functional uses the ordinary conditional probabilities without an additional question-distribution normalization.
+\Needspace{12\baselineskip}
+\begin{theoremA}\label{thm:A}
+The explicitly tabulated rational Bell functional $B$ has $5\,625$ questions per party, at most $12$ answers, and $73\,769$ nonzero coefficients with common denominator $2048$. For every normal spatial strategy, $B\leq0$. A normal spatial strategy attains zero, and every such equality state satisfies \eqref{eq:factor}. No finite-dimensional strategy attains zero; finite-dimensional values approach zero. If $H$ is a lower-bounded local Hamiltonian with $\Tr e^{-\beta H}<\infty$ for some $\beta>0$, its mean energy in either equality marginal is infinite.
+\end{theoremA}
+
+Section~\ref{sec:compiler} states and proves Theorem~B, which compiles finitely many rational linear identities among synchronized projections into Boolean tests. Section~\ref{sec:near} proves Theorem~D: the minimum entropy tends to infinity near the optimum, and explicit strategies give an upper power of $1/5$. The matching lower power is proved only for scalar spectral filters of the canonical strategy.
+
+\subsection{Prior work and scope of the contribution}
+Coladangelo--Stark concern infinite-dimensional spatial correlations \cite{CS}. The game $\Gamma$ supplies an earlier Boolean game with spatial perfection, no finite-dimensional perfect strategy, and finite-entropy attainment \cite[Theorems 1.1 and 13.1]{Gamma}; its displayed pure perfect strategy attains the minimum entropy $\log_2 24+7/9$ bits. Neither dimension separation alone nor an infinite-rank self-test implies the every-optimum entropy assertion here. Pauwels proves finite-dimensional nonattainment for $I_{3322}$ \cite{Pauwels}. Coladangelo's $I_{3322}$ theorem \cite{I3322} is another dimension separation. Its attaining state has finite entropy by the tail argument in Section~\ref{sec:discussion}.
+
+There is a different route to infinity outside the tensor-product model. Paddock and Schmidt self-test exact embezzlement with a commuting-operator correlation that has no tensor-product realization \cite{PS}. Harris characterizes exact embezzlement through Cuntz isometries and a quasi-free state, with a type III conclusion \cite{Harris}. Beside these results, Douglas and Mghirbi give a finite $0/1$ game with $243$ uniformly sampled pairs that is perfect on $R_{1/2}$ and has no perfect strategy with a normal marginal on a semifinite ambient algebra of either party \cite[Theorem 1.1]{ReadType}. This is a type-III-only requirement for normal play, rather than a spatial entropy requirement. The structural relation between embezzlement and type III algebras is developed in \cite{vLSWW,multipartite}; algebraic embezzlement is studied in \cite{Liu}. Exact embezzlement is impossible in tensor products even with infinite entropy \cite{CLP}. Our state is spatial and is not an exact embezzler. These are different levels of the question, not priority claims about infinite dimension, type III algebras, or embezzlement.
+
+Limit-only resource requirements occur in the three-player game of Ji, Leung and Vidick \cite{JLV} and the two-player construction of Coladangelo \cite{C19}. They differ from normally attained perfection. Man\v{c}inska's flagged magic-square game supplies the finite nonmaximally entangled bridge used here \cite{Mancinska}. We prove the needed normal-state extension, rather than importing a finite-dimensional self-test into infinite dimension.
+
+Projection partitions and synchronous game algebras are standard \cite{Fritz,HMPS,BCS}. Known reductions encode multiplicative relations and relations between game algebras \cite{Slofstra,Fu,HarrisColor}. Sums of projections also underlie the correlation self-tests of Man\v{c}inska, Prakash and Schafhauser \cite{MPS} and the nonclosure constructions of Musat and R{\o}rdam \cite{MR}. Those correlation statements do not supply the Boolean row tests below. Chen and Zhao encode real-coefficient unitary presentations by graph and column projections in synchronous correlations \cite[Section 4]{CZ}. Their result uses prescribed tracial correlation values. Our Boolean compiler instead enforces rational additive identities among the retained synchronized projections by zero-probability tests after finite maximally entangled amplification. To our knowledge, this extension is new as stated. The graph and Hadamard-column arguments below give the additional identification proofs.
+
+To our knowledge, Theorem~C is the first finite two-player Boolean game with a normally attained perfect strategy for which every perfect normal spatial strategy has infinite marginal entropy. This bibliographic statement rests on the cited comparisons and targeted literature searches. It is not an exhaustive priority certificate. In particular, we claim no priority for nontracial perfect games. The known synchronous obstruction of Kim, Paulsen and Schafhauser \cite[Theorem 3.10 and Corollary 3.11]{KPS} explains why the nonsynchronous bridge questions are essential.
+
+\subsection{Proof route}
+The operator relations in Section~\ref{sec:catalan} force the Catalan spectrum. Five bipartite equations force its pure tensor factor. Two calibrated flagged magic-square bridges supply density ratios. Shared opposite questions fix the gauge of duplicated bridge measurements. Graph projections and triangles then encode the required products as rational linear projection identities. Their Bell penalties prove Theorem~A. The row compiler replaces those penalties by Boolean tests and proves Theorem~C. Exact finite computations check the exported objects; the infinite statements follow from the written proofs.

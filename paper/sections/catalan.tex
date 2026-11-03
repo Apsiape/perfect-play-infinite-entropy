@@ -1,0 +1,79 @@
+\section{The Catalan relations and the pure tensor factor}\label{sec:catalan}
+Let $A,B,C$ be bounded operators and $P,Q$ projections. The local relations are
+\begin{align}
+ A^*A&=I,& AA^*+BB^*&=I-P,& B^*B&=I-P-Q,\label{eq:R1}\\
+ CP&=P,& CQ&=Q/2,&0&\leq C\leq I,\label{eq:R2}\\
+ CA&=AC/2,&CB&=2BC.&&\label{eq:R3}
+\end{align}
+For an injective normal density $h$, the accompanying modular relations are
+\begin{equation}\label{eq:modular}
+ hA=Ah/4,\qquad [h,B]=[h,C]=0.
+\end{equation}
+The canonical representation on $\ell^2(\WW)$ appends the legal letter, with $B$ zero where it is not allowed. It has $C|w\rangle=2^{-\mathrm{ht}(w)}|w\rangle$, $P=|\varnothing\rangle\langle\varnothing|$ and $Q$ the height-one projection.
+
+\begin{lemma}[Normal Catalan classification]\label{lem:normal}
+Every normal density satisfying \eqref{eq:R1}--\eqref{eq:modular} has, on its support, the form
+\[
+ \HH=\ell^2(\WW)\otimes\mathcal J,\qquad
+ h=\hcat\otimes\sigma,\qquad
+ \hcat=\frac12\sum_{w\in\WW}4^{-n(w)}|w\rangle\langle w|,
+\]
+where $\sigma$ is a normal density and the five operators are the canonical operators tensored with identity.
+\end{lemma}
+\begin{proof}
+The equations $CP=P$ and $CQ=Q/2$ make $P,Q$ reducing spectral subprojections of $C$ and imply $PQ=0$. The operator $B$ is a partial isometry. The three range projections $AA^*,BB^*,P$ are orthogonal and sum to identity. Covariance makes these range projections commute with $C$.
+
+Put $E_k=1_{\{2^{-k}\}}(C)$ and $E_\infty=1_{\{0\}}(C)$. There is no spectrum in $(1/2,1)$: there $B$ is isometric and would send it above one. The same argument on $E_0-P$ gives $E_0=P$. On $E_1-Q$, $B$ would isometrically map into $P$, orthogonally to its range, so $E_1=Q$. Iteration excludes every open interval $(2^{-k-1},2^{-k})$. Bounded functional calculus for $CB=2BC$ justifies these spectral transports. Thus $I=E_\infty+\sum_{k\geq0}E_k$.
+
+The zero-counter space reduces $A,B,C,h$. There $P=Q=0$ and $A,B$ are isometries with orthogonal ranges summing to identity. If $t=\Tr(hE_\infty)$, trace cyclicity and \eqref{eq:modular} give range masses $t/4$ and $t$. Their sum is $t$, so $t=0$. There is no zero-counter state mass.
+
+Starting with $P\HH$, apply legal words in chronological order; write $W_w$ for the resulting isometry from the root space. Different sectors $W_wP\HH$ are orthogonal. Different final letters have orthogonal ranges, and a nonempty sector is orthogonal to $P$. Matching final letters can be canceled using $A^*A=I$ or $B^*B=I-P-Q$, which is identity on each legal predecessor for $B$. Repeating proves the assertion. On sector $w$, $C=2^{-\mathrm{ht}(w)}I$ and
+\[
+ hW_w=4^{-n(w)}W_wh.
+\]
+The root projection commutes with $h$, so each word-sector projection does too. Its density block is $4^{-n(w)}W_wh_0W_w^*$, where $h_0=PhP$.
+
+The closed span of the root sectors reduces all the operators and $h$. Suppose its orthogonal complement carried positive mass. The compact density on that complement has a largest positive eigenvalue $\lambda$, with a nonzero finite-dimensional eigenspace $L$. The adjoint modular equation is $hA^*=4A^*h$, so $A^*L=0$. Since $P=0$ on the complement, $BB^*=I$ on $L$. The space $L$ reduces $B$; its restriction is therefore a unitary. It also reduces $C$. Multiply $CB=2BC$ by the unitary $B^*$ on the right and trace on $L$. This gives $\Tr_LC=2\Tr_LC$. Positivity forces $C=0$ there, contradicting the absence of zero-counter mass. Hence the word sectors exhaust the support.
+
+For $n\geq1$ and $0\leq m\leq n-1$, reflection of the first bad prefix counts the words with $n$ letters $A$ and $m$ letters $B$ as
+\[
+ \binom{n+m-1}{m}-\binom{n+m-1}{m-1}.
+\]
+Summing gives $\Cat_n$; the empty word gives $\Cat_0=1$. The generating function $C(z)=1+zC(z)^2$ gives $\sum_n\Cat_n4^{-n}=2$. Thus $\Tr h_0=1/2$, and $\sigma=2h_0$ gives the claimed identification.
+\end{proof}
+
+Its entropy is
+\begin{equation}\label{eq:infiniteentropy}
+ S(\hcat)=\sum_{n\geq0}\frac{\Cat_n}{2\,4^n}(1+2n)=\infty,
+ \qquad \frac{\Cat_n}{4^n}\sim\frac1{\sqrt\pi n^{3/2}}.
+\end{equation}
+Infinite rank alone would not give this conclusion. Tensoring with any normal density preserves the divergence.
+
+\subsection{Five bipartite equations}
+On a purification $\Omega$ require each party's local relations and
+\begin{align}
+ (A_A/2)\Omega&=A_B^*\Omega,& A_A^*\Omega&=(A_B/2)\Omega,\label{eq:mirrorsA}\\
+ B_A\Omega&=B_B^*\Omega,&B_A^*\Omega&=B_B\Omega,\label{eq:mirrorsB}\\
+ C_A\Omega&=C_B\Omega.&&\label{eq:mirrorsC}
+\end{align}
+Tensor identities and the identity on the environment are suppressed. Both adjoint equations and both factors $1/2$ matter.
+
+\begin{lemma}[Pure extraction]\label{lem:pure}
+The local relations and \eqref{eq:mirrorsA}--\eqref{eq:mirrorsC} imply \eqref{eq:factor}.
+\end{lemma}
+\begin{proof}
+For a pure vector with coefficient operator $K$, the two $A$ equations read
+$A_AK=2K\overline{A_B}$ and $A_A^*K=KA_B^T/2$. Combining either with the adjoint of the other gives $h_AA_A=A_Ah_A/4$. The $B$ equations and the $C$ equation give the remaining commutators. The same holds on Bob. For a purification, use the two original local cuts. Paired equations ensure support reduction, without inverting $K$.
+
+Lemma~\ref{lem:normal} identifies the word sectors on both sides. The $C$ equation gives $P_A\Omega=P_B\Omega$ by functional calculus. Put $\Omega_0=P_A\Omega$. Transferring adjoint letters in their actual order across the vector gives
+\[
+ (W_w^{A*}\otimes I)\Omega
+ =2^{-n(w)}(I\otimes W_w^B)\Omega.
+\]
+The root projection on the transferred side selects the same word sector. Consequently
+\[
+ (P_w^A\otimes I)\Omega
+ =2^{-n(w)}(W_w^A\otimes W_w^B)\Omega_0.
+\]
+The sectors exhaust the state and $\|\Omega_0\|^2=1/2$. Their sum is $\psicat\otimes\eta$, where $\eta=\sqrt2\Omega_0$ lies in the root multiplicities and the environment. Tracing out the environment proves the mixed-state assertion.
+\end{proof}

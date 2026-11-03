@@ -1,0 +1,1 @@
+R_isometry {'flip': [], 'noncommuting_variable_pairs': 0, 'pvm_sum': True, 'idempotent': True, 'hermitian': True, 'orthogonal': 'implied (Hermitian idempotents summing to I are mutually orthogonal)', 'commutes_h': True, 'graph_forbidden_pairs': 480, 'graph_loss': '0', 'rowzero_loss': '1/9600', 'D_sync_loss': '0'} 12.2

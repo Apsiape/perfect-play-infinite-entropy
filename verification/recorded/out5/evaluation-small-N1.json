@@ -1,0 +1,29 @@
+{
+  "variant": "small",
+  "N": 1,
+  "tree_dimension": 2,
+  "local_dimension": 54,
+  "records_evaluated": 73769,
+  "coefficient_sha256": "7549723983b64088f158821b256d40fdb378b0c7315eaab7039c30e2193a08fb",
+  "effect_classes": 7580,
+  "aggregated_effect_pairs": 48181,
+  "top_shell_mass": "1/5",
+  "exact_score": "-2/375",
+  "predicted_boundary_score": "-2/375",
+  "irrational_components": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "all_PVMs_exact": true,
+  "external_event_penalty": "0",
+  "only_failed_polynomial_row": [
+    "R_isometry"
+  ],
+  "peak_working_set_bytes": 259530752,
+  "elapsed_seconds": 54.1069408999756
+}

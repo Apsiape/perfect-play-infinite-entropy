@@ -1,0 +1,19 @@
+{
+  "N": 0,
+  "old_local_dimension": 27,
+  "local_dimension": 6912,
+  "top_shell_mass": "1",
+  "failed_rows": [
+    "R_isometry"
+  ],
+  "old_forbidden_probabilities_exactly_zero": 6916,
+  "old_binary_mismatch_events_exactly_zero": 11184,
+  "rows_contracted": 4529,
+  "unnormalized_event_loss": "1/9600",
+  "uniform_game_loss": "1/275680239360000",
+  "uniform_game_score": "275680239359999/275680239360000",
+  "row_ancilla_dimension": 16,
+  "row_denominator": 2,
+  "peak_working_set_bytes": 674103296,
+  "elapsed_seconds": 5.439143899828196
+}

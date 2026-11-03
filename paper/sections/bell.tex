@@ -1,0 +1,44 @@
+\section{The rational Bell functional}\label{sec:bell}
+For opposite-party binary effects $E_i,F_i$ and rational coefficients $\alpha_0,\ldots,\alpha_m$, define
+\begin{align}
+ S&=\alpha_0I+\sum_i\alpha_iE_i,&
+ T&=\alpha_0I+\sum_i\alpha_iF_i,&
+ k&=1+\tfrac12\sum_i\alpha_i^2,\notag\\
+ F_\alpha&=ST+k\sum_i(E_i+F_i-2E_iF_i).\label{eq:Falpha}
+\end{align}
+This is a Bell expression after expanding $ST$: constants and marginals use a one-answer anchor. It contains no same-party products. For $\Delta_i=E_i-F_i$, cross-party commutation gives the exact identity
+\begin{align}\label{eq:SOS}
+ F_\alpha={}&\frac{S^2+T^2}{2}+\sum_i\Delta_i^2
+ +\frac12\sum_{i<j}(\alpha_j\Delta_i-\alpha_i\Delta_j)^2\\
+ &+k\sum_i(E_i-E_i^2+F_i-F_i^2).\notag
+\end{align}
+Indeed $ST=(S^2+T^2-(S-T)^2)/2$; expansion of the last square and the elementary Lagrange identity yield \eqref{eq:SOS}. No same-party commutation or idempotency is assumed in this calculation. Every displayed summand is positive for effects. Equality gives perfect matching and the row identity $S=0$ on the reducing state support by Section~\ref{sec:support}.
+
+Define $B$ as minus the sum of \eqref{eq:Falpha} for every one of the $4\,529$ core rows, one binary synchrony loss per binary symbol, and the ordinary losing-event probabilities of the conditional FMS predicates, refinements, activity and event bindings. Every loss has unit weight. There are $5\,592$ binary symbols, ten original FMS questions and twenty-two refined questions per party, in addition to the anchor. FMS questions have six answers including inactivity, and refinements have twelve. These finite rules specify the whole functional. Exact aggregation produces the advertised coefficient counts.
+
+\begin{proof}[Proof of Theorem A]
+Equation~\eqref{eq:SOS} and nonnegative event probabilities prove $B\leq0$ for arbitrary POVMs. At equality each loss vanishes separately. Support matching, the bridge and label lemmas, and the projection compiler therefore recover the full construction of Section~\ref{sec:assembly}. Lemma~\ref{lem:pure} gives the pure factor. The simultaneous realization there attains equality normally. Equation~\eqref{eq:infiniteentropy} and invariance of nonzero marginal spectra under isometries give infinite entropy on both sides.
+
+For finite-dimensional nonattainment, the root has nonzero mass and $A^*A=I$ makes $A$ unitary there. The range equation then forces $B=P=0$. The initial equation gives $Q=I$, hence $C=I/2$. Covariance would say $A/2=A/4$, a contradiction.
+
+For approximation, let $a_n=\Cat_n/4^n$, $Z_N=\sum_{n\leq N}a_n$, $t_N=a_N/Z_N$, and use the canonical words with $n\leq N$. Compress the word operators and make centralizer unitary completions on the finite scaffold as before. Every relation is exact except $A_N^*A_N-I=-\Pi_N$. The corresponding compiled row is
+\[
+ S_{\rm iso}=-(|1\rangle\langle2|+|2\rangle\langle1|)
+                \otimes e_0\otimes\Pi_N.
+\]
+All event losses and synchrony losses vanish. Synchronization makes the row penalty equal to $\operatorname{Tr}(h_N S_{\mathrm{iso}}^2)=2t_N/75$, the expectation of its square. Hence
+\begin{equation}\label{eq:cutoffB}
+ B_N=-\frac{2t_N}{75}\longrightarrow0,
+ \qquad t_N\sim\frac1{2\sqrt\pi N^{3/2}}.
+\end{equation}
+Finally the Gibbs entropy bound in natural units is
+$S(h)\ln2\leq\beta\Tr(hH)+\ln\Tr e^{-\beta H}$. It follows by truncation, or the variational principle, also when the entropy is infinite. A lower bound on $H$ makes its mean energy well-defined as an extended number. Finite mean energy would force finite entropy, giving the stated contradiction.
+\end{proof}
+
+\subsection{Literal coefficient convention}
+The archive contains ordered question/answer lists, \texttt{core.json}, \texttt{format.json} and one sorted coefficient stream. Each sixteen-byte little-endian record is an unsigned 64-bit key followed by a signed 64-bit numerator. The coefficient is the numerator divided by $2048$, with
+\[
+ \text{key}=2^{32}\text{event}_A+\text{event}_B,
+ \qquad \text{event}=16\,\text{question id}+\text{answer index}.
+\]
+Unlisted coefficients are zero. Indices start at zero. The anchor makes constants and marginals literal cross-party probabilities. No implicit affine substitution or distribution factor is needed.

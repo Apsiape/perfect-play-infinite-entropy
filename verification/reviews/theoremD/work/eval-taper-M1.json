@@ -1,0 +1,320 @@
+{
+ "M": 1,
+ "words": [
+  "",
+  "A"
+ ],
+ "local_dimension": 54,
+ "archive_sha256": "bb5c0bf32e9a7175bef73d9b156a5c6f3e3a0487462c90a9138e82f809927aaf",
+ "evaluator_copy_sha256": "24464738fc322a50450899d29ae4ad03beba11a344a67b2dc6de29e330f6bf7a",
+ "results": [
+  {
+   "filter": "taper N=1",
+   "Z": "241/400",
+   "D1": "9/64",
+   "D2": "1/64",
+   "predicted_loss": "33/241",
+   "literal_B": "-33/241",
+   "irrational_parts_zero": true,
+   "match": true,
+   "by_class": {
+    "core/synchrony (binary x binary)": {
+     "records": 66853,
+     "nonzero_records": 50273,
+     "contribution": "0"
+    },
+    "other event (binary:binary x fms:C)": {
+     "records": 144,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (binary:binary x fms:U)": {
+     "records": 24,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (binary:binary x refined:refined)": {
+     "records": 528,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:R x binary:binary)": {
+     "records": 96,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:R x fms:C)": {
+     "records": 468,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:R x fms:U)": {
+     "records": 192,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:R x refined:refined)": {
+     "records": 1232,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:T x binary:binary)": {
+     "records": 72,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:T x fms:C)": {
+     "records": 192,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:T x fms:U)": {
+     "records": 80,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:T x refined:refined)": {
+     "records": 880,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (refined:refined x binary:binary)": {
+     "records": 528,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (refined:refined x fms:C)": {
+     "records": 1232,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (refined:refined x fms:U)": {
+     "records": 880,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "sign/sign T-U (fms x fms)": {
+     "records": 16,
+     "nonzero_records": 16,
+     "contribution": "-11/964"
+    },
+    "sign/sign T-U (fms x refined)": {
+     "records": 176,
+     "nonzero_records": 176,
+     "contribution": "-121/1928"
+    },
+    "sign/sign T-U (refined x fms)": {
+     "records": 176,
+     "nonzero_records": 176,
+     "contribution": "-121/1928"
+    }
+   }
+  },
+  {
+   "filter": "random#0 -2:-5/2,-1:-1,0:-1/5,1:-3",
+   "Z": "631/250",
+   "D1": "289/100",
+   "D2": "421/100",
+   "predicted_loss": "6786/3155",
+   "literal_B": "-6786/3155",
+   "irrational_parts_zero": true,
+   "match": true,
+   "by_class": {
+    "core/synchrony (binary x binary)": {
+     "records": 66853,
+     "nonzero_records": 50273,
+     "contribution": "0"
+    },
+    "other event (binary:binary x fms:C)": {
+     "records": 144,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (binary:binary x fms:U)": {
+     "records": 24,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (binary:binary x refined:refined)": {
+     "records": 528,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:R x binary:binary)": {
+     "records": 96,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:R x fms:C)": {
+     "records": 468,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:R x fms:U)": {
+     "records": 192,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:R x refined:refined)": {
+     "records": 1232,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:T x binary:binary)": {
+     "records": 72,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:T x fms:C)": {
+     "records": 192,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:T x fms:U)": {
+     "records": 80,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:T x refined:refined)": {
+     "records": 880,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (refined:refined x binary:binary)": {
+     "records": 528,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (refined:refined x fms:C)": {
+     "records": 1232,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (refined:refined x fms:U)": {
+     "records": 880,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "sign/sign T-U (fms x fms)": {
+     "records": 16,
+     "nonzero_records": 16,
+     "contribution": "-1131/6310"
+    },
+    "sign/sign T-U (fms x refined)": {
+     "records": 176,
+     "nonzero_records": 176,
+     "contribution": "-12441/12620"
+    },
+    "sign/sign T-U (refined x fms)": {
+     "records": 176,
+     "nonzero_records": 176,
+     "contribution": "-12441/12620"
+    }
+   }
+  },
+  {
+   "filter": "random#1 -2:3,-1:3/2,0:9,1:-1/2",
+   "Z": "227/20",
+   "D1": "901/16",
+   "D2": "397/16",
+   "predicted_loss": "1017/227",
+   "literal_B": "-1017/227",
+   "irrational_parts_zero": true,
+   "match": true,
+   "by_class": {
+    "core/synchrony (binary x binary)": {
+     "records": 66853,
+     "nonzero_records": 50273,
+     "contribution": "0"
+    },
+    "other event (binary:binary x fms:C)": {
+     "records": 144,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (binary:binary x fms:U)": {
+     "records": 24,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (binary:binary x refined:refined)": {
+     "records": 528,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:R x binary:binary)": {
+     "records": 96,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:R x fms:C)": {
+     "records": 468,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:R x fms:U)": {
+     "records": 192,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:R x refined:refined)": {
+     "records": 1232,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:T x binary:binary)": {
+     "records": 72,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:T x fms:C)": {
+     "records": 192,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:T x fms:U)": {
+     "records": 80,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (fms:T x refined:refined)": {
+     "records": 880,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (refined:refined x binary:binary)": {
+     "records": 528,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (refined:refined x fms:C)": {
+     "records": 1232,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "other event (refined:refined x fms:U)": {
+     "records": 880,
+     "nonzero_records": 0,
+     "contribution": "0"
+    },
+    "sign/sign T-U (fms x fms)": {
+     "records": 16,
+     "nonzero_records": 16,
+     "contribution": "-339/908"
+    },
+    "sign/sign T-U (fms x refined)": {
+     "records": 176,
+     "nonzero_records": 176,
+     "contribution": "-3729/1816"
+    },
+    "sign/sign T-U (refined x fms)": {
+     "records": 176,
+     "nonzero_records": 176,
+     "contribution": "-3729/1816"
+    }
+   }
+  }
+ ],
+ "elapsed_seconds": 21.03885899996385,
+ "peak_working_set_bytes": 130244608
+}

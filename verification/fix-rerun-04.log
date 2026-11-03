@@ -1,0 +1,13 @@
+{
+ "coefficient_sha256": "7549723983b64088f158821b256d40fdb378b0c7315eaab7039c30e2193a08fb",
+ "literal_records": 73769,
+ "reconstructed_full_entries": 73769,
+ "literal_equals_reconstruction_entrywise": true,
+ "cg_terms_literal": 64957,
+ "cg_terms_reconstructed": 64957,
+ "cg_difference_terms": 0,
+ "cg_difference_sample": [],
+ "literal_constant_term_cg": "-15995/2",
+ "entrywise_difference_count": 0,
+ "entrywise_difference_sample": []
+}

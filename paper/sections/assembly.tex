@@ -1,0 +1,90 @@
+\section{A common Catalan table from two bridges}\label{sec:assembly}
+\subsection{Nine corners and the small polynomial input}
+Take two conditional FMS instances, indexed $g=1,2$. Use nine orthogonal base corners
+\[
+ e_0;\ m_{1,00},m_{1,01},m_{1,10},m_{1,11};\
+ m_{2,00},m_{2,01},m_{2,10},m_{2,11}.
+\]
+Put $M_g=\sum_{ab}m_{g,ab}$, $e_1=m_{1,00}$, $e_2=m_{2,00}$, and impose $e_0+M_1+M_2=I$. Bridge $g$ has flag $e_{g-1}$, magic support $M_g$, and activity $e_{g-1}+M_g$. Every event binding is a zero-mismatch test in both party orientations. In particular Bob's flag/four-magic/inactive $C_0$ partition certifies the activity decomposition.
+
+Let $w_g:e_{g-1}\to e_g$ be the calibrated transports. Then
+\begin{equation}\label{eq:v}
+ v=w_2w_1,\quad v^*v=e_0,\quad vv^*=e_2,\quad hv=4vh.
+\end{equation}
+The bridge masses and cover give root mass $1/25$, with weights $1$, four copies of $2$, and four copies of $4$. Thus the root cannot vanish.
+
+Use the thirteen parameters $e_0$, the eight $m_{g,ab}$, and the four positive $ZI,IX$ events. Bind them to the scalar frame by Section~\ref{sec:projection}. Introduce four global unitary axis labels equal to $x_g,z_g$ of Section~\ref{sec:bridge}. For $r=0,1,2$ and $k\in\{b_+,b_-,p,q,c\}$ use unitary labels $u_{r,k}$ and impose
+\begin{equation}\label{eq:P1}
+ (u_{r,k}-I)(I-e_r)=0.
+\end{equation}
+A unitary fixing $e_r^\perp$ reduces $e_r$, so $e_ru=e_rue_r$. Define the actual polynomials
+\begin{align}
+ b_r&=e_r(u_{r,b_+}+u_{r,b_-})/2,&
+ p_r&=e_r(I+u_{r,p})/2,\label{eq:definitions}\\
+ q_r&=e_r(I+u_{r,q})/2,&
+ c_r&=e_r(2I+u_{r,c}+u_{r,c}^*)/4.\notag
+\end{align}
+Require $u_{0,p}^2=u_{0,q}^2=I$. Hence $p_0,q_0$ are projections, $b_r$ are contractions, and $0\leq c_r\leq e_r$.
+
+For each $g,k$ introduce one unitary $v_{g,k}$ and impose, with $R_{ab}=x_g^az_g^b$,
+\begin{equation}\label{eq:P3}
+ v_{g,k}=I-(e_{g-1}+M_g)+e_{g-1}u_{g-1,k}
+                 +\sum_{ab}R_{ab}e_gu_{g,k}R_{ab}^*.
+\end{equation}
+For each bridge, refine both FMS questions as in Lemma~\ref{lem:label} for the six frame projections $F_1,F_2,F_3,G_{12}(1),G_{13}(1),G_{23}(1)$ and the five projections $G_{12}(v_{g,k})$. This means eleven labels per bridge, twenty-two refined questions per party. Frame preservation comes first. It makes $w_g=I_3\otimes\widetilde w_g$ because the selected magic parameters generate the full $M_4$ algebra and already commute with the frame. The graph-label refinements then give
+\begin{equation}\label{eq:transport}
+ w_gu_{g-1,k}=u_{g,k}w_g.
+\end{equation}
+Thus the repeated operators are transported by the same bridge.
+
+Take two more global unitaries $a_+,a_-$ and $a=(a_++a_-)/2$. The remaining nine equations are
+\begin{align}
+ a&=e_2ae_0,&a^*a&=e_0,&aa^*+b_2b_2^*+p_2&=e_2,\label{eq:P5a}\\
+ b_0^*b_0&=e_0-p_0-q_0,&p_0q_0&=0,&c_0p_0&=p_0,\label{eq:P5b}\\
+ c_0q_0&=q_0/2,&c_2a&=ac_0/2,&c_0b_0&=2b_0c_0.\label{eq:P5c}
+\end{align}
+Together there are four axis equations, fifteen support equations, ten block equations, nine equations above, two root reflection equations, and one cover: forty-one polynomial inputs. Expand every parameter $e=(I+s_e)/2$ and apply the prefix/graph rules. They give $358$ words and $4\,529$ rational linear projection rows, fully listed in \texttt{core.json}.
+
+For clarity, four reductions from a longer presentation are exact. The axis right sides are reflections because their positive events lie under $M_g$. The omitted source/range equations for $t_{ab}$ follow from the actual Pauli cells and the stated outcome bindings. Equation~\eqref{eq:P1} removes the final $e_r$ from every sandwich in \eqref{eq:definitions}. Finally $t_{ab}=R_{ab}e_g$ and \eqref{eq:P1} turn $t_{ab}u_{g,k}t_{ab}^*$ into the summand in \eqref{eq:P3}. No unproved equation deletion enters the smaller list.
+
+\subsection{Extraction and mirrors}
+After factoring the synchronized scalar frame, work on the root corner and define
+\begin{equation}\label{eq:extraction}
+ A=v^*a,\quad B=b_0,\quad C=c_0,\quad P=p_0,\quad Q=q_0.
+\end{equation}
+These are fixed bounded corner expressions in the original effects. From \eqref{eq:v}--\eqref{eq:P5c}, $A^*A=e_0$, $AA^*=e_0-P-BB^*$, $B^*B=e_0-P-Q$. The two counter boundary equations are explicit. Moreover
+\[
+ CA=c_0v^*a=v^*c_2a=v^*ac_0/2=AC/2,
+ \qquad CB=2BC.
+\]
+All centralizer words commute with the full density. Since $hv=4vh$, the normalized root marginal satisfies $h_0A=Ah_0/4$. Thus every local relation of Section~\ref{sec:catalan} holds for one common table.
+
+The synchronized scalar $M_3$ extracts a maximally entangled qutrit. For real-coefficient base words, graph matching gives $T_A\Omega=T_B^*\Omega$; products transfer in reversed order, as their adjoints require. Let $\Omega_r$ denote the shared component in $e_r$. The calibrated vector equations give
+\[
+ \Omega_1=\sqrt2(w_{1,A}\otimes w_{1,B})\Omega_0,
+ \qquad \Omega_2=2(v_A\otimes v_B)\Omega_0.
+\]
+Since $a=e_2ae_0$, its transfers read $a_A\Omega_0=a_B^*\Omega_2$ and $a_A^*\Omega_2=a_B\Omega_0$. Substitute the second component formula and apply $v_A^*$ or $v_B^*$. This yields both equations in \eqref{eq:mirrorsA}. The root centralizer words $b_0,b_0^*,c_0$ give \eqref{eq:mirrorsB}--\eqref{eq:mirrorsC}.
+
+Magic units identify each of the other three directions in a bridge. Hence all nine sectors are local images of the same root component with coefficients $1$, four copies of $\sqrt2$, and four copies of $2$. This factors the entire state into a fixed finite scaffold state and the normalized root state. It is not a postselection argument. Lemma~\ref{lem:pure} gives \eqref{eq:factor}. Every operation acts on original local supports and leaves the purifying environment alone, so the conclusion includes mixed states.
+
+\subsection{Simultaneous normal realization}
+Use the canonical Catalan operators and scaffold density
+\begin{equation}\label{eq:scaffold}
+ h_{\rm sc}=\frac1{25}\operatorname{diag}
+ (\hcat,2\hcat,2\hcat,2\hcat,2\hcat,
+ 4\hcat,4\hcat,4\hcat,4\hcat).
+\end{equation}
+Take identity transports along the bridges. Put $a=|e_2\rangle\langle e_0|\otimes A_{\rm Cat}$, with the canonical copies for $b_r,c_r,p_r,q_r$. The modular ratio makes $a$ commute with \eqref{eq:scaffold}; all nine equations hold.
+
+We justify the unitary encodings simultaneously. The centralizer of an injective trace-class density is a product of finite matrix blocks, one for each positive eigenvalue. In each block the polar partial isometry of any contraction $T$ extends to a unitary $W$. Then
+\[
+ U_\pm=W\bigl(|T|\pm i\sqrt{I-|T|^2}\bigr),\qquad T=(U_++U_-)/2.
+\]
+Direct sums give unitaries in the same centralizer. Apply this to the amplified $a$ and to the root contraction $B$. This does not extend the proper unamplified isometry $A_{\rm Cat}$ in a finite space. Use $2P-I,2Q-I$ for the root reflections and
+\[
+ U_c=2C-I+2i\sqrt{C(I-C)},\qquad C=(2I+U_c+U_c^*)/4.
+\]
+Transport the same choices to the other corners and extend by identity outside them. This realizes all support and block equations.
+
+Append a maximally entangled qutrit and use the graph formulas. Each proposed label commutes with the coarse FMS effects: the frame is preserved and each block unitary has identical transported flag and magic blocks. Refined effects are their actual joint products. Distinct labels use separate measurements. Thus all rows, FMS predicates, bindings and refinements have one simultaneous normal realization.

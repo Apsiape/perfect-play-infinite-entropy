@@ -1,0 +1,42 @@
+\section{Rational projection equations that certify products}\label{sec:projection}
+All projections in this section are synchronized. We give the finite rules used in the core presentation. The projection-partition viewpoint is standard \cite{Fritz}; the formulas here provide the needed actual multiplication identities. See also the graph-projection encoding in \cite[Section 4]{CZ}.
+
+\subsection{Graphs and triangles}
+Let $F_i,F_j$ be orthogonal, $S=F_i+F_j$, and introduce projections $G,H,K_G,K_H$ with
+\begin{equation}\label{eq:G1}
+ G+K_G=S,\quad H+K_H=S,\quad 5H+S=3F_i+4G.
+\end{equation}
+On $S$, put $Z=F_i-F_j$, $X=2G-S$. These are reflections, and $2H-S=(3Z+4X)/5$. Squaring forces $ZX+XZ=0$. Thus
+\[
+ X=\begin{pmatrix}0&u_{ij}\\u_{ij}^*&0\end{pmatrix},\qquad
+ u_{ij}^*u_{ij}=F_j,\quad u_{ij}u_{ij}^*=F_i.
+\]
+The graph blocks are certified, rather than assumed. Conversely any such unitary corner map gives the four projections in \eqref{eq:G1}.
+
+For a partition $F_1+F_2+F_3=I$ impose the graph tests on all three pairs and add a projection $D$ with
+\begin{equation}\label{eq:G2}
+ 3D=2(G_{12}+G_{23}+G_{13})-I.
+\end{equation}
+Its block matrix has diagonal $I/3$ and off-diagonal $u_{ij}/3$. The $(1,3)$ block of $D^2=D$ gives $2u_{13}+u_{12}u_{23}=3u_{13}$, hence $u_{13}=u_{12}u_{23}$. Conversely this product identity makes the entire matrix a projection.
+
+Start with a reference triangle for identity. Its scalar matrix algebra is called the \emph{frame}. It gives scalar matrix units and $\HH=\mathbb C^3\otimes\mathcal K$. For every unitary label $U$, use graphs in all three positions. Triangles $(U,1,U)$ and $(1,U,U)$ identify the placements. A triangle $(U,V,W)$ then certifies $W=UV$; a triangle with product identity certifies inverse labels. Build each word from its proper prefix and final token. Finally a real rational equation $\sum_wq_wU_w=0$ is precisely
+\begin{equation}\label{eq:G3}
+ 2\sum_wq_wG_{12}(U_w)-\Bigl(\sum_wq_w\Bigr)(F_1+F_2)=0.
+\end{equation}
+Its two off-diagonal blocks are the equation and its adjoint. All products therefore refer to actual common operators. Synchronization makes the extracted unitaries commute with the base marginal density.
+
+\subsection{Binding prescribed parameters}
+A prescribed synchronized projection $E$ is linked to the frame by projections $EF_i,NF_i$ with
+\[
+ EF_i+NF_i=F_i,\quad \sum_iEF_i=E,\quad\sum_iNF_i=I-E.
+\]
+These symbols are names for projections before the equations identify their products. For every pair $ij$, introduce $J_{11},J_{10},J_{01},J_{00}$ and impose
+\begin{align*}
+ J_{11}+J_{10}&=EF_i+EF_j,&
+ J_{00}+J_{01}&=NF_i+NF_j,\\
+ J_{11}+J_{01}&=G_{ij}(1),&
+ G_{ij}(s_E)&=J_{11}+J_{00}.
+\end{align*}
+Projection sums give the indicated joint partitions. They force $E$ to commute with the frame and identify the extracted $s_E$ with $2e-I$, where $E=I_3\otimes e$. In particular these parameters are the specified FMS events, not independent replacements. There are thirteen such parameters below.
+
+These rules are a deterministic finite compiler for the finite word list. Cancellation of adjacent inverse tokens is performed before taking proper prefixes. All coefficients stay rational. Conversely a centralizer unitary assignment with the prescribed parameter projections gives every graph, complement, $H$, triangle and joint projection simultaneously by these formulas.

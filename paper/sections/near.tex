@@ -1,0 +1,125 @@
+\section{Entropy near the optimum}\label{sec:near}
+Define
+\[
+ E_B(\varepsilon)=\inf\{S(\rho_A):B\geq-\varepsilon\},\qquad
+ E_G(\varepsilon)=\inf\{S(\rho_A):\omega(G)\geq1-\varepsilon\}.
+\]
+The infima range over normal spatial strategies. Purifying onto Bob preserves Alice's marginal and all probabilities, so the same infima are obtained with pure states. They need not be attained. The corresponding assertions hold with the parties exchanged.
+
+\Needspace{15\baselineskip}
+\begin{theoremD}\label{thm:D}
+As $\varepsilon\downarrow0$, both $E_B(\varepsilon)$ and $E_G(\varepsilon)$ tend to infinity. Put
+\[
+ C_L=\frac{24}{25\sqrt\pi},\quad C_S=\frac{64}{45\sqrt\pi},\quad
+ C=C_SC_L^{1/5}=0.709793116354\ldots.
+\]
+There are finite-dimensional strategies giving
+\[
+ E_B(\varepsilon)\leq(C+o(1))\varepsilon^{-1/5},\qquad
+ E_G(\varepsilon)\leq(CQ^{-2/5}+o(1))\varepsilon^{-1/5},
+ \quad Q=169\,460.
+\]
+With the infinite canonical measurements fixed, the exponent $1/5$ is optimal among arbitrary scalar spectral filters of their canonical marginal, for $B$ and likewise for $G$. This restricted optimality does not assert a matching lower power for unrestricted strategies.
+\end{theoremD}
+
+\subsection{Divergence at bounded entropy}
+Here is the compactness argument, included to identify precisely what it proves. Sort the Schmidt probabilities $p_1\geq p_2\geq\cdots$ of any pure state of entropy at most $K$. Since $p_j\leq1/j$,
+\begin{equation}\label{eq:tail}
+ \sum_{j>d}p_j\leq\frac{K}{\log_2(d+1)}.
+\end{equation}
+Compress each POVM to the (separable) state supports; this preserves all probabilities. If the Schmidt rank is finite, extend by a fixed deterministic answer on the complement in $\ell^2$. After local basis changes write each state as $\sum_j\sqrt{p_j}|j,j\rangle$ in common copies of $\ell^2$. Uniformly small tails yield a norm-convergent subsequence of these vectors with unit norm. Finite partial entropy sums and lower semicontinuity show that its entropy is at most $K$.
+
+Bounded effect sets on a separable Hilbert space are sequentially weak-operator compact. Extract a common subsequence for the finitely many effects. Positivity and POVM sums survive the limit. On the first $d$ Schmidt coordinates all probabilities involve only finitely many matrix entries. The tail bound then lets $d$ tend to infinity, uniformly over the measurements. Thus entropy-at-most-$K$ spatial correlations form a compact set in each finite scenario.
+
+If a sequence had vanishing loss and bounded entropy, nearly minimizing pure strategies would have a limit attaining the optimum with finite entropy. Theorems~A and C forbid this. Equivalently each finite entropy budget has a strictly positive loss gap. The argument gives no evaluated modulus for that gap.
+
+\subsection{A spectral taper and its exact loss}
+In the canonical realization, let $r=0,1,2$ denote the corner-weight exponent, with multiplicities $m_0=1,m_1=m_2=4$. Including the qutrit, each marginal eigenvalue is $2^r4^{-n}/150$. Define
+\[
+ J|\mathrm{frame},r,w\rangle=(n(w)-r/2)|\mathrm{frame},r,w\rangle.
+\]
+Every synchronized core projection commutes with $J$, because $J$ is affine in the logarithm of the canonical marginal. In particular the centralizer unitary completions preserve it. Take
+\[
+ f_N(j)=\begin{cases}1&j\leq0,\\(1-(j/N)^2)_+&j>0,\end{cases}
+ \qquad \psi_N^f=\frac{f_N(J_A)\psi_*}{\sqrt{Z_N^f}}.
+\]
+Here $\psi_*$ is the full canonical state. The filter has finite Schmidt rank, supported in $n\leq N$. Compressing the original measurements to that support gives valid finite POVMs with exactly the same probabilities; the support need not reduce the FMS signs. Filtering bare word size would fail to preserve centralizer tests, which is why the shifts $r/2$ are retained.
+
+Write $a_n=\Cat_n/4^n$ and $f_{n,r}=f_N(n-r/2)$. Exactly,
+\begin{equation}\label{eq:Zf}
+ Z_N^f=\frac1{50}\sum_{n\geq0}a_n
+              (f_{n,0}^2+8f_{n,1}^2+16f_{n,2}^2)\longrightarrow1.
+\end{equation}
+Core rows are zero operator identities, and their projections remain synchronized after filtering. All activity, flag, retained-event and label bindings remain exact. Each refined measurement remains a joint product with its single label. Only wrong sign/sign events in original or duplicated FMS pairs can lose.
+
+Put
+\begin{align*}
+ D_1(N)&=\sum_na_n[f_N(n)-f_N(n-1/2)]^2,\\
+ D_2(N)&=\sum_na_n[f_N(n-1/2)-f_N(n-1)]^2.
+\end{align*}
+In bridge $g$, put $f_f=f_{n,g-1}$ and $f_m=f_{n,g}$, the filter values on its flag and magic corners. On a fixed word and frame, a forbidden sign pair in bridge $g$ has amplitude
+\[
+ \frac{\sqrt{2^{g-1}}\,2^{-n}(f_f-f_m)}{2\sqrt{150Z_N^f}}.
+\]
+Its probability, after summing the frame and words, is $2^{g-1}D_g/(200Z_N^f)$. There are two wrong signs per pair. In each bridge there are four original pairs, twenty-two duplicated Alice pairs and twenty-two duplicated Bob pairs. Summing refined labels gives the coarse event. Consequently the \emph{literal} Bell loss is
+\begin{equation}\label{eq:filteredloss}
+ \ell_B(N)=-B(\psi_N^f)=\frac{12}{25}\frac{D_1(N)+2D_2(N)}{Z_N^f}.
+\end{equation}
+The serialized direct-event audit counts $368$ potentially nonzero fine sign records; their labels sum to these $192$ coarse events across both bridges. The derivation uses only scalar values of the filter on the $J$-spectrum. Thus \eqref{eq:filteredloss} holds for every nonzero Borel scalar filter $f(J)$ with $\Tr(h_*|f(J)|^2)<\infty$, using its corresponding normalization $Z$ and difference sums $D_1,D_2$; for complex filters the squared differences are $|f_f-f_m|^2$.
+
+For $F(x)=(1-x^2)_+$ and $a_n\sim n^{-3/2}/\sqrt\pi$, half-step difference sums give
+\[
+ D_g(N)\sim\frac{N^{-5/2}}{4\sqrt\pi}
+        \int_0^1x^{-3/2}F'(x)^2\,dx
+ =\frac{2}{3\sqrt\pi}N^{-5/2}.
+\]
+To justify the Riemann sum, first restrict to $[\eta,1]$. The omitted lower interval is bounded by a constant times $\eta^{3/2}N^{-5/2}$, since $F'(x)=-2x$. The finitely many endpoint terms are $O(N^{-4})$ near zero and $O(N^{-7/2})$ at the upper edge. Therefore
+\[
+ \ell_B(N)\sim C_LN^{-5/2}.
+\]
+For example $Z_N^f\geq1/2$ and each half-step difference is at most $n/N^2$, which also give a nonasymptotic bound $\ell_B(N)\leq5N^{-5/2}$ for $N\geq1$.
+
+The filtered eigenvalues give, with $0\log0=0$,
+\begin{align}\label{eq:filteredentropy}
+ S_N={}&\log_2(150Z_N^f)\\
+ &+\frac1{50Z_N^f}\sum_na_n\sum_{r=0}^2m_r2^rf_{n,r}^2
+                   [2n-r-2\log_2f_{n,r}].\notag
+\end{align}
+Only the $2n$ term contributes to the leading order. All other terms are uniformly bounded using $\sum_na_n=2$ and boundedness of $u^2|\log u|$. Since $Z_N^f=1+O(N^{-1/2})$,
+\[
+ S_N\sim\frac{\sqrt N}{\sqrt\pi}
+       \int_0^1x^{-1/2}(1-x^2)^2\,dx=C_S\sqrt N.
+\]
+Choosing an integer $N=(C_L/\varepsilon)^{2/5}(1+o(1))$ with sufficient positive slack proves the Bell upper bound. The $o(1)$ can decay slowly; the leading constant alone is not a finite-loss error estimate. The game extension adds eight bits. Its new row identities remain exact; only the retained old FMS sign events lose. Thus $\ell_G(N)=\ell_B(N)/Q^2$, proving the game constant. Formula~\eqref{eq:gamecutoff} is for a different cutoff family and must not be used for these filtered states.
+
+\subsection{Restricted lower bound for all spectral filters}
+Normalize $\Tr(h_*|f(J)|^2)=1$ and set $f_k=f(k/2)$ for $k=-2,-1,0,\ldots$. Absolute values preserve entropy and normalization and can only decrease the difference energy, so assume $f_k\geq0$. The shell masses and degeneracies are
+\begin{align*}
+ \mu_{2m}&=(a_m+16a_{m+1})/50,&d_{2m}&=3(\Cat_m+4\Cat_{m+1}),\quad m\geq0,\\
+ \mu_{2m-1}&=8a_m/50,&d_{2m-1}&=12\Cat_m,\quad m\geq0,\\
+ \mu_{-2}&=16/50,&d_{-2}&=12.
+\end{align*}
+Thus $\sum_k\mu_kf_k^2=1$ and
+\begin{equation}\label{eq:radialentropy}
+ S=H((\mu_kf_k^2)_k)+\sum_k\mu_kf_k^2\log_2d_k
+ \geq\tfrac12\sum_{k\geq0}k\mu_kf_k^2.
+\end{equation}
+The elementary bounds $\Cat_m\geq2^{m-1}$ for $m\geq1$ and $a_m\geq[2(m+1)^{3/2}]^{-1}$ imply $\log_2d_k\geq k/2$ and $\mu_k\geq[100(k+3)^{3/2}]^{-1}$ for $k\geq0$.
+
+For a normalized filter, \eqref{eq:filteredloss} becomes $\ell=(12/25)D$, where
+\[
+ D=\sum_{n\geq0}a_n[(f_{2n}-f_{2n-1})^2
+                          +2(f_{2n-1}-f_{2n-2})^2].
+\]
+This is the energy of a connected weighted half-line. The sum of inverse conductances from $-2$ to $L$ is at most $2(L+3)^{5/2}$. Cauchy--Schwarz along the path gives
+\[
+ |f_k-f_{-2}|\leq\sqrt{2D(L+3)^{5/2}},\qquad -2\leq k\leq L.
+\]
+For small $D$ choose $L=\lfloor(32D)^{-2/5}-3\rfloor$, so the right side is at most $1/4$. If $f_{-2}\geq1/2$, then $f_k\geq1/4$ through $L$. Equation~\eqref{eq:radialentropy} bounds the entropy below by
+\[
+ \frac1{3200}\sum_{k=1}^L\frac{k}{(k+3)^{3/2}}
+ \geq\frac{\sqrt L}{25600}\quad(L\geq6).
+\]
+If $f_{-2}<1/2$, the low-shell amplitudes are at most $3/4$, so at least $7/16$ of the normalized mass lies above $L$. Then $S\geq7L/32$. Both cases give $S\geq c\ell^{-1/5}$ for an absolute positive $c$. For complex filters apply this argument to their absolute values; their energy is no larger. For filters $f(J)\otimes I$ of the game's canonical marginal, the same compiler extension gives $\ell_G=\ell_B/Q^2$ and $S_G=S_B+8$. Together with the taper this proves restricted optimality for both $B$ and $G$ and completes Theorem~D.
+
+An unrestricted lower power remains open. Exact dense-range cancellation has no uniform operator-norm version at small marginal eigenvalues. Approximate magic blocks, compatible labels, and a simultaneous word-sector extraction would need additional estimates. We make no claim that an arbitrary near-optimal strategy is a scalar spectral deformation.

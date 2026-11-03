@@ -1,0 +1,78 @@
+\section{Rational rows as Boolean winning conditions}\label{sec:compiler}
+The Bell penalties have signed coefficients. Reclassifying their negative terms as losses would not enforce their zero sets. We instead implement each rational row as a subspace orthogonality test.
+
+\Needspace{15\baselineskip}
+\begin{theoremB}\label{thm:B}
+Let a finite strategy specification name finitely many synchronized binary projections and finitely many rational linear identities among them. There is a finite extension by Boolean tests with the following properties.
+
+\emph{Soundness:} in every perfect normal spatial strategy for the extended tests, the identities hold as operator identities for the named support-restricted projections on each local state support.
+
+\emph{Completeness:} any normal spatial strategy with these synchronized projections, satisfying the identities on its supports, extends to satisfy all the added tests perfectly after adjoining a finite maximally entangled state. The old measurements act trivially on the new factor. The rest of the old strategy, including nonsynchronous questions, is retained; if its old tests were perfect, the whole extension is perfect.
+\end{theoremB}
+
+\subsection{A certified scalar matrix algebra}
+Choose $d_{\max}=2^{2r}$ large enough for every row construction below. Use $r$ synchronized magic squares, binding each context's cell marginals to synchronized binary cells. The Pauli-pair calculation in Lemma~\ref{lem:bridge} gives two anticommuting pairs per square. Four-answer joint questions for all pairs of axes from distinct squares force cross-square commutation. Hence their algebra is $M_{d_{\max}}\otimes I$ on the support. Synchronization makes the marginal $I_{d_{\max}}/d_{\max}\otimes h$.
+
+Add joint questions between every named old projection and every scalar axis. Their sharp marginals force the old projections into the commutant: $E_i=I_{d_{\max}}\otimes e_i$. This step concerns only synchronized projections, never an FMS sign. Add global $Z$ and global $X$ measurements with all bit outcomes, binding each bit marginal to its axis. They are the actual joint spectral measurements.
+
+For a row dimension $d=2^n\leq d_{\max}$ use the first $n$ qubits; the rest are spectators. For each nonzero $j\in\mathbb F_2^n$, choose a basis $\ell_1,\ldots,\ell_{n-1}$ of $j^\perp$. Add a joint context for $X^j,Z^{\ell_1},\ldots,Z^{\ell_{n-1}}$, binding its marginals to the corresponding global parity events. These commute because $\ell\cdot j=0$. The zero-$Z$-syndrome outcomes with $X^j$ sign $\pm$ are
+\[
+ R_j^\pm=\tfrac12(|0\rangle\pm|j\rangle)(\langle0|\pm\langle j|)
+                       \otimes I_{\rm spectator}.
+\]
+The reference $R_d=|+_d\rangle\langle+_d|\otimes I_{\rm spectator}$ is the event that the first $n$ global $X$ bits are positive. It includes all spectator outcomes.
+
+\subsection{Signed reflections and column graphs}
+For one row $S=\alpha_0I+\sum_i\alpha_ie_i$, let $L$ clear all coefficient denominators and set
+\[
+ s_i=2e_i-I,\quad c_i=L\alpha_i,\quad
+ c_0=2L\alpha_0+\sum_iL\alpha_i.
+\]
+Then $2LS=c_0I+\sum_ic_is_i$. Expand this into signed reflections with integer repetitions, add a canceling $I,-I$ pair with $V_0=I$, and pad by further such pairs to a power of four $d$. The list has even length because its coefficient sum is even. Thus
+\begin{equation}\label{eq:slots}
+ \sum_{j=0}^{d-1}V_j=2LS,\qquad V_0=I,\qquad
+ V_j\in\{\pm I,\ \pm(2e_i-I)\}.
+\end{equation}
+For each $j>0$ use a six-answer joint question of $e_i$ and the three-way scalar measurement $R_j^+,R_j^-,I-R_j^+-R_j^-$. For $V_j=\pm I$, bind its binary bit to the anchor. Matching both marginals identifies all joint effects. Appropriate coarse events are the two-coordinate graph projections
+\[
+ G_j^\pm=\frac12\begin{pmatrix}I&\pm V_j\\\pm V_j&I\end{pmatrix}
+\]
+on coordinates $0,j$, zero elsewhere. A negative reflection sign exchanges the two coarse events.
+
+Add a synchronized $d$-answer question with projections $D_t$, indexed by $t\in\mathbb F_2^n$. Put $\chi_t(j)=(-1)^{t\cdot j}$. Forbid $D_t$ together with $G_j^-$ when $\chi_t(j)=1$, or $G_j^+$ when $\chi_t(j)=-1$. The forbidden-event support rule gives actual orthogonality. A vector in $\ran D_t$ therefore has coordinates $v_j=\chi_t(j)V_jv_0$.
+
+Define
+\[
+ J_t\xi=d^{-1/2}\bigl(\chi_t(j)V_j\xi\bigr)_{j=0}^{d-1},
+ \qquad P_t=J_tJ_t^*.
+\]
+Unitarity and character orthogonality give $J_t^*J_u=\delta_{tu}I$ and $\sum_tP_t=I$. Neither equation requires different $V_j$ to commute. The kernel conditions give $D_t\leq P_t$. Since both families sum to identity, $D_t=P_t$ for every $t$.
+
+Finally forbid $D_0$ jointly with the opposite $R_d$. Then $D_0R_d=0$, equivalently $R_dJ_0=0$. The column overlap is
+\[
+ J_0^*R_dJ_0=d^{-2}\Bigl(\sum_jV_j\Bigr)^*
+                                  \Bigl(\sum_jV_j\Bigr).
+\]
+It vanishes exactly when $S=0$. This proves soundness on arbitrary normal supports.
+
+For completeness append $\Phi_{d_{\max}}$, use the scalar Paulis and the actual joint products, and define the column partition by the $J_t$. Synchronized original projections commute with the marginal and transfer across a purification. Products transfer in reversed order. Define Bob's column effects by those transferred products, equivalently by transpose in canonical Schmidt coordinates. This order matters for noncommuting $e_i$. All column and synchrony tests hold. The row-zero test holds precisely because $S=0$. These constructions act trivially on every old measurement's new factor and prove completeness, including for mixed original states.
+
+\subsection{The explicit game and proof of Theorem C}
+For the present $4\,529$ rows, $d=16$ for $4\,507$ rows, $64$ for twenty rows and $256$ for two rows. Four magic squares certify eight scalar qubits. The old core has $5\,590$ projection variables; two additional activity symbols do not enter a row. There are $89\,440$ old-variable/axis joint questions, $333$ scalar pair contexts, $69\,375$ slot joint questions and $4\,529$ column questions. Together with scalar cells, contexts, cross-square joints and global measurements these add $163\,835$ questions per party.
+
+Retain the $6\,916$ old FMS/refinement/binding forbidden events and old binary synchrony tests. Add all the compiler rules. Accept any answer pair not forbidden by these rules and reject invalid answers. Choose questions independently and uniformly, so every pair has probability $Q^{-2}$, where $Q=169\,460$. The predicate is Boolean; masks in \texttt{game.json} list the finite answer subsets used by each rule.
+
+In a perfect strategy every pair has positive sampling probability, so each rejecting event is zero. Theorem~B gives every old rational row. The restricted old strategy has $B=0$ by \eqref{eq:Falpha}, so Theorem~A gives \eqref{eq:factor}. Completeness extends the canonical normal realization by $\PhiD$. These separable infinite spaces identify locally with $\ell^2$. Finite nonattainment follows from Theorem~A.
+
+The cutoff strategies also extend by $\PhiD$. Every new structural rule is exact; only one row-zero event fails. For a row,
+\begin{equation}\label{eq:d3}
+ p(D_0,R_d)=\frac{4L^2}{d^3}\Tr(h_{\rm old}S^2).
+\end{equation}
+The maximally mixed scalar marginal supplies the third power of $d$, including spectator normalization. For the isometry row $L=2,d=16$ and $\Tr(h_{\rm old}S^2)=2t_N/75$. Thus
+\begin{equation}\label{eq:gamecutoff}
+ 1-\omega_N=\frac{t_N}{9600Q^2}\longrightarrow0.
+\end{equation}
+This completes the proof of Theorem~C.
+
+\paragraph{The known synchronous obstruction.}
+Kim, Paulsen and Schafhauser prove that a synchronous game with a perfect spatial strategy has a perfect finite-dimensional strategy \cite[Theorem 3.10 and Corollary 3.11]{KPS}. On a normal support its synchronized projections reduce each positive finite-dimensional marginal eigenspace, where a maximally entangled strategy remains perfect. The present game retains nonsynchronous FMS and refined questions. Their transports change density eigenvalues. The full strategy cannot be restricted to a single marginal eigenspace. This observation explains the construction; it is not a new obstruction theorem.

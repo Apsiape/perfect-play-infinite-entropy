@@ -1,0 +1,21 @@
+\section{Normal states and support calculus}\label{sec:support}
+We collect the support facts used throughout the proof. They are elementary operator facts, not additional novelty claims. A trace-class density has separable support. Thus even if the ambient spaces are nonseparable, all state-bearing arguments take place on separable spaces. We purify mixed states on $\HH_A\otimes\HH_B\otimes\HH_E$; no queried measurement acts on $E$.
+
+\paragraph{Perfect matching.}
+For opposite-party effects $E,F$, zero mismatch implies
+\begin{equation}\label{eq:matching}
+0=\langle E+F-2EF\rangle
+ =\langle(E-F)^2+(E-E^2)+(F-F^2)\rangle.
+\end{equation}
+Each positive term annihilates the purification $\Omega$. In coefficient-operator coordinates for the cut $A\mid BE$, the first identity is $EK=K(F\otimes I_E)^T$. The range of $K$ is dense in Alice's state support. Hence $E$ preserves that support, and self-adjointness makes it reducing. Repeat on the $B\mid AE$ cut. On these supports the positive sharpness defects vanish: if $h$ is injective there and $D\geq0$, then $\Tr(hD)=0$ gives $D^{1/2}h^{1/2}=0$, and dense range gives $D=0$. Thus matched effects restrict to projections. Multiplying the intertwining equation and its adjoint gives $[E,h_A]=0$, and similarly on Bob. This order of reasoning establishes reduction before using projectivity.
+
+\paragraph{Projective compression.}
+If $P$ projects onto a state support, $0\leq E\leq I$, and $PEP=Q$ is a projection on $P\HH$, then $E$ reduces $P\HH$. Indeed $\langle v,(I-E)v\rangle=0$ for $v\in\ran Q$ forces $Ev=v$. For $v\in\ker Q\cap P\HH$, positivity forces $Ev=0$. Self-adjointness finishes the reduction argument.
+
+\paragraph{Sharp marginals.}
+A POVM with sharp coarse marginals is their commuting joint spectral measurement. Each compressed fine effect lies below the corresponding marginal projections. If $0\leq q\leq Z$ and $Z$ is a projection, then $q=ZqZ$. Summing over the other outcomes shows that the marginals commute and that their joint products equal the fine effects (or zero for omitted outcome patterns). If this argument starts with compressed effects, projective compression is used only after sharpness has been proved.
+
+\paragraph{Forbidden events.}
+Suppose $D_A,K_A,K_B$ are support projections and $(K_A-K_B)\Omega=0$. A zero event for $D_A$ and $K_B$ gives $D_AK_B\Omega=0$, hence $D_AK_A\Omega=0$. Dense Schmidt range gives $D_AK_A=0$ on the support, and taking adjoints gives the reverse product. This proof needs no density commutation in the orthogonality step.
+
+A full synchronized question has zero probability of unequal answers. Coarse-graining gives \eqref{eq:matching} for every answer subset. Consequently all its support effects are projections commuting with the local marginal. We always mean these support-restricted projections when using local polynomial identities.

@@ -1,0 +1,1 @@
+offdiag_G12_0 {'flip': [3], 'noncommuting_variable_pairs': 3, 'pvm_sum': True, 'idempotent': True, 'hermitian': True, 'orthogonal': 'implied (Hermitian idempotents summing to I are mutually orthogonal)', 'commutes_h': True, 'graph_forbidden_pairs': 480, 'graph_loss': '1/8', 'rowzero_loss': '1/1024', 'D_sync_loss': '0'} 12.8

@@ -1,0 +1,40 @@
+povm checks {'magic_square_identities_exact': 4, 'povm_structures_checked': 928} 202.67153906822205
+pairs done 400.3792955875397
+{
+ "N": 0,
+ "rules_evaluated": {
+  "sync": 163835,
+  "bind": 918276,
+  "graph": 69375,
+  "rowzero": 4529
+ },
+ "structural_zeros": {
+  "row_columns_sync": 4529
+ },
+ "checks": {
+  "magic_square_identities_exact": 4,
+  "povm_structures_checked": 928
+ },
+ "rowzero_T_constant": {
+  "16": "1",
+  "64": "1/16",
+  "256": "1/256"
+ },
+ "nonzero_pairs_new": [
+  [
+   165076,
+   95221,
+   "row_columns",
+   "scalar_global",
+   [
+    "rowzero"
+   ],
+   "1/9600"
+  ]
+ ],
+ "sum_rejecting_event_probabilities": "1/9600",
+ "uniform_game_loss": "1/275680239360000",
+ "predicted_t_N_over_9600": "1/9600",
+ "matches_7_2": true,
+ "seconds": 400.37942838668823
+}

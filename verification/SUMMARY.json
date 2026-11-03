@@ -1,0 +1,62 @@
+{
+  "all_21_documented_verification_commands_passed": true,
+  "exact_cross_implementation_comparisons": [
+    {
+      "N": 0,
+      "both_bell_scores": "-2/75",
+      "both_uniform_game_losses": "1/275680239360000",
+      "independent_new_rule_instances": 1156015,
+      "independent_povm_structures": 928
+    },
+    {
+      "N": 1,
+      "both_bell_scores": "-2/375",
+      "both_uniform_game_losses": "1/1378401196800000",
+      "independent_new_rule_instances": 1156015,
+      "independent_povm_structures": 928
+    },
+    {
+      "N": 2,
+      "both_bell_scores": "-2/825",
+      "both_uniform_game_losses": "1/3032482632960000",
+      "independent_new_rule_instances": 1156015,
+      "independent_povm_structures": 928
+    }
+  ],
+  "filtered_state_literal_checks": [
+    {
+      "M": 1,
+      "local_dimension": 54,
+      "filters_checked": 3,
+      "all_literal_formula_matches": true
+    },
+    {
+      "M": 2,
+      "local_dimension": 108,
+      "filters_checked": 4,
+      "all_literal_formula_matches": true
+    }
+  ],
+  "negative_control": {
+    "flip": [
+      3
+    ],
+    "noncommuting_variable_pairs": 3,
+    "pvm_sum": true,
+    "idempotent": true,
+    "hermitian": true,
+    "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+    "commutes_h": true,
+    "graph_forbidden_pairs": 480,
+    "graph_loss": "1/8",
+    "rowzero_loss": "1/1024",
+    "D_sync_loss": "0"
+  },
+  "source_archive_18_members_match": true,
+  "all_58_existing_labels_preserved": true,
+  "abstract_exact_match": true,
+  "abstract_characters": 1178,
+  "strict_build_clean": true,
+  "archives_unchanged": true,
+  "mathematical_scope": "Written proofs establish infinite claims; exact finite checks do not provide an unrestricted entropy lower power. The methods cross-family provenance statement follows the preparation review record; the imported Theorem D reviewer retains its same-family self-description."
+}

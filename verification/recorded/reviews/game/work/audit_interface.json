@@ -1,0 +1,107 @@
+{
+ "old_questions_identical": true,
+ "old_kinds": {
+  "anchor": 1,
+  "binary": 5592,
+  "fms": 10,
+  "refined": 22
+ },
+ "fms_records": 6916,
+ "fms_distinct_events": 6916,
+ "binary_anchor_bilinear_form_equals_minus_Falpha_minus_sync": true,
+ "bilinear_entries": 55675,
+ "game_old_forbidden": 6916,
+ "game_old_forbidden_equals_table_fms_events": true,
+ "rows_slot_identity_5_1_checked": 4529,
+ "row_dims": {
+  "16": 4507,
+  "64": 20,
+  "256": 2
+ },
+ "row_denominators": {
+  "1": 4520,
+  "4": 2,
+  "2": 1,
+  "8": 2,
+  "16": 4
+ },
+ "R_isometry": {
+  "d": 16,
+  "den": 2,
+  "slots": [
+   [
+    null,
+    1
+   ],
+   [
+    null,
+    -1
+   ],
+   [
+    "G12_25",
+    -1
+   ],
+   [
+    "G12_25",
+    -1
+   ],
+   [
+    "G12_80",
+    1
+   ],
+   [
+    "G12_85",
+    1
+   ],
+   [
+    null,
+    1
+   ],
+   [
+    null,
+    -1
+   ]
+  ]
+ },
+ "indexed_pairs": 880809,
+ "sync_is_all_old_binary_plus_all_new": true,
+ "rules_linking_fms_to_new": 0,
+ "rule_kind_counts": {
+  "bind|anchor|row_joint": 38145,
+  "bind|binary|commute_old": 89440,
+  "bind|binary|row_joint": 31230,
+  "bind|commute_old|binary": 89440,
+  "bind|commute_old|scalar_cell": 89440,
+  "bind|cross_axes|scalar_cell": 192,
+  "bind|row_joint|anchor": 38145,
+  "bind|row_joint|binary": 31230,
+  "bind|row_joint|scalar_pair": 208125,
+  "bind|scalar_cell|commute_old": 89440,
+  "bind|scalar_cell|cross_axes": 192,
+  "bind|scalar_cell|scalar_global": 16,
+  "bind|scalar_cell|scalar_ms": 72,
+  "bind|scalar_global|scalar_cell": 16,
+  "bind|scalar_global|scalar_pair": 2478,
+  "bind|scalar_ms|scalar_cell": 72,
+  "bind|scalar_pair|row_joint": 208125,
+  "bind|scalar_pair|scalar_global": 2478,
+  "graph|row_columns|row_joint": 69375,
+  "old|binary|fms": 168,
+  "old|binary|refined": 528,
+  "old|fms|binary": 168,
+  "old|fms|fms": 948,
+  "old|fms|refined": 2288,
+  "old|refined|binary": 528,
+  "old|refined|fms": 2288,
+  "rowzero|row_columns|scalar_global": 4529,
+  "sync|binary|binary": 5592,
+  "sync|commute_old|commute_old": 89440,
+  "sync|cross_axes|cross_axes": 96,
+  "sync|row_columns|row_columns": 4529,
+  "sync|row_joint|row_joint": 69375,
+  "sync|scalar_cell|scalar_cell": 36,
+  "sync|scalar_global|scalar_global": 2,
+  "sync|scalar_ms|scalar_ms": 24,
+  "sync|scalar_pair|scalar_pair": 333
+ }
+}

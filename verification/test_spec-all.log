@@ -1,0 +1,4 @@
+row gadgets 4529 Counter({16: 4507, 64: 20, 256: 2})
+rows encoded by predicate data: 4529 of 4529
+Counter({(16, 15): 4507, (64, 63): 20, (256, 255): 2})
+slot/pair-context mismatches 0

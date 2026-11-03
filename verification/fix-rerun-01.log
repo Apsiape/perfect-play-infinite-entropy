@@ -1,0 +1,134 @@
+{
+  "rank_one_check": {
+    "exact_rank_one_Born_contractions": 32,
+    "field": "Q(sqrt(2))"
+  },
+  "table_audit": {
+    "direct_records": 6916,
+    "potentially_nonzero_sign_records": 368,
+    "coarse_sign_events_after_summing_labels": {
+      "1": 96,
+      "2": 96
+    },
+    "groups": {
+      "(1, 'fms', 'fms')": 8,
+      "(1, 'fms', 'refined')": 88,
+      "(2, 'fms', 'fms')": 8,
+      "(2, 'fms', 'refined')": 88,
+      "(1, 'refined', 'fms')": 88,
+      "(2, 'refined', 'fms')": 88
+    },
+    "coefficient_sha256": "7549723983b64088f158821b256d40fdb378b0c7315eaab7039c30e2193a08fb"
+  },
+  "exact_checks": [
+    {
+      "N": 1,
+      "normalization": "241/400",
+      "D1": "9/64",
+      "D2": "1/64",
+      "loss": "33/241"
+    },
+    {
+      "N": 2,
+      "normalization": "8247/12800",
+      "D1": "67/2048",
+      "D2": "27/2048",
+      "loss": "121/2749"
+    },
+    {
+      "N": 3,
+      "normalization": "349541/518400",
+      "D1": "1141/82944",
+      "D2": "23/3072",
+      "loss": "7149/349541"
+    },
+    {
+      "N": 5,
+      "normalization": "22906777/32000000",
+      "D1": "23009/5120000",
+      "D2": "15769/5120000",
+      "loss": "163641/22906777"
+    }
+  ],
+  "constants": {
+    "entropy_sqrtN": 0.80240296326792,
+    "loss_N_to_minus_5_over_2": 0.541622000205846,
+    "bell_entropy_loss_constant": 0.7097931163542254,
+    "game_entropy_loss_constant_if_review_holds": 0.005747843070476385,
+    "old_sharp_bell_constant": 0.2210936788266907
+  },
+  "numerics": [
+    {
+      "N": 10,
+      "Z": 0.7738365485572812,
+      "entropy_bits": 6.9359252083015095,
+      "bell_loss": 0.0015229319259753055,
+      "scaled_loss": 0.4815933607468913,
+      "scaled_entropy": 2.1933321338810576,
+      "S_times_loss_to_one_fifth": 1.8951365152033557,
+      "sharp_root_S_times_t_to_one_third": 0.6770715272067378
+    },
+    {
+      "N": 100,
+      "Z": 0.9162909048098526,
+      "entropy_bits": 12.382930191382524,
+      "bell_loss": 5.6173107418205686e-06,
+      "scaled_loss": 0.5617310741820568,
+      "scaled_entropy": 1.2382930191382524,
+      "S_times_loss_to_one_fifth": 1.1033901798389407,
+      "sharp_root_S_times_t_to_one_third": 0.7270704154556212
+    },
+    {
+      "N": 1000,
+      "Z": 0.9728960992523665,
+      "entropy_bits": 29.70787901918211,
+      "bell_loss": 1.750374039432323e-08,
+      "scaled_loss": 0.5535168721835521,
+      "scaled_entropy": 0.9394456215334449,
+      "S_times_loss_to_one_fifth": 0.834637357435879,
+      "sharp_root_S_times_t_to_one_third": 0.7366058370352087
+    },
+    {
+      "N": 4000,
+      "Z": 0.9864173705976088,
+      "entropy_bits": 55.07488066486175,
+      "bell_loss": 5.418030235798391e-10,
+      "scaled_loss": 0.5482661112570262,
+      "scaled_entropy": 0.8708103238146587,
+      "S_times_loss_to_one_fifth": 0.7721858688139451,
+      "sharp_root_S_times_t_to_one_third": 0.738395995281206
+    },
+    {
+      "N": 10000,
+      "Z": 0.9914055651434612,
+      "entropy_bits": 84.5639610566144,
+      "bell_loss": 5.459894826389856e-11,
+      "scaled_loss": 0.5459894826389856,
+      "scaled_entropy": 0.845639610566144,
+      "S_times_loss_to_one_fifth": 0.7492421008582073,
+      "sharp_root_S_times_t_to_one_third": 0.7390162692277223
+    },
+    {
+      "N": 100000,
+      "Z": 0.997281422582493,
+      "entropy_bits": 258.0623651333372,
+      "bell_loss": 1.7173236014265795e-13,
+      "scaled_loss": 0.5430654060071178,
+      "scaled_entropy": 0.8160648521913675,
+      "S_times_loss_to_one_fifth": 0.7222625568113649,
+      "sharp_root_S_times_t_to_one_third": 0.7397205289976833
+    },
+    {
+      "N": 1000000,
+      "Z": 0.9991402853318563,
+      "entropy_bits": 806.7221336825531,
+      "bell_loss": 5.420847277674905e-16,
+      "scaled_loss": 0.5420847277674905,
+      "scaled_entropy": 0.8067221336825532,
+      "S_times_loss_to_one_fifth": 0.7137356786206461,
+      "sharp_root_S_times_t_to_one_third": 0.7399375315811955
+    }
+  ],
+  "elapsed_seconds": 3.6144693999085575,
+  "peak_working_set_bytes": 26226688
+}

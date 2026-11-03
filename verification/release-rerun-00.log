@@ -1,0 +1,47 @@
+{
+  "audit": "independently written same-family Theorem D scalar check",
+  "arithmetic": "exact rational finite sums; floating point pi-based constants",
+  "exact_profiles": [
+    {
+      "N": 1,
+      "normalization": "241/400",
+      "D1": "9/64",
+      "D2": "1/64",
+      "bell_loss": "33/241"
+    },
+    {
+      "N": 2,
+      "normalization": "8247/12800",
+      "D1": "67/2048",
+      "D2": "27/2048",
+      "bell_loss": "121/2749"
+    },
+    {
+      "N": 3,
+      "normalization": "349541/518400",
+      "D1": "1141/82944",
+      "D2": "23/3072",
+      "bell_loss": "7149/349541"
+    },
+    {
+      "N": 5,
+      "normalization": "22906777/32000000",
+      "D1": "23009/5120000",
+      "D2": "15769/5120000",
+      "bell_loss": "163641/22906777"
+    }
+  ],
+  "integrals": {
+    "dirichlet": "8/3",
+    "entropy": "64/45"
+  },
+  "coarse_forbidden_events_per_bridge": 96,
+  "constants": {
+    "C_L": 0.541622000205846,
+    "C_S": 0.8024029632679202,
+    "bell_constant": 0.7097931163542255,
+    "game_constant": 0.005747843070476387
+  },
+  "assertions_passed": true,
+  "limitations": "Does not replace analytic asymptotics, prove an unrestricted entropy lower power, or constitute cross-family review."
+}

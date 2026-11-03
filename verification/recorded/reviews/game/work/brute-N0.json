@@ -1,0 +1,112 @@
+{
+ "R_isometry": {
+  "pvm_sum": true,
+  "idempotent": true,
+  "hermitian": true,
+  "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+  "commutes_h": true,
+  "graph_forbidden_pairs": 480,
+  "graph_loss": "0",
+  "rowzero_loss": "1/9600",
+  "D_sync_loss": "0"
+ },
+ "frame_partition": {
+  "pvm_sum": true,
+  "idempotent": true,
+  "hermitian": true,
+  "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+  "commutes_h": true,
+  "graph_forbidden_pairs": 480,
+  "graph_loss": "0",
+  "rowzero_loss": "0",
+  "D_sync_loss": "0"
+ },
+ "offdiag_G12_0": {
+  "pvm_sum": true,
+  "idempotent": true,
+  "hermitian": true,
+  "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+  "commutes_h": true,
+  "graph_forbidden_pairs": 480,
+  "graph_loss": "0",
+  "rowzero_loss": "0",
+  "D_sync_loss": "0"
+ },
+ "support_G12_0": {
+  "pvm_sum": true,
+  "idempotent": true,
+  "hermitian": true,
+  "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+  "commutes_h": true,
+  "graph_forbidden_pairs": 480,
+  "graph_loss": "0",
+  "rowzero_loss": "0",
+  "D_sync_loss": "0"
+ },
+ "parameter_graph_root_12": {
+  "pvm_sum": true,
+  "idempotent": true,
+  "hermitian": true,
+  "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+  "commutes_h": true,
+  "graph_forbidden_pairs": 480,
+  "graph_loss": "0",
+  "rowzero_loss": "0",
+  "D_sync_loss": "0"
+ },
+ "param_joint_G_m1_00_12": {
+  "pvm_sum": true,
+  "idempotent": true,
+  "hermitian": true,
+  "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+  "commutes_h": true,
+  "graph_forbidden_pairs": 480,
+  "graph_loss": "0",
+  "rowzero_loss": "0",
+  "D_sync_loss": "0"
+ },
+ "a_support": {
+  "pvm_sum": true,
+  "idempotent": true,
+  "hermitian": true,
+  "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+  "commutes_h": true,
+  "graph_forbidden_pairs": 480,
+  "graph_loss": "0",
+  "rowzero_loss": "0",
+  "D_sync_loss": "0"
+ },
+ "unitary_outside_0_c": {
+  "pvm_sum": true,
+  "idempotent": true,
+  "hermitian": true,
+  "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+  "commutes_h": true,
+  "graph_forbidden_pairs": 480,
+  "graph_loss": "0",
+  "rowzero_loss": "0",
+  "D_sync_loss": "0"
+ },
+ "copy13_30": {
+  "pvm_sum": true,
+  "idempotent": true,
+  "hermitian": true,
+  "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+  "commutes_h": true,
+  "graph_forbidden_pairs": 480,
+  "graph_loss": "0",
+  "rowzero_loss": "0",
+  "D_sync_loss": "0"
+ },
+ "product_78": {
+  "pvm_sum": true,
+  "idempotent": true,
+  "hermitian": true,
+  "orthogonal": "implied (Hermitian idempotents summing to I are mutually orthogonal)",
+  "commutes_h": true,
+  "graph_forbidden_pairs": 480,
+  "graph_loss": "0",
+  "rowzero_loss": "0",
+  "D_sync_loss": "0"
+ }
+}

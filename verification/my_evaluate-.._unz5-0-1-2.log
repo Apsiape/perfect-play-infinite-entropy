@@ -1,0 +1,102 @@
+{
+ "N": 0,
+ "catalan_dim": 1,
+ "local_dim": 27,
+ "coefficient_sha256": "7549723983b64088f158821b256d40fdb378b0c7315eaab7039c30e2193a08fb",
+ "binary_symbols": 5592,
+ "binary_symbols_not_projection": [],
+ "nonzero_rows": [
+  "R_isometry"
+ ],
+ "R_isometry_row_equals_predicted_boundary": true,
+ "measurement_problems": [],
+ "records_contracted": 73769,
+ "Z_N": "1",
+ "t_N": "1",
+ "score": "-2/75",
+ "score_nonrational_coordinates_zero": true,
+ "predicted_minus_2tN_over_75": "-2/75",
+ "score_matches_prediction": true,
+ "fms_refined_subtotal": [
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0"
+ ],
+ "fms_refined_records_with_nonzero_probability": 0,
+ "records_with_irrational_probability": 0,
+ "seconds": 58.1,
+ "peak_working_set_MiB": 209.0
+}
+{
+ "N": 1,
+ "catalan_dim": 2,
+ "local_dim": 54,
+ "coefficient_sha256": "7549723983b64088f158821b256d40fdb378b0c7315eaab7039c30e2193a08fb",
+ "binary_symbols": 5592,
+ "binary_symbols_not_projection": [],
+ "nonzero_rows": [
+  "R_isometry"
+ ],
+ "R_isometry_row_equals_predicted_boundary": true,
+ "measurement_problems": [],
+ "records_contracted": 73769,
+ "Z_N": "5/4",
+ "t_N": "1/5",
+ "score": "-2/375",
+ "score_nonrational_coordinates_zero": true,
+ "predicted_minus_2tN_over_75": "-2/375",
+ "score_matches_prediction": true,
+ "fms_refined_subtotal": [
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0"
+ ],
+ "fms_refined_records_with_nonzero_probability": 0,
+ "records_with_irrational_probability": 0,
+ "seconds": 57.4,
+ "peak_working_set_MiB": 335.8
+}
+{
+ "N": 2,
+ "catalan_dim": 4,
+ "local_dim": 108,
+ "coefficient_sha256": "7549723983b64088f158821b256d40fdb378b0c7315eaab7039c30e2193a08fb",
+ "binary_symbols": 5592,
+ "binary_symbols_not_projection": [],
+ "nonzero_rows": [
+  "R_isometry"
+ ],
+ "R_isometry_row_equals_predicted_boundary": true,
+ "measurement_problems": [],
+ "records_contracted": 73769,
+ "Z_N": "11/8",
+ "t_N": "1/11",
+ "score": "-2/825",
+ "score_nonrational_coordinates_zero": true,
+ "predicted_minus_2tN_over_75": "-2/825",
+ "score_matches_prediction": true,
+ "fms_refined_subtotal": [
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0",
+  "0"
+ ],
+ "fms_refined_records_with_nonzero_probability": 0,
+ "records_with_irrational_probability": 384,
+ "seconds": 63.2,
+ "peak_working_set_MiB": 582.0
+}
