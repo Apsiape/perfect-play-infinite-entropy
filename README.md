@@ -1,6 +1,6 @@
 # Perfect play in a finite nonlocal game requires infinite entanglement entropy
 
-Seth Douglas and Nidhal Mghirbi. Version 1.0.0, 2 November 2026.
+Seth Douglas and Nidhal Mghirbi. Version 1.0.0, 2 November 2026. DOI: [10.5281/zenodo.23902656](https://doi.org/10.5281/zenodo.23902656).
 
 **This is a preprint. It has not been peer reviewed.**
 
@@ -25,5 +25,5 @@ Computational checks support the written proofs; finite evaluations alone do not
 
 ## Citation and rights
 
-See `CITATION.cff` for citation metadata. No DOI has been assigned to this manuscript.
+See `CITATION.cff` for citation metadata.
 Paper and documentation: CC BY 4.0. Scripts: MIT or Apache 2.0, at your option. See `RIGHTS.md`, the license files and `NOTICE`.

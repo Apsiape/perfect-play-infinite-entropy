@@ -3,6 +3,7 @@ message: Please cite the paper; this distribution supplies its source and finite
 type: software
 title: "Perfect play in a finite nonlocal game requires infinite entanglement entropy"
 version: 1.0.0
+doi: "10.5281/zenodo.23902656"
 date-released: '2026-11-02'
 license:
 - CC-BY-4.0
@@ -35,6 +36,7 @@ preferred-citation:
     orcid: https://orcid.org/0009-0005-6534-1118
   year: 2026
   version: 1.0.0
+  doi: "10.5281/zenodo.23902656"
   notes: 'Preprint. It has not been peer reviewed. Text: CC BY 4.0. Scripts: MIT or Apache 2.0; see RIGHTS.md.'
 references:
 - type: generic
