@@ -1,6 +1,6 @@
 # Perfect play in a finite nonlocal game requires infinite entanglement entropy
 
-Seth Douglas and Nidhal Mghirbi. Version 1.1.0, 3 November 2026. Prior v1.0.0 DOI: [10.5281/zenodo.23902656](https://doi.org/10.5281/zenodo.23902656).
+Seth Douglas and Nidhal Mghirbi. Version 1.1.0, 3 November 2026. Concept DOI (all versions): [10.5281/zenodo.23902655](https://doi.org/10.5281/zenodo.23902655). Version 1.0.0: [10.5281/zenodo.23902656](https://doi.org/10.5281/zenodo.23902656). Version 1.1.0: [10.5281/zenodo.23932017](https://doi.org/10.5281/zenodo.23932017).
 
 The minimum marginal entropy at loss epsilon is Theta(log(1/epsilon)) for all normal spatial strategies. The full decoding and rounding proofs are in the paper. The radial inverse-fifth-root bound remains valid and optimal within scalar spectral filters.
 
